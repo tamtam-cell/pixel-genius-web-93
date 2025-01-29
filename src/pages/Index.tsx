@@ -1,12 +1,14 @@
 import { ArrowRight, Clock, Users, ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
+import { Timeline } from "@/components/ui/timeline";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(172800);
   const [remainingSpots, setRemainingSpots] = useState(5);
 
@@ -36,6 +38,11 @@ const Index = () => {
       .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
+  const handleOfferClick = () => {
+    setRemainingSpots(prev => Math.max(0, prev - 1));
+    navigate('/contact');
+  };
+
   const testimonials = [
     {
       author: {
@@ -60,6 +67,65 @@ const Index = () => {
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
       },
       text: "Enfin une agence qui comprend vraiment nos besoins ! La qualité du design et l'attention aux détails sont impressionnantes."
+    },
+    {
+      author: {
+        name: "Lucas Petit",
+        handle: "@lucasdev",
+        avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Une équipe exceptionnelle qui a su donner vie à notre vision avec une expertise technique remarquable."
+    },
+    {
+      author: {
+        name: "Emma Richard",
+        handle: "@emmaux",
+        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Le professionnalisme et la créativité de PixelCraftLab ont dépassé toutes nos attentes."
+    }
+  ];
+
+  const timelineData = [
+    {
+      title: "2024",
+      content: (
+        <div>
+          <p className="text-muted-foreground text-sm font-normal mb-8">
+            Lancement de notre nouvelle plateforme d'innovation numérique et expansion de nos services premium
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Innovation Continue</h4>
+              <p className="text-sm text-muted-foreground">Développement de solutions sur mesure</p>
+            </div>
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Excellence Technique</h4>
+              <p className="text-sm text-muted-foreground">Adoption des dernières technologies</p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023",
+      content: (
+        <div>
+          <p className="text-muted-foreground text-sm font-normal mb-8">
+            Création de PixelCraftLab et premiers succès avec nos clients fondateurs
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Vision Initiale</h4>
+              <p className="text-sm text-muted-foreground">Fondation de l'entreprise</p>
+            </div>
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Premiers Projets</h4>
+              <p className="text-sm text-muted-foreground">Collaborations réussies</p>
+            </div>
+          </div>
+        </div>
+      ),
     }
   ];
 
@@ -104,14 +170,13 @@ const Index = () => {
                 Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
               </p>
             </div>
-            <Link
-              to="/services"
+            <button
+              onClick={handleOfferClick}
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors whitespace-nowrap shadow-[0_0_20px_rgba(155,135,245,0.3)]"
-              onClick={() => setRemainingSpots(prev => Math.max(0, prev - 1))}
             >
               J'en profite
               <ArrowRight size={16} />
-            </Link>
+            </button>
           </div>
         </div>
       )}
@@ -157,13 +222,14 @@ const Index = () => {
             ],
           },
         ].map((offer, index) => (
-          <div
+          <button
             key={index}
-            className="cyber-border p-4 rounded-xl card-hover"
+            onClick={handleOfferClick}
+            className="cyber-border p-4 rounded-xl card-hover text-left"
           >
             <h3 className="text-xl font-semibold mb-3">{offer.title}</h3>
             <div className="text-2xl font-bold mb-3">${offer.price}</div>
-            <ul className="text-left space-y-2 text-sm">
+            <ul className="space-y-2 text-sm">
               {offer.features.map((feature, idx) => (
                 <li key={idx} className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-primary" />
@@ -171,9 +237,16 @@ const Index = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </button>
         ))}
       </div>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection
+        title="La confiance de nos clients témoigne de notre excellence"
+        description="Rejoignez les entreprises qui construisent déjà leur avenir numérique avec PixelCraftLab"
+        testimonials={testimonials}
+      />
 
       {/* Features Section */}
       <section className="py-16">
@@ -215,12 +288,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <TestimonialsSection
-        title="La confiance de nos clients témoigne de notre excellence"
-        description="Rejoignez les entreprises qui construisent déjà leur avenir numérique avec PixelCraftLab"
-        testimonials={testimonials}
-      />
+      {/* Timeline Section */}
+      <Timeline data={timelineData} />
     </div>
   );
 };
