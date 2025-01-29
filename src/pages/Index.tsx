@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, Users, ShieldCheck, Zap, Code, Database, Cloud } from "lucide-react";
+import { ArrowRight, Clock, Users, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
@@ -43,7 +43,7 @@ const Index = () => {
         handle: "@marieweb",
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
       },
-      text: "PixelCraftLab a transformé notre présence en ligne. Leur approche innovante et leur expertise technique sont remarquables.",
+      text: "PixelCraftLab a complètement transformé notre présence en ligne. Leur approche innovante et leur expertise technique sont remarquables.",
     },
     {
       author: {
@@ -59,31 +59,7 @@ const Index = () => {
         handle: "@sophiedesign",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Une agence qui comprend vraiment nos besoins ! La qualité du design et l'attention aux détails sont impressionnantes."
-    },
-    {
-      author: {
-        name: "Lucas Petit",
-        handle: "@lucasweb",
-        avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face"
-      },
-      text: "Le support technique est exceptionnel. Réactifs et professionnels, ils ont su répondre à toutes nos attentes.",
-    },
-    {
-      author: {
-        name: "Emma Rousseau",
-        handle: "@emmatech",
-        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-      },
-      text: "Un partenaire de confiance pour notre transformation digitale. Résultats au-delà de nos espérances.",
-    },
-    {
-      author: {
-        name: "Alexandre Durand",
-        handle: "@alexdev",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-      },
-      text: "Expertise technique impressionnante et vision créative unique. Un véritable atout pour notre entreprise.",
+      text: "Enfin une agence qui comprend vraiment nos besoins ! La qualité du design et l'attention aux détails sont impressionnantes."
     }
   ];
 
@@ -116,32 +92,30 @@ const Index = () => {
         </motion.p>
       </LampContainer>
 
-      {/* Limited Offer Section with reduced spacing */}
-      <div className="mt-8">
-        {remainingSpots > 0 && (
-          <div className="cyber-border p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="text-left">
-                <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-                  Offre Limitée ! Plus que {remainingSpots} places disponibles
-                </h3>
-                <p className="text-purple-200/80 text-sm">
-                  Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
-                </p>
-              </div>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors whitespace-nowrap shadow-[0_0_20px_rgba(155,135,245,0.3)]"
-                onClick={() => setRemainingSpots(prev => Math.max(0, prev - 1))}
-              >
-                J'en profite
-                <ArrowRight size={16} />
-              </Link>
+      {/* Limited Offer Section */}
+      {remainingSpots > 0 && (
+        <div className="cyber-border p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-left">
+              <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
+                Offre Limitée ! Plus que {remainingSpots} places disponibles
+              </h3>
+              <p className="text-purple-200/80 text-sm">
+                Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
+              </p>
             </div>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors whitespace-nowrap shadow-[0_0_20px_rgba(155,135,245,0.3)]"
+              onClick={() => setRemainingSpots(prev => Math.max(0, prev - 1))}
+            >
+              J'en profite
+              <ArrowRight size={16} />
+            </Link>
           </div>
-        )}
-      </div>
-
+        </div>
+      )}
+      
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         {[
@@ -201,57 +175,52 @@ const Index = () => {
         ))}
       </div>
 
+      {/* Features Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
+            Technologies du Futur
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: ShieldCheck,
+                title: "Sécurité Quantique",
+                description:
+                  "Protection de nouvelle génération pour vos données.",
+              },
+              {
+                icon: Users,
+                title: "IA Adaptative",
+                description:
+                  "Expérience utilisateur personnalisée par intelligence artificielle.",
+              },
+              {
+                icon: Clock,
+                title: "Performance Optimale",
+                description:
+                  "Temps de chargement ultra-rapides garantis.",
+              },
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="cyber-border p-6 rounded-xl card-hover"
+              >
+                <feature.icon className="w-12 h-12 mb-4 text-primary" />
+                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <TestimonialsSection
         title="La confiance de nos clients témoigne de notre excellence"
         description="Rejoignez les entreprises qui construisent déjà leur avenir numérique avec PixelCraftLab"
         testimonials={testimonials}
       />
-
-      {/* Enhanced Features Section */}
-      <section className="py-16 bg-background/50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-            Technologies du Futur
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                icon: ShieldCheck,
-                title: "Sécurité Quantique",
-                description: "Protection de nouvelle génération pour vos données avec cryptographie avancée.",
-              },
-              {
-                icon: Code,
-                title: "Architecture Innovante",
-                description: "Solutions techniques modernes et évolutives pour une performance optimale.",
-              },
-              {
-                icon: Database,
-                title: "IA & Big Data",
-                description: "Exploitation intelligente des données pour des décisions stratégiques.",
-              },
-              {
-                icon: Cloud,
-                title: "Cloud Native",
-                description: "Infrastructure scalable et résiliente pour votre croissance.",
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="cyber-border p-6 rounded-xl card-hover backdrop-blur-sm"
-              >
-                <feature.icon className="w-12 h-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
