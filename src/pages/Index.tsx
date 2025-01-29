@@ -2,6 +2,9 @@ import { ArrowRight, Clock, Users, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
+import { LampContainer } from "@/components/ui/lamp";
+import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(172800);
@@ -33,104 +36,144 @@ const Index = () => {
       .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
-  const offers = [
+  const testimonials = [
     {
-      title: "Offre Complète",
-      price: 849,
-      features: [
-        "Design personnalisé",
-        "Responsive design",
-        "3 pages",
-        "Formulaire de contact",
-        "Optimisation SEO de base",
-        "Support 30 jours",
-      ],
+      author: {
+        name: "Marie Dubois",
+        handle: "@marieweb",
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "PixelCraftLab a complètement transformé notre présence en ligne. Leur approche innovante et leur expertise technique sont remarquables.",
     },
     {
-      title: "Offre Premium",
-      price: 1399,
-      features: [
-        "Tout de l'offre Complète",
-        "Jusqu'à 7 pages",
-        "Blog intégré",
-        "Animations personnalisées",
-        "Optimisation SEO avancée",
-        "Support 60 jours",
-      ],
-      isPopular: true,
+      author: {
+        name: "Thomas Martin",
+        handle: "@thomasdev",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "L'intégration de notre site a été parfaite. Nous avons réduit notre temps de développement de 60% grâce à leur solution.",
     },
     {
-      title: "Offre Magique",
-      price: 1899,
-      features: [
-        "Tout de l'offre Premium",
-        "Pages illimitées",
-        "E-commerce intégré",
-        "Système de réservation",
-        "Optimisation SEO expert",
-        "Support 90 jours",
-      ],
-    },
+      author: {
+        name: "Sophie Bernard",
+        handle: "@sophiedesign",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Enfin une agence qui comprend vraiment nos besoins ! La qualité du design et l'attention aux détails sont impressionnantes."
+    }
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-16 pb-8 hero-gradient">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-            Créez votre présence numérique du futur
-          </h1>
-          <p className="text-lg text-purple-200/80 mb-8 max-w-2xl mx-auto animate-fade-in">
-            PixelCraftLab transforme vos idées en expériences web révolutionnaires
-          </p>
-          
-          {/* Limited Offer Section */}
-          {remainingSpots > 0 && (
-            <div className="cyber-border p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="text-left">
-                  <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-                    Offre Limitée ! Plus que {remainingSpots} places disponibles
-                  </h3>
-                  <p className="text-purple-200/80 text-sm">
-                    Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
-                  </p>
-                </div>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors whitespace-nowrap shadow-[0_0_20px_rgba(155,135,245,0.3)]"
-                  onClick={() => setRemainingSpots(prev => Math.max(0, prev - 1))}
-                >
-                  J'en profite
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
+      <LampContainer>
+        <motion.h1
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="mt-8 bg-gradient-to-br from-primary to-purple-400 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        >
+          Innovez dans le Numérique, <br /> Créez l'Extraordinaire
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.4,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="mt-4 text-center text-muted-foreground text-xl"
+        >
+          Transformons vos visions en expériences web captivantes et innovantes
+        </motion.p>
+      </LampContainer>
+
+      {/* Limited Offer Section */}
+      {remainingSpots > 0 && (
+        <div className="cyber-border p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-left">
+              <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
+                Offre Limitée ! Plus que {remainingSpots} places disponibles
+              </h3>
+              <p className="text-purple-200/80 text-sm">
+                Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
+              </p>
             </div>
-          )}
-          
-          {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            {offers.map((offer, index) => (
-              <div
-                key={index}
-                className="cyber-border p-4 rounded-xl card-hover"
-              >
-                <h3 className="text-xl font-semibold mb-3">{offer.title}</h3>
-                <div className="text-2xl font-bold mb-3">${offer.price}</div>
-                <ul className="text-left space-y-2 text-sm">
-                  {offer.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4 text-primary" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors whitespace-nowrap shadow-[0_0_20px_rgba(155,135,245,0.3)]"
+              onClick={() => setRemainingSpots(prev => Math.max(0, prev - 1))}
+            >
+              J'en profite
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
-      </section>
+      )}
+      
+      {/* Pricing Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        {[
+          {
+            title: "Offre Complète",
+            price: 849,
+            features: [
+              "Design personnalisé",
+              "Responsive design",
+              "3 pages",
+              "Formulaire de contact",
+              "Optimisation SEO de base",
+              "Support 30 jours",
+            ],
+          },
+          {
+            title: "Offre Premium",
+            price: 1399,
+            features: [
+              "Tout de l'offre Complète",
+              "Jusqu'à 7 pages",
+              "Blog intégré",
+              "Animations personnalisées",
+              "Optimisation SEO avancée",
+              "Support 60 jours",
+            ],
+            isPopular: true,
+          },
+          {
+            title: "Offre Magique",
+            price: 1899,
+            features: [
+              "Tout de l'offre Premium",
+              "Pages illimitées",
+              "E-commerce intégré",
+              "Système de réservation",
+              "Optimisation SEO expert",
+              "Support 90 jours",
+            ],
+          },
+        ].map((offer, index) => (
+          <div
+            key={index}
+            className="cyber-border p-4 rounded-xl card-hover"
+          >
+            <h3 className="text-xl font-semibold mb-3">{offer.title}</h3>
+            <div className="text-2xl font-bold mb-3">${offer.price}</div>
+            <ul className="text-left space-y-2 text-sm">
+              {offer.features.map((feature, idx) => (
+                <li key={idx} className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-primary" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
 
       {/* Features Section */}
       <section className="py-16">
@@ -171,6 +214,13 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection
+        title="La confiance de nos clients témoigne de notre excellence"
+        description="Rejoignez les entreprises qui construisent déjà leur avenir numérique avec PixelCraftLab"
+        testimonials={testimonials}
+      />
     </div>
   );
 };
