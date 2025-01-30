@@ -269,7 +269,7 @@ const Index = () => {
             ],
             bonus: "BONUS : Formation maintenance WordPress (valeur 299€)",
             isPopular: true,
-            stock: 5,
+            stock: 2,
             upgrade: "Passez à l'offre Magique pour seulement 500€ de plus et obtenez des pages illimitées !",
           },
           {
