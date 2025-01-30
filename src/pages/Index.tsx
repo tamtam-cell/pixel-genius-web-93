@@ -297,8 +297,8 @@ const Index = () => {
 
       {/* Testimonials Section */}
       <TestimonialsSection
-        title="Ils nous font confiance et partagent leur expérience"
-        description="Rejoignez les entreprises qui construisent déjà leur avenir numérique avec PixelCraftLab"
+        title="Nous donnons vie à de plus en plus de projets"
+        description="Découvrez comment notre expertise technique et notre approche stratégique transforment les projets de nos clients"
         testimonials={testimonials}
       />
 
@@ -347,4 +347,3 @@ const Index = () => {
 };
 
 export default Index;
-
