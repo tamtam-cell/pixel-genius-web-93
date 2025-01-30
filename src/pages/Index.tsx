@@ -358,15 +358,17 @@ const Index = () => {
                 Réserver maintenant
               </button>
 
-              {offer.title !== "Offre Premium" && offer.stock <= 3 && (
-                <p className="text-sm text-center text-muted-foreground">
-                  {offer.title !== "Offre Premium" && `Plus que ${offer.stock} place${offer.stock > 1 ? 's' : ''} !`}
-                </p>
-              )}
+              <div className="space-y-2">
+                {offer.stock <= 3 && (
+                  <p className="text-sm text-center font-medium bg-primary/10 py-2 rounded-md backdrop-blur-sm">
+                    Plus que {offer.stock} place{offer.stock > 1 ? 's' : ''} !
+                  </p>
+                )}
 
-              <p className="text-xs text-center text-muted-foreground">
-                Offre limitée - Prix garanti pendant {formatTime(timeLeft)}
-              </p>
+                <p className="text-sm text-center font-medium bg-primary/10 py-2 rounded-md backdrop-blur-sm">
+                  Offre limitée - Prix garanti pendant {formatTime(timeLeft)}
+                </p>
+              </div>
             </div>
           </div>
         ))}
