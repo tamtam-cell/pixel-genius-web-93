@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter } from "lucide-react"
+import { Link } from "react-router-dom"
 
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(true)
@@ -52,18 +53,18 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Liens Rapides</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-primary">
+              <Link to="/" className="block transition-colors hover:text-primary">
                 Accueil
-              </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              </Link>
+              <Link to="/about" className="block transition-colors hover:text-primary">
                 Notre histoire
-              </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              </Link>
+              <Link to="/services" className="block transition-colors hover:text-primary">
                 Services
-              </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              </Link>
+              <Link to="/contact" className="block transition-colors hover:text-primary">
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
           <div>
@@ -150,15 +151,15 @@ function Footerdemo() {
             © 2024 PixelCraftLab. Tous droits réservés.
           </p>
           <nav className="flex gap-4 text-sm">
-            <a href="#" className="transition-colors hover:text-primary">
+            <Link to="/privacy" className="transition-colors hover:text-primary">
               Politique de Confidentialité
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
+            </Link>
+            <Link to="/terms" className="transition-colors hover:text-primary">
               Conditions d'Utilisation
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
+            </Link>
+            <Link to="/cookies" className="transition-colors hover:text-primary">
               Paramètres des Cookies
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
