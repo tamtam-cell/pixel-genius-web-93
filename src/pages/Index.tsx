@@ -300,17 +300,15 @@ const Index = () => {
               </div>
             )}
             
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-3">{offer.title}</h3>
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <span className="text-3xl font-bold">{offer.price}€</span>
-                  {offer.originalPrice && (
-                    <span className="text-sm text-muted-foreground line-through">
-                      {offer.originalPrice}€
-                    </span>
-                  )}
-                </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3">{offer.title}</h3>
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <span className="text-3xl font-bold">{offer.price}€</span>
+                {offer.originalPrice && (
+                  <span className="text-sm text-muted-foreground line-through">
+                    {offer.originalPrice}€
+                  </span>
+                )}
               </div>
 
               <ul className="space-y-3 mb-6">
@@ -323,7 +321,7 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="space-y-4 mt-auto">
+            <div className="mt-auto space-y-4">
               {offer.bonus && (
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <p className="font-semibold text-primary">{offer.bonus}</p>
