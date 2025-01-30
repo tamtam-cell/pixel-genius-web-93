@@ -220,7 +220,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-left">
               <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-                Offre Limitée ! Plus que {remainingSpots} places disponibles
+                Offre Limitée ! Plus que {remainingSpots} place{remainingSpots > 1 ? 's' : ''} disponibles
               </h3>
               <p className="text-purple-200/80 text-sm">
                 Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
