@@ -1,78 +1,59 @@
-import * as React from "react"
-import { Link } from "react-router-dom"
-import { LucideIcon } from "lucide-react"
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+"use client";
+
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { LucideIcon } from "lucide-react";
 
 interface NavItem {
-  name: string
-  path: string
-  icon: LucideIcon
+  name: string;
+  path: string;
+  icon: LucideIcon;
 }
 
 interface NavBarProps {
-  items: NavItem[]
-  className?: string
+  items: NavItem[];
 }
 
-export function NavBar({ items, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = React.useState(items[0].name)
-  const [isMobile, setIsMobile] = React.useState(false)
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+export const NavBar = ({ items }: NavBarProps) => {
+  const location = useLocation();
+  console.log("Current location:", location.pathname);
 
   return (
-    <div className={cn("z-50", className)}>
-      <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
-        {items.map((item) => {
-          const Icon = item.icon
-          const isActive = activeTab === item.name
+    <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      {items.map((item, idx) => {
+        const isActive = location.pathname === item.path;
+        console.log(`Link ${item.name} active status:`, isActive);
 
-          return (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={() => setActiveTab(item.name)}
-              className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                "text-foreground/80 hover:text-primary",
-                isActive && "bg-muted text-primary"
-              )}
-            >
-              <span className="hidden md:inline">{item.name}</span>
-              <span className="md:hidden">
-                <Icon size={18} strokeWidth={2.5} />
-              </span>
-              {isActive && (
-                <motion.div
-                  layoutId="lamp"
-                  className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
-                  initial={false}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30,
-                  }}
-                >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-t-full">
-                    <div className="absolute w-12 h-6 bg-primary/20 rounded-full blur-md -top-2 -left-2" />
-                    <div className="absolute w-8 h-6 bg-primary/20 rounded-full blur-md -top-1" />
-                    <div className="absolute w-4 h-4 bg-primary/20 rounded-full blur-sm top-0 left-2" />
-                  </div>
-                </motion.div>
-              )}
-            </Link>
-          )
-        })}
-      </div>
+        return (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={cn(
+              "relative px-3 py-1.5 text-sm font-medium transition-colors",
+              "hover:text-white",
+              isActive ? "text-white" : "text-neutral-400"
+            )}
+          >
+            {isActive && (
+              <motion.div
+                layoutId="navbar-active"
+                className="absolute inset-0 bg-white/10 rounded-full"
+                transition={{
+                  type: "spring",
+                  bounce: 0.3,
+                  duration: 0.6,
+                }}
+              />
+            )}
+            <span className="relative flex items-center gap-2">
+              <item.icon className="w-4 h-4" />
+              {item.name}
+            </span>
+          </Link>
+        );
+      })}
     </div>
-  )
-}
+  );
+};
