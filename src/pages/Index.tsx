@@ -29,8 +29,18 @@ const Index = () => {
     }
   }, [timeLeft]);
 
+  const formatTime = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return `${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  };
+
   const handleOfferClick = () => {
     console.log("Redirecting to contact page...");
+    setRemainingSpots(prev => Math.max(0, prev - 1));
     navigate('/contact');
   };
 
@@ -150,25 +160,27 @@ const Index = () => {
       </LampContainer>
 
       {/* Limited Offer Section */}
-      <div className="cyber-border p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-[#1A1F2C]/90 backdrop-blur-sm">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-left">
-            <h3 className="text-xl font-bold mb-1 text-gray-200">
-              Offre Limitée ! Plus que {remainingSpots} places disponibles
-            </h3>
-            <p className="text-gray-400">
-              Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
-            </p>
+      {remainingSpots > 0 && (
+        <div className="cyber-border p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-left">
+              <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
+                Offre Limitée ! Plus que {remainingSpots} places disponibles
+              </h3>
+              <p className="text-purple-200/80 text-sm">
+                Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
+              </p>
+            </div>
+            <button
+              onClick={handleOfferClick}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors whitespace-nowrap shadow-[0_0_20px_rgba(155,135,245,0.3)]"
+            >
+              J'en profite
+              <ArrowRight size={16} />
+            </button>
           </div>
-          <button
-            onClick={handleOfferClick}
-            className="bg-[#9b87f5] hover:bg-[#9b87f5]/90 text-white px-6 py-2 rounded-md transition-colors flex items-center gap-2 whitespace-nowrap"
-          >
-            J'en profite
-            <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
-      </div>
+      )}
 
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
