@@ -10,8 +10,6 @@ const Index = () => {
   const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(172800);
   const [remainingSpots, setRemainingSpots] = useState(5);
-  const [selectedOffer, setSelectedOffer] = useState<string | null>(null);
-  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -243,7 +241,6 @@ const Index = () => {
           {
             title: "Offre Complète",
             price: 849,
-            originalPrice: 999,
             features: [
               "Design personnalisé",
               "Responsive design",
@@ -252,13 +249,10 @@ const Index = () => {
               "Optimisation SEO de base",
               "Support 30 jours",
             ],
-            bonus: "BONUS : Guide d'optimisation SEO offert (valeur 99€)",
-            stock: 3,
           },
           {
             title: "Offre Premium",
             price: 1399,
-            originalPrice: 1699,
             features: [
               "Tout de l'offre Complète",
               "Jusqu'à 7 pages",
@@ -267,15 +261,11 @@ const Index = () => {
               "Optimisation SEO avancée",
               "Support 60 jours",
             ],
-            bonus: "BONUS : Formation maintenance WordPress (valeur 299€)",
             isPopular: true,
-            stock: 2,
-            upgrade: "Passez à l'offre Magique pour seulement 500€ de plus et obtenez des pages illimitées !",
           },
           {
             title: "Offre Magique",
             price: 1899,
-            originalPrice: 2499,
             features: [
               "Tout de l'offre Premium",
               "Pages illimitées",
@@ -284,45 +274,16 @@ const Index = () => {
               "Optimisation SEO expert",
               "Support 90 jours",
             ],
-            bonus: "BONUS EXCLUSIF : Audit performance + Plan marketing (valeur 599€)",
-            stock: 1,
           },
         ].map((offer, index) => (
-          <div
+          <button
             key={index}
-            className={`cyber-border p-6 rounded-xl card-hover relative transition-all duration-300 ${
-              offer.isPopular ? 'transform hover:scale-105 shadow-xl' : ''
-            }`}
+            onClick={handleOfferClick}
+            className="cyber-border p-4 rounded-xl card-hover text-left"
           >
-            {offer.isPopular && (
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                Plus Populaire
-              </div>
-            )}
-            
-            <div className="absolute top-2 right-2">
-              {offer.stock <= 3 && (
-                <span className="bg-red-500/10 text-red-500 text-xs font-semibold px-2 py-1 rounded-full animate-pulse">
-                  Plus que {offer.stock} place{offer.stock > 1 ? 's' : ''} !
-                </span>
-              )}
-            </div>
-
             <h3 className="text-xl font-semibold mb-3">{offer.title}</h3>
-            
-            <div className="mb-4">
-              <span className="text-2xl font-bold">{offer.price}€</span>
-              {offer.originalPrice && (
-                <span className="ml-2 text-sm text-muted-foreground line-through">
-                  {offer.originalPrice}€
-                </span>
-              )}
-              <span className="text-green-500 text-sm ml-2 font-semibold">
-                -{Math.round(((offer.originalPrice - offer.price) / offer.originalPrice) * 100)}%
-              </span>
-            </div>
-
-            <ul className="space-y-2 text-sm mb-6">
+            <div className="text-2xl font-bold mb-3">${offer.price}</div>
+            <ul className="space-y-2 text-sm">
               {offer.features.map((feature, idx) => (
                 <li key={idx} className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-primary" />
@@ -330,33 +291,7 @@ const Index = () => {
                 </li>
               ))}
             </ul>
-
-            {offer.bonus && (
-              <div className="bg-primary/10 p-3 rounded-lg mb-4 text-sm">
-                <p className="font-semibold text-primary">{offer.bonus}</p>
-              </div>
-            )}
-
-            {offer.upgrade && (
-              <p className="text-sm text-primary/80 mb-4 italic">
-                {offer.upgrade}
-              </p>
-            )}
-
-            <button
-              onClick={() => {
-                setSelectedOffer(offer.title);
-                handleOfferClick();
-              }}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)]"
-            >
-              Réserver maintenant
-            </button>
-
-            <p className="text-xs text-muted-foreground mt-4 text-center">
-              Offre limitée - Prix garanti pendant {formatTime(timeLeft)}
-            </p>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -412,3 +347,4 @@ const Index = () => {
 };
 
 export default Index;
+
