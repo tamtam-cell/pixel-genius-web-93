@@ -34,7 +34,7 @@ const Contact = () => {
               </motion.a>
             </div>
             <p className="mt-4 text-muted-foreground">
-              Disponible 24h/24 7j/7
+              Disponible 7j/7 de 9h à 20h
             </p>
           </motion.div>
 
