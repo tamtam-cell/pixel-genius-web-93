@@ -134,7 +134,7 @@ const Index = () => {
       
       {/* Limited Offer Section */}
       {remainingSpots > 0 && (
-        <div className="cyber-border p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
+        <div className="cyber-border card-hover p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-left">
               <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
