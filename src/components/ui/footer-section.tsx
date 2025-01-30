@@ -74,8 +74,8 @@ function Footerdemo() {
             <address className="space-y-2 text-sm not-italic">
               <p>123 Rue de l'Innovation</p>
               <p>Ville Tech, 75000</p>
-              <p>Tél: 01 23 45 67 89</p>
-              <p>Email: bonjour@pixelcraftlab.fr</p>
+              <p>Tél: 07 45 45 11 36</p>
+              <p>Email: eltmytb@gmail.com</p>
             </address>
           </div>
           <div className="relative">
