@@ -309,7 +309,7 @@ const Index = () => {
             />
             
             {offer.isPopular && (
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10">
+              <div className="absolute -top-4 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10 text-center shadow-lg">
                 Plus Populaire
               </div>
             )}
@@ -337,15 +337,15 @@ const Index = () => {
 
             <div className="mt-auto space-y-4 relative z-10">
               {offer.bonus && (
-                <div className="bg-primary/10 p-4 rounded-lg">
+                <div className="bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
                   <p className="font-semibold text-primary">{offer.bonus}</p>
                 </div>
               )}
 
               {offer.upgrade && (
-                <p className="text-sm text-primary/80 italic">
+                <div className={`text-sm italic ${offer.isPopular ? 'bg-primary/10 p-4 rounded-lg backdrop-blur-sm text-primary font-medium' : 'text-primary/80'}`}>
                   {offer.upgrade}
-                </p>
+                </div>
               )}
 
               <button
