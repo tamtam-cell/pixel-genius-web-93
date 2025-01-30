@@ -17,8 +17,18 @@ const Header = () => {
     <header className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-2xl font-bold text-primary">
-            PixelCraftLab
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="relative">
+              <div className="text-2xl font-bold bg-gradient-to-r from-primary/90 to-[#7E69AB] bg-clip-text text-transparent">
+                Pixel
+                <span className="relative">
+                  Craft
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full opacity-75 animate-pulse"></span>
+                </span>
+                <span className="text-primary">Lab</span>
+              </div>
+              <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-primary/50 to-transparent"></div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
