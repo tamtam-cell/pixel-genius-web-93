@@ -58,7 +58,7 @@ const Contact = () => {
               </motion.a>
             </div>
             <p className="mt-4 text-muted-foreground">
-              Vous pouvez aussi nous contacter notre Professionnelle sur Instagram disponible 7j/7 de 9h à 20h
+              Vous pouvez aussi contacter notre Professionnelle sur Instagram disponible 7j/7 de 9h à 20h
             </p>
           </motion.div>
         </div>
