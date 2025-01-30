@@ -24,6 +24,10 @@ function Footerdemo() {
     }
   }, [isDarkMode])
 
+  const handleInstagramClick = () => {
+    window.open('https://www.instagram.com/pixelcraftlab.professionnelle', '_blank');
+  };
+
   return (
     <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
@@ -73,7 +77,7 @@ function Footerdemo() {
               <p>123 Rue de l'Innovation</p>
               <p>Ville Tech, 75000</p>
               <p>Tél: 07 45 45 11 36</p>
-              <p>Email: eltmytb@gmail.com</p>
+              <p>Email: pixelcraftlab.professionnelle@gmail.com</p>
             </address>
           </div>
           <div className="relative">
@@ -108,7 +112,12 @@ function Footerdemo() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="rounded-full"
+                      onClick={handleInstagramClick}
+                    >
                       <Instagram className="h-4 w-4" />
                       <span className="sr-only">Instagram</span>
                     </Button>
