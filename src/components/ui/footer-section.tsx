@@ -62,9 +62,6 @@ function Footerdemo() {
                 Services
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                Produits
-              </a>
-              <a href="#" className="block transition-colors hover:text-primary">
                 Contact
               </a>
             </nav>
