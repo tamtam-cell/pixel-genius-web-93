@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { LucideIcon } from "lucide-react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
@@ -16,7 +16,7 @@ interface NavBarProps {
 }
 
 export function NavBar({ items, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = React.useState(items[0].name)
+  const location = useLocation();
   const [isMobile, setIsMobile] = React.useState(false)
 
   React.useEffect(() => {
@@ -29,18 +29,20 @@ export function NavBar({ items, className }: NavBarProps) {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
+  // Trouve l'item actif en fonction de l'URL courante
+  const activeItem = items.find(item => item.path === location.pathname) || items[0];
+
   return (
     <div className={cn("z-50", className)}>
       <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
-          const isActive = activeTab === item.name
+          const isActive = item.path === location.pathname
 
           return (
             <Link
               key={item.path}
               to={item.path}
-              onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                 "text-foreground/80 hover:text-primary",
