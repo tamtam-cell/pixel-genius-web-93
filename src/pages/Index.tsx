@@ -82,6 +82,86 @@ const Index = () => {
         avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
       },
       text: "Le professionnalisme et la créativité de PixelCraftLab ont dépassé toutes nos attentes."
+    },
+    {
+      author: {
+        name: "Julie Moreau",
+        handle: "@juliemoreau",
+        avatar: "https://images.unsplash.com/photo-1557296387-5358ad7997bb?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Une collaboration exceptionnelle qui a transformé notre vision en réalité numérique.",
+    },
+    {
+      author: {
+        name: "Pierre Durand",
+        handle: "@pierredev",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Leur expertise en développement web nous a permis de créer une plateforme performante et innovante.",
+    },
+    {
+      author: {
+        name: "Claire Lambert",
+        handle: "@clairedesign",
+        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Un travail d'une qualité exceptionnelle, avec une équipe à l'écoute et réactive.",
+    },
+    {
+      author: {
+        name: "Antoine Rousseau",
+        handle: "@antoineweb",
+        avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "PixelCraftLab a su capturer l'essence de notre marque et la traduire en une expérience web unique.",
+    },
+    {
+      author: {
+        name: "Sarah Martin",
+        handle: "@sarahux",
+        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Une approche créative et technique qui a dépassé nos attentes les plus élevées.",
+    },
+    {
+      author: {
+        name: "Marc Dupont",
+        handle: "@marcdev",
+        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Leur expertise en développement web est impressionnante, résultats garantis !",
+    },
+    {
+      author: {
+        name: "Léa Robert",
+        handle: "@learobert",
+        avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Une équipe passionnée qui a su donner vie à notre projet avec brio.",
+    },
+    {
+      author: {
+        name: "Nicolas Blanc",
+        handle: "@nicoweb",
+        avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Un accompagnement personnalisé et des solutions techniques innovantes.",
+    },
+    {
+      author: {
+        name: "Camille Duval",
+        handle: "@camilledev",
+        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "La qualité de leur travail et leur professionnalisme sont tout simplement remarquables.",
+    },
+    {
+      author: {
+        name: "Paul Mercier",
+        handle: "@paulmercier",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Une expertise technique combinée à une créativité sans limites.",
     }
   ];
 
