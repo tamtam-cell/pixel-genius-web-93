@@ -46,7 +46,7 @@ const Index = () => {
     {
       author: {
         name: "Marie Dubois",
-        handle: "Directrice Digital, TechVision SA",
+        handle: "@marie.dubois@techvision.fr",
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
       },
       text: "Je suis impressionnée par l'impact de PixelCraftLab sur notre entreprise. Non seulement nous avons réduit nos coûts de développement de 40%, mais leur approche personnalisée et leur écoute attentive ont vraiment fait la différence. Notre time-to-market s'est accéléré de 60% !",
@@ -54,7 +54,7 @@ const Index = () => {
     {
       author: {
         name: "Thomas Martin",
-        handle: "CTO, InnovTech Solutions",
+        handle: "@thomas.martin@innovtech-solutions.com",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
       },
       text: "Je cherchais une équipe qui comprenne vraiment nos enjeux techniques. Leur expertise en microservices et CI/CD a dépassé mes attentes - nos cycles de déploiement sont 75% plus rapides maintenant. C'est un vrai plaisir de travailler avec une équipe aussi passionnée.",
@@ -62,7 +62,7 @@ const Index = () => {
     {
       author: {
         name: "Sophie Bernard",
-        handle: "Product Manager, E-Commerce Leader",
+        handle: "@sophie.bernard@ecommerce-leader.com",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
       },
       text: "La transformation de notre plateforme e-commerce était un défi majeur pour nous. L'équipe a su nous accompagner avec patience et expertise. Résultat : +85% de conversion et -50% de taux de rebond. Mais au-delà des chiffres, c'est leur approche humaine qui m'a marquée.",
@@ -70,7 +70,7 @@ const Index = () => {
     {
       author: {
         name: "Lucas Petit",
-        handle: "Lead Developer, FinTech Solutions",
+        handle: "@lucas.petit@fintech-solutions.com",
         avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face"
       },
       text: "En tant que développeur, je suis particulièrement sensible à la qualité technique. Leur solution API Gateway ne m'a pas déçu : la latence est passée de 200ms à 50ms, et notre capacité de traitement a triplé. Leur équipe est toujours disponible pour échanger et optimiser.",
@@ -78,7 +78,7 @@ const Index = () => {
     {
       author: {
         name: "Emma Richard",
-        handle: "@emmaux",
+        handle: "@emma.richard@uxdesign.fr",
         avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
       },
       text: "La méthodologie structurée et l'expertise technique de PixelCraftLab ont été déterminantes dans le succès de notre projet."
@@ -86,7 +86,7 @@ const Index = () => {
     {
       author: {
         name: "Julie Moreau",
-        handle: "@juliemoreau",
+        handle: "@juliemoreau@consulting.com",
         avatar: "https://images.unsplash.com/photo-1557296387-5358ad7997bb?w=150&h=150&fit=crop&crop=face"
       },
       text: "Une approche consultative qui combine expertise technique et compréhension des objectifs stratégiques.",
@@ -94,7 +94,7 @@ const Index = () => {
     {
       author: {
         name: "Pierre Durand",
-        handle: "@pierredev",
+        handle: "@pierre.dev@techvision.com",
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
       },
       text: "L'implémentation des solutions techniques avancées a significativement amélioré nos performances digitales.",
@@ -102,7 +102,7 @@ const Index = () => {
     {
       author: {
         name: "Claire Lambert",
-        handle: "@clairedesign",
+        handle: "@clairedesign@creativeagency.com",
         avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
       },
       text: "Une expertise technique pointue associée à une excellente gestion de projet et une communication transparente.",
@@ -110,7 +110,7 @@ const Index = () => {
     {
       author: {
         name: "Antoine Rousseau",
-        handle: "@antoineweb",
+        handle: "@antoineweb@digitalstrategy.com",
         avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
       },
       text: "L'analyse approfondie de nos besoins a permis une transformation digitale parfaitement alignée avec notre stratégie.",
@@ -118,7 +118,7 @@ const Index = () => {
     {
       author: {
         name: "Sarah Martin",
-        handle: "@sarahux",
+        handle: "@sarahux@uxdesign.com",
         avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
       },
       text: "Une expertise technique remarquable combinée à une excellente compréhension des enjeux business.",
@@ -126,7 +126,7 @@ const Index = () => {
     {
       author: {
         name: "Marc Dupont",
-        handle: "@marcdev",
+        handle: "@marcdev@techvision.com",
         avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
       },
       text: "La mise en place des solutions techniques innovantes a considérablement amélioré notre efficacité opérationnelle.",
@@ -134,7 +134,7 @@ const Index = () => {
     {
       author: {
         name: "Léa Robert",
-        handle: "@learobert",
+        handle: "@learobert@designagency.com",
         avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=150&h=150&fit=crop&crop=face"
       },
       text: "Une expertise technique de haut niveau qui a permis une transformation digitale réussie de notre entreprise.",
@@ -142,7 +142,7 @@ const Index = () => {
     {
       author: {
         name: "Nicolas Blanc",
-        handle: "@nicoweb",
+        handle: "@nicoweb@websolutions.com",
         avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop&crop=face"
       },
       text: "L'accompagnement stratégique et l'implémentation technique ont dépassé nos objectifs initiaux.",
@@ -150,7 +150,7 @@ const Index = () => {
     {
       author: {
         name: "Camille Duval",
-        handle: "@camilledev",
+        handle: "@camilledev@techvision.com",
         avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face"
       },
       text: "Une méthodologie rigoureuse et une expertise technique qui ont permis une transformation digitale efficace.",
@@ -158,7 +158,7 @@ const Index = () => {
     {
       author: {
         name: "Paul Mercier",
-        handle: "@paulmercier",
+        handle: "@paulmercier@consulting.com",
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
       },
       text: "L'alliance parfaite entre expertise technique et vision stratégique pour une transformation digitale réussie.",
@@ -347,3 +347,4 @@ const Index = () => {
 };
 
 export default Index;
+
