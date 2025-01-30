@@ -21,7 +21,7 @@ const Header = () => {
             <div className="relative group">
               <div className="text-2xl font-bold bg-gradient-to-r from-[#9b87f5] via-[#7E69AB] to-[#6E59A5] bg-clip-text text-transparent transform transition-all duration-300 group-hover:scale-105">
                 Pixel
-                <span className="relative inline-block">
+                <span className="relative inline-block text-white font-bold">
                   Craft
                   <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#9b87f5] rounded-full opacity-75 animate-pulse"></span>
                   <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-[#9b87f5] rounded-full opacity-20 animate-ping"></span>
