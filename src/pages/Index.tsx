@@ -217,7 +217,7 @@ const Index = () => {
 
       {/* Testimonials Section */}
       <TestimonialsSection
-        title="La confiance de nos clients témoigne de notre excellence"
+        title="Ils nous font confiance et partagent leur expérience"
         description="Rejoignez les entreprises qui construisent déjà leur avenir numérique avec PixelCraftLab"
         testimonials={testimonials}
       />
