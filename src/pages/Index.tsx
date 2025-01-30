@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { HeroSection } from "@/components/blocks/HeroSection";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { Timeline } from "@/components/ui/timeline";
+import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -254,6 +255,7 @@ const Index = () => {
             ],
             bonus: "BONUS : Guide d'optimisation SEO offert (valeur 99€)",
             stock: 3,
+            gradientColors: ["#0A0A0A", "#9333EA", "#A855F7", "#C084FC"],
           },
           {
             title: "Offre Premium",
@@ -271,6 +273,7 @@ const Index = () => {
             isPopular: true,
             stock: 2,
             upgrade: "Passez à l'offre Magique pour seulement 500€ de plus et obtenez des pages illimitées !",
+            gradientColors: ["#0A0A0A", "#6D28D9", "#7C3AED", "#8B5CF6"],
           },
           {
             title: "Offre Magique",
@@ -286,21 +289,32 @@ const Index = () => {
             ],
             bonus: "BONUS EXCLUSIF : Audit performance + Plan marketing (valeur 599€)",
             stock: 1,
+            gradientColors: ["#0A0A0A", "#4C1D95", "#5B21B6", "#6D28D9"],
           },
         ].map((offer, index) => (
           <div
             key={index}
-            className={`cyber-border p-6 rounded-xl card-hover relative transition-all duration-300 flex flex-col justify-between min-h-[700px] ${
+            className={`cyber-border p-6 rounded-xl card-hover relative transition-all duration-300 flex flex-col justify-between min-h-[700px] overflow-hidden ${
               offer.isPopular ? 'transform hover:scale-105 shadow-xl' : ''
             }`}
           >
+            <AnimatedGradientBackground
+              startingGap={150}
+              Breathing={true}
+              gradientColors={offer.gradientColors}
+              gradientStops={[20, 40, 60, 100]}
+              animationSpeed={0.015}
+              breathingRange={8}
+              containerClassName="opacity-40"
+            />
+            
             {offer.isPopular && (
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10">
                 Plus Populaire
               </div>
             )}
             
-            <div>
+            <div className="relative z-10">
               <h3 className="text-xl font-semibold mb-3">{offer.title}</h3>
               <div className="flex items-center justify-center gap-2 mb-6">
                 <span className="text-3xl font-bold">{offer.price}€</span>
@@ -321,7 +335,7 @@ const Index = () => {
               </ul>
             </div>
 
-            <div className="mt-auto space-y-4">
+            <div className="mt-auto space-y-4 relative z-10">
               {offer.bonus && (
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <p className="font-semibold text-primary">{offer.bonus}</p>
