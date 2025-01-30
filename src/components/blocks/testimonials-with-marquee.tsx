@@ -30,7 +30,7 @@ export function TestimonialsSection({
             Nous donnons vie à de plus en plus de projet chaque jour
           </h2>
           <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
-            Découvrez comment notre expertise technique et notre approche stratégique transforment les projets de nos clients
+            Rejoignez les entreprises qui construisent déjà leur avenir à nos côtés
           </p>
         </div>
 
