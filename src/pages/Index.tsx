@@ -46,34 +46,34 @@ const Index = () => {
     {
       author: {
         name: "Marie Dubois",
-        handle: "@marieweb",
+        handle: "Directrice Digital, TechVision SA",
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
       },
-      text: "L'expertise technique et l'approche méthodologique de PixelCraftLab ont permis une transformation digitale efficace de notre entreprise.",
+      text: "Grâce à l'expertise de PixelCraftLab, nous avons réduit nos coûts de développement de 40% et accéléré notre time-to-market de 60%. Leur approche agile et leur maîtrise technique ont été déterminantes.",
     },
     {
       author: {
         name: "Thomas Martin",
-        handle: "@thomasdev",
+        handle: "CTO, InnovTech Solutions",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Grâce à leur méthodologie agile et leur expertise technique, nous avons optimisé notre processus de développement de 60%.",
+      text: "L'implémentation de leur architecture microservices et leur expertise en CI/CD ont permis de réduire nos cycles de déploiement de 75%. Un véritable game-changer pour notre scalabilité.",
     },
     {
       author: {
         name: "Sophie Bernard",
-        handle: "@sophiedesign",
+        handle: "Product Manager, E-Commerce Leader",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Une collaboration stratégique qui allie expertise technique et compréhension approfondie des enjeux business."
+      text: "La refonte de notre plateforme e-commerce a généré une augmentation de 85% du taux de conversion et une réduction de 50% du taux de rebond. ROI exceptionnel."
     },
     {
       author: {
         name: "Lucas Petit",
-        handle: "@lucasdev",
+        handle: "Lead Developer, FinTech Solutions",
         avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face"
       },
-      text: "L'équipe a démontré une maîtrise exceptionnelle des technologies modernes et une vision stratégique claire."
+      text: "L'intégration de leur solution API Gateway a réduit la latence de 200ms à 50ms et augmenté notre capacité de traitement de 300%. Performance exceptionnelle."
     },
     {
       author: {
