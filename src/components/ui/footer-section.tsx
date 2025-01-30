@@ -56,7 +56,7 @@ function Footerdemo() {
                 Accueil
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                À Propos
+                Notre histoire
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
                 Services
