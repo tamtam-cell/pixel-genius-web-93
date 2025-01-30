@@ -49,7 +49,7 @@ const Index = () => {
         handle: "@marieweb",
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
       },
-      text: "PixelCraftLab a complètement transformé notre présence en ligne. Leur approche innovante et leur expertise technique sont remarquables.",
+      text: "L'expertise technique et l'approche méthodologique de PixelCraftLab ont permis une transformation digitale efficace de notre entreprise.",
     },
     {
       author: {
@@ -57,7 +57,7 @@ const Index = () => {
         handle: "@thomasdev",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
       },
-      text: "L'intégration de notre site a été parfaite. Nous avons réduit notre temps de développement de 60% grâce à leur solution.",
+      text: "Grâce à leur méthodologie agile et leur expertise technique, nous avons optimisé notre processus de développement de 60%.",
     },
     {
       author: {
@@ -65,7 +65,7 @@ const Index = () => {
         handle: "@sophiedesign",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Enfin une agence qui comprend vraiment nos besoins ! La qualité du design et l'attention aux détails sont impressionnantes."
+      text: "Une collaboration stratégique qui allie expertise technique et compréhension approfondie des enjeux business."
     },
     {
       author: {
@@ -73,7 +73,7 @@ const Index = () => {
         handle: "@lucasdev",
         avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Une équipe exceptionnelle qui a su donner vie à notre vision avec une expertise technique remarquable."
+      text: "L'équipe a démontré une maîtrise exceptionnelle des technologies modernes et une vision stratégique claire."
     },
     {
       author: {
@@ -81,7 +81,7 @@ const Index = () => {
         handle: "@emmaux",
         avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Le professionnalisme et la créativité de PixelCraftLab ont dépassé toutes nos attentes."
+      text: "La méthodologie structurée et l'expertise technique de PixelCraftLab ont été déterminantes dans le succès de notre projet."
     },
     {
       author: {
@@ -89,7 +89,7 @@ const Index = () => {
         handle: "@juliemoreau",
         avatar: "https://images.unsplash.com/photo-1557296387-5358ad7997bb?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Une collaboration exceptionnelle qui a transformé notre vision en réalité numérique.",
+      text: "Une approche consultative qui combine expertise technique et compréhension des objectifs stratégiques.",
     },
     {
       author: {
@@ -97,7 +97,7 @@ const Index = () => {
         handle: "@pierredev",
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Leur expertise en développement web nous a permis de créer une plateforme performante et innovante.",
+      text: "L'implémentation des solutions techniques avancées a significativement amélioré nos performances digitales.",
     },
     {
       author: {
@@ -105,7 +105,7 @@ const Index = () => {
         handle: "@clairedesign",
         avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Un travail d'une qualité exceptionnelle, avec une équipe à l'écoute et réactive.",
+      text: "Une expertise technique pointue associée à une excellente gestion de projet et une communication transparente.",
     },
     {
       author: {
@@ -113,7 +113,7 @@ const Index = () => {
         handle: "@antoineweb",
         avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
       },
-      text: "PixelCraftLab a su capturer l'essence de notre marque et la traduire en une expérience web unique.",
+      text: "L'analyse approfondie de nos besoins a permis une transformation digitale parfaitement alignée avec notre stratégie.",
     },
     {
       author: {
@@ -121,7 +121,7 @@ const Index = () => {
         handle: "@sarahux",
         avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Une approche créative et technique qui a dépassé nos attentes les plus élevées.",
+      text: "Une expertise technique remarquable combinée à une excellente compréhension des enjeux business.",
     },
     {
       author: {
@@ -129,7 +129,7 @@ const Index = () => {
         handle: "@marcdev",
         avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Leur expertise en développement web est impressionnante, résultats garantis !",
+      text: "La mise en place des solutions techniques innovantes a considérablement amélioré notre efficacité opérationnelle.",
     },
     {
       author: {
@@ -137,7 +137,7 @@ const Index = () => {
         handle: "@learobert",
         avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Une équipe passionnée qui a su donner vie à notre projet avec brio.",
+      text: "Une expertise technique de haut niveau qui a permis une transformation digitale réussie de notre entreprise.",
     },
     {
       author: {
@@ -145,7 +145,7 @@ const Index = () => {
         handle: "@nicoweb",
         avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Un accompagnement personnalisé et des solutions techniques innovantes.",
+      text: "L'accompagnement stratégique et l'implémentation technique ont dépassé nos objectifs initiaux.",
     },
     {
       author: {
@@ -153,7 +153,7 @@ const Index = () => {
         handle: "@camilledev",
         avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face"
       },
-      text: "La qualité de leur travail et leur professionnalisme sont tout simplement remarquables.",
+      text: "Une méthodologie rigoureuse et une expertise technique qui ont permis une transformation digitale efficace.",
     },
     {
       author: {
@@ -161,7 +161,7 @@ const Index = () => {
         handle: "@paulmercier",
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Une expertise technique combinée à une créativité sans limites.",
+      text: "L'alliance parfaite entre expertise technique et vision stratégique pour une transformation digitale réussie.",
     }
   ];
 
@@ -347,3 +347,4 @@ const Index = () => {
 };
 
 export default Index;
+
