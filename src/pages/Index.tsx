@@ -346,7 +346,7 @@ const Index = () => {
                 Réserver maintenant
               </button>
 
-              {offer.stock <= 3 && (
+              {offer.title !== "Offre Premium" && offer.stock <= 3 && (
                 <p className="text-sm text-center text-muted-foreground">
                   Plus que {offer.stock} place{offer.stock > 1 ? 's' : ''} !
                 </p>
