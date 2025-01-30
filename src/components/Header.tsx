@@ -18,16 +18,18 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="relative">
-              <div className="text-2xl font-bold bg-gradient-to-r from-primary/90 to-[#7E69AB] bg-clip-text text-transparent">
+            <div className="relative group">
+              <div className="text-2xl font-bold bg-gradient-to-r from-[#9b87f5] via-[#7E69AB] to-[#6E59A5] bg-clip-text text-transparent transform transition-all duration-300 group-hover:scale-105">
                 Pixel
-                <span className="relative">
+                <span className="relative inline-block">
                   Craft
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full opacity-75 animate-pulse"></span>
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#9b87f5] rounded-full opacity-75 animate-pulse"></span>
+                  <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-[#9b87f5] rounded-full opacity-20 animate-ping"></span>
                 </span>
-                <span className="text-primary">Lab</span>
+                <span className="text-[#9b87f5]">Lab</span>
               </div>
-              <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-primary/50 to-transparent"></div>
+              <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#9b87f5] via-[#7E69AB] to-transparent"></div>
+              <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-[#9b87f5] to-[#6E59A5] group-hover:w-full transition-all duration-300"></div>
             </div>
           </Link>
 
