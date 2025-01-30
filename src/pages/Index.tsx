@@ -291,11 +291,11 @@ const Index = () => {
           <div
             key={index}
             className={`cyber-border p-6 rounded-xl card-hover relative transition-all duration-300 flex flex-col justify-between min-h-[700px] ${
-              offer.isPopular ? 'transform hover:scale-105 shadow-xl mt-6' : ''
+              offer.isPopular ? 'transform hover:scale-105 shadow-xl' : ''
             }`}
           >
             {offer.isPopular && (
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
                 Plus Populaire
               </div>
             )}
