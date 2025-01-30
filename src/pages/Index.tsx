@@ -49,7 +49,7 @@ const Index = () => {
         handle: "Directrice Digital, TechVision SA",
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
       },
-      text: "Grâce à l'expertise de PixelCraftLab, nous avons réduit nos coûts de développement de 40% et accéléré notre time-to-market de 60%. Leur approche agile et leur maîtrise technique ont été déterminantes.",
+      text: "Je suis impressionnée par l'impact de PixelCraftLab sur notre entreprise. Non seulement nous avons réduit nos coûts de développement de 40%, mais leur approche personnalisée et leur écoute attentive ont vraiment fait la différence. Notre time-to-market s'est accéléré de 60% !",
     },
     {
       author: {
@@ -57,7 +57,7 @@ const Index = () => {
         handle: "CTO, InnovTech Solutions",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
       },
-      text: "L'implémentation de leur architecture microservices et leur expertise en CI/CD ont permis de réduire nos cycles de déploiement de 75%. Un véritable game-changer pour notre scalabilité.",
+      text: "Je cherchais une équipe qui comprenne vraiment nos enjeux techniques. Leur expertise en microservices et CI/CD a dépassé mes attentes - nos cycles de déploiement sont 75% plus rapides maintenant. C'est un vrai plaisir de travailler avec une équipe aussi passionnée.",
     },
     {
       author: {
@@ -65,7 +65,7 @@ const Index = () => {
         handle: "Product Manager, E-Commerce Leader",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
       },
-      text: "La refonte de notre plateforme e-commerce a généré une augmentation de 85% du taux de conversion et une réduction de 50% du taux de rebond. ROI exceptionnel."
+      text: "La transformation de notre plateforme e-commerce était un défi majeur pour nous. L'équipe a su nous accompagner avec patience et expertise. Résultat : +85% de conversion et -50% de taux de rebond. Mais au-delà des chiffres, c'est leur approche humaine qui m'a marquée.",
     },
     {
       author: {
@@ -73,7 +73,7 @@ const Index = () => {
         handle: "Lead Developer, FinTech Solutions",
         avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face"
       },
-      text: "L'intégration de leur solution API Gateway a réduit la latence de 200ms à 50ms et augmenté notre capacité de traitement de 300%. Performance exceptionnelle."
+      text: "En tant que développeur, je suis particulièrement sensible à la qualité technique. Leur solution API Gateway ne m'a pas déçu : la latence est passée de 200ms à 50ms, et notre capacité de traitement a triplé. Leur équipe est toujours disponible pour échanger et optimiser.",
     },
     {
       author: {
