@@ -39,8 +39,7 @@ const Index = () => {
 
   const handleOfferClick = () => {
     console.log("Redirecting to contact page...");
-    setRemainingSpots((prev) => Math.max(0, prev - 1));
-    navigate('/contact');
+    window.location.href = '/contact';
   };
 
   const testimonials = [
