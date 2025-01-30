@@ -39,7 +39,7 @@ const Index = () => {
 
   const handleOfferClick = () => {
     console.log("Redirecting to contact page...");
-    setRemainingSpots(prev => Math.max(0, prev - 1));
+    setRemainingSpots((prev) => Math.max(0, prev - 1));
     navigate('/contact');
   };
 
@@ -147,10 +147,10 @@ const Index = () => {
             </div>
             <button
               onClick={handleOfferClick}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors whitespace-nowrap shadow-[0_0_20px_rgba(155,135,245,0.3)]"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)]"
             >
               J'en profite
-              <ArrowRight size={16} />
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
