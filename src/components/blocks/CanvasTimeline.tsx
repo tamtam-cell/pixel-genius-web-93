@@ -8,6 +8,7 @@ export interface TimelineEntry {
   description: string;
   content: string;
   highlight?: string;
+  image?: string;
 }
 
 const timelineData: TimelineEntry[] = [
@@ -16,35 +17,40 @@ const timelineData: TimelineEntry[] = [
     title: "Collecte des Besoins",
     description: "Analyse approfondie de vos besoins",
     content: "Nous commençons par comprendre votre vision et vos objectifs à travers notre formulaire détaillé sur la page Services.",
-    highlight: "Formulaire intelligent"
+    highlight: "Formulaire intelligent",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop"
   },
   {
     icon: Palette,
     title: "Design Personnalisé",
     description: "Création d'une identité unique",
     content: "Nos designers créent une maquette sur mesure qui reflète votre marque et vos valeurs.",
-    highlight: "Design moderne"
+    highlight: "Design moderne",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop"
   },
   {
     icon: Code,
     title: "Développement Agile",
     description: "Codage et intégration",
     content: "Notre équipe de développeurs transforme la maquette en site web fonctionnel avec les dernières technologies.",
-    highlight: "Technologies modernes"
+    highlight: "Technologies modernes",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop"
   },
   {
     icon: Bug,
     title: "Tests & Optimisation",
     description: "Contrôle qualité rigoureux",
     content: "Phase intensive de tests pour garantir performance, sécurité et compatibilité.",
-    highlight: "Qualité garantie"
+    highlight: "Qualité garantie",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop"
   },
   {
     icon: CheckCircle,
     title: "Mise en Production",
     description: "Lancement et accompagnement",
     content: "Déploiement de votre site et formation à son utilisation pour une transition en douceur.",
-    highlight: "Support continu"
+    highlight: "Support continu",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=300&fit=crop"
   }
 ];
 
@@ -77,6 +83,16 @@ export function CanvasTimeline() {
               <div className="absolute -inset-px bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-500" />
               
               <div className="relative z-10">
+                {item.image && (
+                  <div className="mb-6 overflow-hidden rounded-lg">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-lg bg-primary/10">
                     <item.icon className="w-6 h-6 text-primary" />
