@@ -393,7 +393,7 @@ const Index = () => {
                     )}
 
                     <p className="text-sm text-center font-medium bg-primary/10 py-2 rounded-md backdrop-blur-sm">
-                      Offre limitée - Prix garanti pendant {formatTime(timeLeft)}
+                      Offre temporaire - Bonus garanti pendant {formatTime(timeLeft)}
                     </p>
                   </div>
                 </div>
