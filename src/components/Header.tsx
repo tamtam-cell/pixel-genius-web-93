@@ -20,26 +20,13 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             <div className="relative group">
               <div className="flex items-center">
-                {/* Logo Symbol */}
+                {/* New Logo */}
                 <div className="relative w-12 h-12 mr-4">
-                  {/* Main hexagon shape */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white to-[#9b87f5] transform rotate-[30deg] group-hover:rotate-[210deg] transition-all duration-700">
-                    <div className="absolute inset-[2px] bg-background">
-                      <div className="absolute inset-[2px] bg-gradient-to-tr from-[#9b87f5] to-white transform -rotate-[60deg] group-hover:rotate-[120deg] transition-all duration-700"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Inner triangle */}
-                  <div className="absolute inset-[4px] bg-gradient-to-br from-[#9b87f5] to-white transform rotate-[30deg] group-hover:rotate-[210deg] transition-all duration-700 clip-triangle">
-                    <div className="absolute inset-[2px] bg-background clip-triangle">
-                      <div className="absolute inset-[2px] bg-gradient-to-tr from-white to-[#9b87f5] transform -rotate-[60deg] group-hover:rotate-[120deg] transition-all duration-700 clip-triangle"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-white rounded-full"></div>
-                  <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-[#9b87f5] rounded-full"></div>
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-gradient-to-br from-white to-[#9b87f5] rounded-full transform group-hover:scale-150 transition-all duration-700"></div>
+                  <img 
+                    src="/lovable-uploads/23b2c862-4d9c-4aa4-9758-102095150904.png" 
+                    alt="PixelCraftLab Logo"
+                    className="w-full h-full object-contain filter hue-rotate-[20deg] brightness-110"
+                  />
                 </div>
 
                 {/* Logo Text */}
