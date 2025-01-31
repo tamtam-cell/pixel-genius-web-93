@@ -15,14 +15,24 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const navigate = useNavigate();
-  const [timeLeft, setTimeLeft] = useState(172800);
+  const [timeLeftComplete, setTimeLeftComplete] = useState(172800); // 48h
+  const [timeLeftPremium, setTimeLeftPremium] = useState(259200); // 72h
+  const [timeLeftMagic, setTimeLeftMagic] = useState(345600); // 96h
   const [remainingSpots, setRemainingSpots] = useState(5);
   const [selectedOffer, setSelectedOffer] = useState<string | null>(null);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
+      setTimeLeftComplete((prev) => {
+        if (prev <= 0) return 0;
+        return prev - 1;
+      });
+      setTimeLeftPremium((prev) => {
+        if (prev <= 0) return 0;
+        return prev - 1;
+      });
+      setTimeLeftMagic((prev) => {
         if (prev <= 0) return 0;
         return prev - 1;
       });
@@ -32,10 +42,10 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    if (timeLeft === 0) {
-      toast.error("L'offre spéciale est terminée !");
+    if (timeLeftComplete === 0 || timeLeftPremium === 0 || timeLeftMagic === 0) {
+      toast.error("Une offre spéciale est terminée !");
     }
-  }, [timeLeft]);
+  }, [timeLeftComplete, timeLeftPremium, timeLeftMagic]);
 
   const formatTime = (seconds: number) => {
     const hours = Math.floor(seconds / 3600);
@@ -274,6 +284,7 @@ const Index = () => {
                 ],
                 bonus: "BONUS : Guide d'optimisation SEO offert (valeur 99€)",
                 stock: 3,
+                timeLeft: timeLeftComplete,
                 gradientColors: ["#0A0A0A", "#9333EA", "#A855F7", "#C084FC"],
               },
               {
@@ -291,6 +302,7 @@ const Index = () => {
                 bonus: "BONUS : Formation maintenance WordPress (valeur 299€)",
                 isPopular: true,
                 stock: 2,
+                timeLeft: timeLeftPremium,
                 upgrade: "Passez à l'offre Magique pour seulement 500€ de plus et obtenez des pages illimitées !",
                 gradientColors: ["#0A0A0A", "#6D28D9", "#7C3AED", "#8B5CF6"],
               },
@@ -308,6 +320,7 @@ const Index = () => {
                 ],
                 bonus: "BONUS EXCLUSIF : Audit performance + Plan marketing (valeur 599€)",
                 stock: 1,
+                timeLeft: timeLeftMagic,
                 gradientColors: ["#0A0A0A", "#4C1D95", "#5B21B6", "#6D28D9"],
               },
             ].map((offer, index) => (
@@ -345,7 +358,7 @@ const Index = () => {
                   </div>
                   
                   <p className="text-sm text-center font-medium bg-primary/10 py-2 rounded-md backdrop-blur-sm mb-6">
-                    Offre temporaire - Bonus garanti pendant {formatTime(timeLeft)}
+                    Offre temporaire - Bonus garanti pendant {formatTime(offer.timeLeft)}
                   </p>
 
                   <ul className="space-y-3 mb-6">
