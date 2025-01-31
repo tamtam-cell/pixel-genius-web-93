@@ -11,10 +11,10 @@ import {
 } from "@/components/ui/tooltip"
 import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter } from "lucide-react"
 import { Link } from "react-router-dom"
+import { Waves } from "@/components/ui/waves-background"
 
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(true)
-  const [isChatOpen, setIsChatOpen] = React.useState(false)
 
   React.useEffect(() => {
     if (isDarkMode) {
@@ -30,7 +30,22 @@ function Footerdemo() {
 
   return (
     <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
+      <div className="absolute inset-0 z-0">
+        <Waves
+          lineColor={isDarkMode ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)"}
+          backgroundColor="transparent"
+          waveSpeedX={0.02}
+          waveSpeedY={0.01}
+          waveAmpX={40}
+          waveAmpY={20}
+          friction={0.9}
+          tension={0.01}
+          maxCursorMove={120}
+          xGap={12}
+          yGap={36}
+        />
+      </div>
+      <div className="container relative z-10 mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
             <h2 className="mb-4 text-3xl font-bold tracking-tight">Restez Connecté</h2>
