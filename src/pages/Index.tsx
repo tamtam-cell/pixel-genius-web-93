@@ -43,8 +43,8 @@ const Index = () => {
   };
 
   const handleOfferClick = () => {
-    console.log("Redirecting to contact page...");
-    window.location.href = '/contact';
+    console.log("Redirecting to services page...");
+    navigate('/services');
   };
 
   const testimonials = [
