@@ -9,7 +9,6 @@ import AnimatedGradientBackground from "@/components/ui/animated-gradient-backgr
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Timeline } from "@/components/ui/timeline";
-import { CanvasTimeline, TimelineEntry } from "@/components/blocks/CanvasTimeline";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -17,45 +16,6 @@ const Index = () => {
   const [remainingSpots, setRemainingSpots] = useState(5);
   const [selectedOffer, setSelectedOffer] = useState<string | null>(null);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
-
-  // Define timelineData with the correct type
-  const timelineData: TimelineEntry[] = [
-    {
-      title: "Collecte des Besoins",
-      description: "Nous analysons en détail vos besoins via notre formulaire intelligent sur la page Services",
-      date: "Étape 1",
-      icon: "📋",
-      content: "Utilisation d'un formulaire intelligent adaptatif"
-    },
-    {
-      title: "Design Personnalisé",
-      description: "Nos designers créent une maquette unique reflétant votre identité visuelle",
-      date: "Étape 2",
-      icon: "🎨",
-      content: "Création d'une identité visuelle unique"
-    },
-    {
-      title: "Développement Agile",
-      description: "Notre équipe développe votre site avec les dernières technologies",
-      date: "Étape 3",
-      icon: "⚡",
-      content: "Utilisation des dernières technologies web"
-    },
-    {
-      title: "Tests & Optimisation",
-      description: "Chaque fonctionnalité est rigoureusement testée pour une expérience optimale",
-      date: "Étape 4",
-      icon: "🔍",
-      content: "Tests approfondis et optimisation continue"
-    },
-    {
-      title: "Mise en Production",
-      description: "Votre site est déployé avec un support technique continu",
-      date: "Étape 5",
-      icon: "🚀",
-      content: "Déploiement sécurisé et support dédié"
-    }
-  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -520,8 +480,59 @@ const Index = () => {
           testimonials={testimonials}
         />
 
-        {/* New Canvas Timeline Section */}
-        <CanvasTimeline data={timelineData} />
+        {/* New Process Section */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-primary">
+                Notre Processus de Création
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                De la conception à la réalisation, découvrez comment nous transformons vos idées en réalité numérique
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+              {processSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className="group relative"
+                >
+                  {/* Connector Line */}
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-1/2 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent -translate-y-1/2 z-0" />
+                  )}
+                  
+                  {/* Step Card */}
+                  <div className="relative cyber-border card-hover p-6 rounded-xl bg-background/40 backdrop-blur-sm z-10">
+                    <div className="text-4xl mb-4">{step.icon}</div>
+                    <h3 className="text-xl font-semibold mb-2 text-foreground">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      {step.description}
+                    </p>
+                    <div className="inline-block bg-primary/10 px-3 py-1 rounded-full text-xs font-medium text-primary">
+                      {step.highlight}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-16 text-center">
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)]"
+              >
+                Démarrer Votre Projet
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Notre Histoire Section */}
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
