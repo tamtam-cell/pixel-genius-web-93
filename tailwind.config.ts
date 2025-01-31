@@ -22,6 +22,11 @@ export default {
         container: "1280px",
       },
       colors: {
+        "color-1": "hsl(var(--color-1))",
+        "color-2": "hsl(var(--color-2))",
+        "color-3": "hsl(var(--color-3))",
+        "color-4": "hsl(var(--color-4))",
+        "color-5": "hsl(var(--color-5))",
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -54,16 +59,6 @@ export default {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
-        },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))'
         }
       },
       borderRadius: {
@@ -105,6 +100,10 @@ export default {
             'background-size': '200% 200%',
             'background-position': 'left center'
           }
+        },
+        rainbow: {
+          "0%": { "background-position": "0%" },
+          "100%": { "background-position": "200%" }
         }
       },
       animation: {
@@ -112,6 +111,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'marquee': 'marquee var(--duration) linear infinite',
         'gradient-x': 'gradient-x 8s ease-in-out infinite',
+        'rainbow': 'rainbow var(--speed, 2s) infinite linear'
       }
     }
   },

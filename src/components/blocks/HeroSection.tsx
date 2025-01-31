@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 import { useNavigate } from "react-router-dom";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export function HeroSection() {
   const navigate = useNavigate();
@@ -26,16 +27,15 @@ export function HeroSection() {
         </motion.h1>
 
         <div className="flex justify-center mt-8">
-          <motion.button
-            onClick={() => navigate('/contact')}
-            className="card-hover bg-white text-black px-8 py-3 rounded-md font-medium text-lg"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            whileHover={{ scale: 1.05 }}
           >
-            COMMENCER
-          </motion.button>
+            <RainbowButton onClick={() => navigate('/contact')}>
+              COMMENCER
+            </RainbowButton>
+          </motion.div>
         </div>
       </div>
     </LampContainer>
