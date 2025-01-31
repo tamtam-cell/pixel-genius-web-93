@@ -32,7 +32,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            <RainbowButton onClick={() => navigate('/contact')}>
+            <RainbowButton onClick={() => navigate('/services')}>
               COMMENCER
             </RainbowButton>
           </motion.div>
