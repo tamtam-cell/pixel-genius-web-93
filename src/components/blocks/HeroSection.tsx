@@ -37,14 +37,11 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="mt-8 relative z-10"
+          className="mt-8"
         >
-          <div className="absolute inset-0 -top-40 -bottom-40 z-0 flex items-center justify-center">
-            <div className="w-full h-full bg-gradient-to-b from-primary/50 to-primary/5 blur-3xl opacity-50 rounded-full" />
-          </div>
           <RainbowButton 
             onClick={handleClick}
-            className="text-lg tracking-wider relative z-10"
+            className="text-lg tracking-wider"
           >
             COMMENCER
           </RainbowButton>
