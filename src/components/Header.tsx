@@ -22,29 +22,36 @@ const Header = () => {
               <div className="flex items-center">
                 {/* Logo Symbol */}
                 <div className="relative w-12 h-12 mr-4">
-                  {/* Main shape */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white to-[#9b87f5] rounded-md transform rotate-45 group-hover:rotate-[225deg] transition-all duration-700"></div>
-                  
-                  {/* Inner shape */}
-                  <div className="absolute inset-[3px] bg-background rounded-[4px] transform rotate-45 group-hover:rotate-[225deg] transition-all duration-700">
-                    <div className="absolute inset-[3px] bg-gradient-to-tr from-[#9b87f5] to-white rounded-sm transform -rotate-90 group-hover:rotate-90 transition-all duration-700"></div>
+                  {/* Main hexagon shape */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white to-[#9b87f5] transform rotate-[30deg] group-hover:rotate-[210deg] transition-all duration-700">
+                    <div className="absolute inset-[2px] bg-background">
+                      <div className="absolute inset-[2px] bg-gradient-to-tr from-[#9b87f5] to-white transform -rotate-[60deg] group-hover:rotate-[120deg] transition-all duration-700"></div>
+                    </div>
                   </div>
                   
-                  {/* Decorative dots */}
-                  <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-white rounded-full"></div>
-                  <div className="absolute bottom-0 left-0 w-1.5 h-1.5 bg-[#9b87f5] rounded-full"></div>
+                  {/* Inner triangle */}
+                  <div className="absolute inset-[4px] bg-gradient-to-br from-[#9b87f5] to-white transform rotate-[30deg] group-hover:rotate-[210deg] transition-all duration-700 clip-triangle">
+                    <div className="absolute inset-[2px] bg-background clip-triangle">
+                      <div className="absolute inset-[2px] bg-gradient-to-tr from-white to-[#9b87f5] transform -rotate-[60deg] group-hover:rotate-[120deg] transition-all duration-700 clip-triangle"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-white rounded-full"></div>
+                  <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-[#9b87f5] rounded-full"></div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-gradient-to-br from-white to-[#9b87f5] rounded-full transform group-hover:scale-150 transition-all duration-700"></div>
                 </div>
 
                 {/* Logo Text */}
                 <div className="flex items-baseline">
                   <span className="text-2xl font-light tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">
-                    pixel
+                    nova
                   </span>
                   <span className="text-2xl font-bold tracking-wider bg-gradient-to-r from-white to-[#9b87f5] bg-clip-text text-transparent mx-0.5 transition-all duration-300 group-hover:tracking-widest">
-                    craft
+                    tech
                   </span>
                   <span className="text-2xl font-light tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">
-                    lab
+                    hub
                   </span>
                 </div>
               </div>
