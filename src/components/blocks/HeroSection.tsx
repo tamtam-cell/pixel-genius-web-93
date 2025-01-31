@@ -30,11 +30,11 @@ export function HeroSection() {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="mt-8 bg-gradient-to-br from-white to-white/80 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent"
+          className="mt-8 bg-gradient-to-br from-white to-white/80 py-4 bg-clip-text text-center font-light tracking-wide text-transparent"
         >
-          <span className="text-2xl md:text-4xl">Imaginez l'Impossible</span>
+          <span className="text-2xl md:text-4xl font-extralight">Imaginez l'Impossible</span>
           <br />
-          <span className="text-4xl md:text-7xl">Créons-le Ensemble</span>
+          <span className="text-4xl md:text-7xl font-extralight tracking-tight">Créons-le Ensemble</span>
         </motion.h1>
 
         <div className="flex justify-center mt-8">
