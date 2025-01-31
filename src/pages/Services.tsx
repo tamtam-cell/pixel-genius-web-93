@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -16,37 +17,31 @@ const formSchema = z.object({
   siteType: z.enum(["vitrine", "ecommerce", "service"], {
     required_error: "Veuillez sélectionner un type de site",
   }),
-  businessName: z.string().min(2, {
-    message: "Le nom de l'entreprise doit contenir au moins 2 caractères",
+  brandName: z.string().min(2, {
+    message: "Le nom de la marque doit contenir au moins 2 caractères",
   }),
-  industry: z.string({
-    required_error: "Veuillez sélectionner votre secteur d'activité",
+  brandColor: z.string({
+    required_error: "Veuillez sélectionner une couleur",
   }),
-  budget: z.string({
-    required_error: "Veuillez sélectionner votre budget",
-  }),
-  timeline: z.string({
-    required_error: "Veuillez sélectionner votre délai souhaité",
-  }),
-  description: z.string().min(10, {
-    message: "La description doit contenir au moins 10 caractères",
-  }),
+  serviceDescription: z.string().optional(),
+  productDescription: z.string().optional(),
+  digitalProductDescription: z.string().optional(),
 });
 
 const Services = () => {
   const [showSiteTypeFields, setShowSiteTypeFields] = useState(false);
-  const [showNextFields, setShowNextFields] = useState(false);
+  const [showBrandFields, setShowBrandFields] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       offer: undefined,
       siteType: undefined,
-      businessName: "",
-      industry: "",
-      budget: "",
-      timeline: "",
-      description: "",
+      brandName: "",
+      brandColor: "",
+      serviceDescription: "",
+      productDescription: "",
+      digitalProductDescription: "",
     },
   });
 
@@ -62,8 +57,10 @@ const Services = () => {
 
   const handleSiteTypeChange = (value: string) => {
     form.setValue("siteType", value as "vitrine" | "ecommerce" | "service");
-    setShowNextFields(true);
+    setShowBrandFields(true);
   };
+
+  const siteType = form.watch("siteType");
 
   return (
     <div className="container mx-auto px-4 pt-32 pb-16 max-w-2xl">
@@ -180,16 +177,16 @@ const Services = () => {
               </div>
             )}
 
-            {showNextFields && (
+            {showBrandFields && (
               <div className="space-y-6 animate-in fade-in-50 duration-500">
                 <FormField
                   control={form.control}
-                  name="businessName"
+                  name="brandName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Nom de votre entreprise</FormLabel>
+                      <FormLabel>Nom de votre marque</FormLabel>
                       <FormControl>
-                        <Input placeholder="Votre entreprise" {...field} />
+                        <Input placeholder="Votre marque" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -198,23 +195,22 @@ const Services = () => {
 
                 <FormField
                   control={form.control}
-                  name="industry"
+                  name="brandColor"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Secteur d'activité</FormLabel>
+                      <FormLabel>Couleur principale de votre marque</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder="Sélectionnez votre secteur" />
+                            <SelectValue placeholder="Choisissez une couleur" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="commerce">Commerce</SelectItem>
-                          <SelectItem value="services">Services</SelectItem>
-                          <SelectItem value="technologie">Technologie</SelectItem>
-                          <SelectItem value="sante">Santé</SelectItem>
-                          <SelectItem value="education">Éducation</SelectItem>
-                          <SelectItem value="autre">Autre</SelectItem>
+                          <SelectItem value="color-1">Rouge</SelectItem>
+                          <SelectItem value="color-2">Violet</SelectItem>
+                          <SelectItem value="color-3">Bleu</SelectItem>
+                          <SelectItem value="color-4">Turquoise</SelectItem>
+                          <SelectItem value="color-5">Vert</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -222,70 +218,65 @@ const Services = () => {
                   )}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="budget"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Budget approximatif</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                {siteType === "vitrine" && (
+                  <FormField
+                    control={form.control}
+                    name="serviceDescription"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Décrivez vos services</FormLabel>
                         <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Sélectionnez votre budget" />
-                          </SelectTrigger>
+                          <Textarea
+                            placeholder="Détaillez les services que vous proposez..."
+                            className="min-h-[100px]"
+                            {...field}
+                          />
                         </FormControl>
-                        <SelectContent>
-                          <SelectItem value="moins-2000">Moins de 2000€</SelectItem>
-                          <SelectItem value="2000-5000">2000€ - 5000€</SelectItem>
-                          <SelectItem value="5000-10000">5000€ - 10000€</SelectItem>
-                          <SelectItem value="plus-10000">Plus de 10000€</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
 
-                <FormField
-                  control={form.control}
-                  name="timeline"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Délai souhaité</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                {siteType === "ecommerce" && (
+                  <FormField
+                    control={form.control}
+                    name="productDescription"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Décrivez vos produits</FormLabel>
                         <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Sélectionnez votre délai" />
-                          </SelectTrigger>
+                          <Textarea
+                            placeholder="Détaillez les produits que vous vendez..."
+                            className="min-h-[100px]"
+                            {...field}
+                          />
                         </FormControl>
-                        <SelectContent>
-                          <SelectItem value="1-mois">1 mois</SelectItem>
-                          <SelectItem value="2-3-mois">2-3 mois</SelectItem>
-                          <SelectItem value="3-6-mois">3-6 mois</SelectItem>
-                          <SelectItem value="plus-6-mois">Plus de 6 mois</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
 
-                <FormField
-                  control={form.control}
-                  name="description"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Description de votre projet</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Décrivez brièvement votre projet..."
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                {siteType === "service" && (
+                  <FormField
+                    control={form.control}
+                    name="digitalProductDescription"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Décrivez vos produits numériques</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Détaillez les produits numériques que vous proposez..."
+                            className="min-h-[100px]"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
 
                 <Button type="submit" className="w-full">
                   Envoyer ma demande
