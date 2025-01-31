@@ -240,7 +240,7 @@ const Index = () => {
                 </span>
               </h1>
               
-              <div className="text-center space-y-4 mb-12">
+              <div className="text-center space-y-8 mb-16">
                 <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
                   Pas convaincu? Appellez-nous!
                 </p>
@@ -475,4 +475,3 @@ const Index = () => {
 };
 
 export default Index;
-
