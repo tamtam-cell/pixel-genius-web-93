@@ -214,7 +214,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      
+      <div className="mt-[-2rem]">
       {/* Limited Offer Section */}
       {remainingSpots > 0 && (
         <div className="cyber-border card-hover p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
@@ -236,6 +236,7 @@ const Index = () => {
             </button>
           </div>
         </div>
+      </div>
       )}
 
       {/* Pricing Cards */}
