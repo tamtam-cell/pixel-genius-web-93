@@ -266,7 +266,7 @@ const Index = () => {
             </h1>
           }
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full overflow-y-auto p-4">
             {[
               {
                 title: "Offre Complète",
@@ -321,7 +321,7 @@ const Index = () => {
             ].map((offer, index) => (
               <div
                 key={index}
-                className={`cyber-border p-6 rounded-xl card-hover relative transition-all duration-300 flex flex-col justify-between overflow-hidden ${
+                className={`cyber-border p-6 rounded-xl card-hover relative transition-all duration-300 flex flex-col justify-between overflow-hidden h-full ${
                   offer.isPopular ? 'transform hover:scale-105 shadow-xl' : ''
                 }`}
               >
