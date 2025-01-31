@@ -10,6 +10,9 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
 const formSchema = z.object({
+  offer: z.enum(["starter", "business", "premium"], {
+    required_error: "Veuillez sélectionner une offre",
+  }),
   siteType: z.enum(["vitrine", "ecommerce", "service"], {
     required_error: "Veuillez sélectionner un type de site",
   }),
@@ -31,12 +34,13 @@ const formSchema = z.object({
 });
 
 const Services = () => {
-  const [step, setStep] = useState(1);
+  const [showSiteTypeFields, setShowSiteTypeFields] = useState(false);
   const [showNextFields, setShowNextFields] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      offer: undefined,
       siteType: undefined,
       businessName: "",
       industry: "",
@@ -49,6 +53,11 @@ const Services = () => {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log("Formulaire soumis avec les valeurs:", values);
     toast.success("Votre demande a été envoyée avec succès !");
+  };
+
+  const handleOfferChange = (value: string) => {
+    form.setValue("offer", value as "starter" | "business" | "premium");
+    setShowSiteTypeFields(true);
   };
 
   const handleSiteTypeChange = (value: string) => {
@@ -68,42 +77,51 @@ const Services = () => {
           <div className="space-y-6">
             <FormField
               control={form.control}
-              name="siteType"
+              name="offer"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel>Quel type de site souhaitez-vous créer ?</FormLabel>
+                  <FormLabel>Choisissez votre offre</FormLabel>
                   <FormControl>
                     <RadioGroup
                       onValueChange={(value) => {
                         field.onChange(value);
-                        handleSiteTypeChange(value);
+                        handleOfferChange(value);
                       }}
                       defaultValue={field.value}
-                      className="flex flex-col space-y-1"
+                      className="flex flex-col space-y-4"
                     >
-                      <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
                         <FormControl>
-                          <RadioGroupItem value="vitrine" />
+                          <RadioGroupItem value="starter" />
                         </FormControl>
-                        <FormLabel className="font-normal">
-                          Site Vitrine
-                        </FormLabel>
+                        <div className="space-y-1">
+                          <FormLabel className="font-semibold">Starter</FormLabel>
+                          <p className="text-sm text-muted-foreground">
+                            Idéal pour les petites entreprises - Site simple et efficace
+                          </p>
+                        </div>
                       </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
                         <FormControl>
-                          <RadioGroupItem value="ecommerce" />
+                          <RadioGroupItem value="business" />
                         </FormControl>
-                        <FormLabel className="font-normal">
-                          Site E-commerce
-                        </FormLabel>
+                        <div className="space-y-1">
+                          <FormLabel className="font-semibold">Business</FormLabel>
+                          <p className="text-sm text-muted-foreground">
+                            Pour les entreprises en croissance - Fonctionnalités avancées
+                          </p>
+                        </div>
                       </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
                         <FormControl>
-                          <RadioGroupItem value="service" />
+                          <RadioGroupItem value="premium" />
                         </FormControl>
-                        <FormLabel className="font-normal">
-                          Site de Services
-                        </FormLabel>
+                        <div className="space-y-1">
+                          <FormLabel className="font-semibold">Premium</FormLabel>
+                          <p className="text-sm text-muted-foreground">
+                            Solution complète pour les grandes entreprises
+                          </p>
+                        </div>
                       </FormItem>
                     </RadioGroup>
                   </FormControl>
@@ -111,6 +129,56 @@ const Services = () => {
                 </FormItem>
               )}
             />
+
+            {showSiteTypeFields && (
+              <div className="animate-in fade-in-50 duration-500">
+                <FormField
+                  control={form.control}
+                  name="siteType"
+                  render={({ field }) => (
+                    <FormItem className="space-y-3">
+                      <FormLabel>Quel type de site souhaitez-vous créer ?</FormLabel>
+                      <FormControl>
+                        <RadioGroup
+                          onValueChange={(value) => {
+                            field.onChange(value);
+                            handleSiteTypeChange(value);
+                          }}
+                          defaultValue={field.value}
+                          className="flex flex-col space-y-1"
+                        >
+                          <FormItem className="flex items-center space-x-3 space-y-0">
+                            <FormControl>
+                              <RadioGroupItem value="vitrine" />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              Site Vitrine
+                            </FormLabel>
+                          </FormItem>
+                          <FormItem className="flex items-center space-x-3 space-y-0">
+                            <FormControl>
+                              <RadioGroupItem value="ecommerce" />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              Site E-commerce
+                            </FormLabel>
+                          </FormItem>
+                          <FormItem className="flex items-center space-x-3 space-y-0">
+                            <FormControl>
+                              <RadioGroupItem value="service" />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              Site de Services
+                            </FormLabel>
+                          </FormItem>
+                        </RadioGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            )}
 
             {showNextFields && (
               <div className="space-y-6 animate-in fade-in-50 duration-500">
