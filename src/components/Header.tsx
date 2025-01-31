@@ -19,7 +19,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <div className="relative group">
-              <div className="text-2xl font-bold bg-gradient-to-r from-[#c4b7ff] via-[#9b87f5] to-[#8875e8] bg-clip-text text-transparent transform transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_3px_rgba(155,135,245,0.5)]">
+              <div className="text-2xl font-bold bg-gradient-to-r from-[#c4b7ff] via-[#9b87f5] to-[#8875e8] bg-clip-text text-transparent transform transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_3px_rgba(155,135,245,0.5)] [text-shadow:_0_1px_10px_rgb(155_135_245_/_70%)]">
                 Pixel
                 <span className="relative inline-block text-white font-bold">
                   Craft
