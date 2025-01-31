@@ -189,7 +189,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <HeroSection />
+      <div className="relative z-[-1] bg-slate-950 w-full h-[85vh]">
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <HeroSection />
+        </div>
+      </div>
+
       <div className="mt-[-2rem]">
         {/* Limited Offer Section */}
         {remainingSpots > 0 && (
