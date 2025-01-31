@@ -489,7 +489,7 @@ const Index = () => {
           testimonials={testimonials}
         />
 
-        <section className="py-16">
+        <section className="py-16 bg-background/50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
               Technologies du Futur
@@ -523,10 +523,10 @@ const Index = () => {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className="cyber-border p-6 rounded-xl card-hover"
+                  className="flex flex-col items-center text-center p-4 transition-all duration-300 hover:bg-primary/5 rounded-lg"
                 >
                   <feature.icon className="w-12 h-12 mb-4 text-primary" />
-                  <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                 </div>
               ))}
