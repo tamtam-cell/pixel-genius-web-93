@@ -20,7 +20,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-4">
             <div className="relative group flex items-center">
               <img 
-                src="/lovable-uploads/3b590dfc-0a26-49a7-b634-94697cbebe72.png" 
+                src="/lovable-uploads/logo-clean.png" 
                 alt="PixelCraftLab Logo" 
                 className="h-8 w-auto transform transition-all duration-300 group-hover:scale-105"
               />
