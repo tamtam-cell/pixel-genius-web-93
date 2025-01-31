@@ -20,26 +20,37 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             <div className="relative group">
               <div className="flex items-center">
-                <div className="relative flex items-center space-x-1">
-                  {/* Logo Symbol */}
-                  <div className="w-8 h-8 relative mr-3">
-                    <div className="absolute inset-0 bg-white rounded-sm rotate-45 transform transition-transform duration-300 group-hover:rotate-90"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5] to-purple-300 rounded-sm rotate-0 transform transition-transform duration-300 group-hover:rotate-45"></div>
-                  </div>
-                  
-                  {/* Logo Text */}
-                  <div className="flex items-baseline space-x-0">
-                    <span className="text-2xl tracking-tight font-light text-white">pixel</span>
-                    <span className="text-2xl tracking-tight font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">craft</span>
-                    <span className="text-2xl tracking-tight font-light text-white">lab</span>
-                  </div>
+                {/* Logo Symbol */}
+                <div className="relative w-10 h-10 mr-4 transform transition-transform duration-700 group-hover:rotate-180">
+                  {/* Inner rotating squares */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white to-[#9b87f5] rounded-sm rotate-45 transform transition-all duration-700 group-hover:scale-90"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#9b87f5] to-purple-300 rounded-sm rotate-0 transform transition-all duration-700 group-hover:rotate-90 group-hover:scale-75"></div>
+                  {/* Glowing dots */}
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#9b87f5] rounded-full animate-pulse delay-150"></div>
+                </div>
+
+                {/* Logo Text */}
+                <div className="flex items-baseline space-x-1">
+                  <span className="text-3xl tracking-tight font-extralight text-white transition-all duration-300 group-hover:tracking-wide">
+                    pixel
+                  </span>
+                  <span className="text-3xl tracking-tight font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent transition-all duration-300 group-hover:tracking-wide">
+                    craft
+                  </span>
+                  <span className="text-3xl tracking-tight font-extralight text-white transition-all duration-300 group-hover:tracking-wide">
+                    lab
+                  </span>
                 </div>
               </div>
               
               {/* Hover Effect Line */}
-              <div className="absolute -bottom-1 left-0 w-full h-[1px] overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-r from-transparent via-white to-transparent transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              <div className="absolute -bottom-1 left-0 w-full h-[2px] overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-r from-transparent via-[#9b87f5] to-transparent transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </div>
+
+              {/* Glowing background effect */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#9b87f5]/0 via-[#9b87f5]/10 to-[#9b87f5]/0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700"></div>
             </div>
           </Link>
 
