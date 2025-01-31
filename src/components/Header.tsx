@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed w-full bg-transparent z-50 border-b border-[#9b87f5]/20">
+    <header className="fixed w-full bg-background/80 backdrop-blur-sm z-50 border-b border-[#9b87f5]/20">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
@@ -71,7 +71,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white [text-shadow:_0_0_10px_rgb(255_255_255)]"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,7 +85,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className="flex items-center gap-2 nav-link px-4 text-white [text-shadow:_0_0_10px_rgb(255_255_255)]"
+                className="flex items-center gap-2 nav-link px-4 text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <item.icon size={16} />
