@@ -8,6 +8,7 @@ import { Timeline } from "@/components/ui/timeline";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -233,13 +234,37 @@ const Index = () => {
               <div className="max-w-3xl w-full mx-auto">
                 <div className="cyber-border card-hover p-6 rounded-xl text-center bg-background/40 backdrop-blur-sm">
                   <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div className="text-left">
+                    <div className="text-left relative">
                       <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
                         Offre Limitée ! Plus que {remainingSpots} place{remainingSpots > 1 ? 's' : ''} disponibles
                       </h3>
                       <p className="text-purple-200/80 text-sm">
                         Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
                       </p>
+                      
+                      {/* Particles effect */}
+                      <div className="absolute -bottom-4 w-full h-20">
+                        <div className="w-full h-full relative">
+                          {/* Gradients */}
+                          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+                          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+                          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+
+                          {/* Core component */}
+                          <SparklesCore
+                            background="transparent"
+                            minSize={0.4}
+                            maxSize={1}
+                            particleDensity={1200}
+                            className="w-full h-full"
+                            particleColor="#FFFFFF"
+                          />
+
+                          {/* Radial Gradient */}
+                          <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+                        </div>
+                      </div>
                     </div>
                     <button
                       onClick={handleOfferClick}
