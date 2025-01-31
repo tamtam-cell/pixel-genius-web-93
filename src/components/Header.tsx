@@ -20,12 +20,12 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             <div className="relative group">
               <div className="flex items-center">
-                {/* Updated Logo */}
-                <div className="relative w-12 h-12 mr-4">
+                {/* Logo mis à jour */}
+                <div className="relative w-16 h-16 mr-4">
                   <img 
                     src="/lovable-uploads/43f7d6ac-0267-43c1-9e82-0b3b8057ea36.png" 
                     alt="PixelCraftLab Logo"
-                    className="w-full h-full object-contain brightness-200 invert"
+                    className="w-full h-full object-contain mix-blend-screen"
                   />
                 </div>
 
