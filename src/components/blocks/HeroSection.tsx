@@ -25,7 +25,7 @@ export function HeroSection() {
           <span className="text-4xl md:text-7xl">Créons-le Ensemble</span>
         </motion.h1>
 
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-8">
           <motion.button
             onClick={() => navigate('/contact')}
             className="card-hover bg-white text-black px-8 py-3 rounded-md font-medium text-lg"
