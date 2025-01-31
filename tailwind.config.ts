@@ -18,6 +18,9 @@ export default {
       }
     },
     extend: {
+      fontFamily: {
+        'sites-web': ['Playfair Display', 'serif'],
+      },
       maxWidth: {
         container: "1280px",
       },
