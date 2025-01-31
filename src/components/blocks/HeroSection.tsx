@@ -9,13 +9,8 @@ export function HeroSection() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    console.log("Button clicked, attempting navigation to /services");
-    try {
-      navigate("/services");
-      console.log("Navigation completed");
-    } catch (error) {
-      console.error("Navigation error:", error);
-    }
+    console.log("Button clicked, navigating to /services");
+    navigate("/services");
   };
 
   return (
