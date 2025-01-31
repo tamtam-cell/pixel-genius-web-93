@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Squares } from "@/components/ui/squares-background";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
@@ -17,6 +18,16 @@ import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 
 const queryClient = new QueryClient();
+
+const ScrollToTop = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  return null;
+};
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -56,6 +67,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen relative">
           <div className="absolute inset-0 -z-10">
             <Squares 
