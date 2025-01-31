@@ -1,9 +1,11 @@
 import { ArrowRight, Clock, Users, ShieldCheck } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { HeroSection } from "@/components/blocks/HeroSection";
 import { GradientSection } from "@/components/blocks/GradientSection";
+import { WavyBackgroundDemo } from "@/components/blocks/WavyBackgroundDemo";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { Timeline } from "@/components/ui/timeline";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
@@ -229,7 +231,7 @@ const Index = () => {
         </motion.button>
       </div>
 
-      <GradientSection />
+      <WavyBackgroundDemo />
       
       {/* Limited Offer Section */}
       {remainingSpots > 0 && (
