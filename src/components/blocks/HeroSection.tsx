@@ -30,11 +30,11 @@ export function HeroSection() {
           className="w-full"
           containerClassName="h-40 relative"
           colors={["#9333EA", "#A855F7", "#C084FC"]}
-          waveWidth={100}
+          waveWidth={150}
           backgroundFill="transparent"
-          blur={4}
+          blur={2}
           speed="slow"
-          waveOpacity={0.6}
+          waveOpacity={0.8}
         >
           <div className="flex justify-center">
             <motion.button
