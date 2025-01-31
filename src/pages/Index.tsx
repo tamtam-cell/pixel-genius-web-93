@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, Users, ShieldCheck } from "lucide-react";
+import { ArrowRight, Globe, Computer, Smartphone, Users, Clock } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
@@ -494,25 +494,31 @@ const Index = () => {
             <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
               Technologies du Futur
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
-                  icon: ShieldCheck,
-                  title: "Sécurité Quantique",
+                  icon: Globe,
+                  title: "Solutions Web",
                   description:
-                    "Protection de nouvelle génération pour vos données.",
+                    "Applications web modernes et performantes.",
+                },
+                {
+                  icon: Computer,
+                  title: "Design Responsive",
+                  description:
+                    "Interfaces adaptatives pour tous les écrans.",
+                },
+                {
+                  icon: Smartphone,
+                  title: "Mobile First",
+                  description:
+                    "Expérience mobile optimisée en priorité.",
                 },
                 {
                   icon: Users,
-                  title: "IA Adaptative",
+                  title: "UX Centrée Utilisateur",
                   description:
-                    "Expérience utilisateur personnalisée par intelligence artificielle.",
-                },
-                {
-                  icon: Clock,
-                  title: "Performance Optimale",
-                  description:
-                    "Temps de chargement ultra-rapides garantis.",
+                    "Design pensé pour vos utilisateurs.",
                 },
               ].map((feature, index) => (
                 <div
