@@ -23,7 +23,7 @@ export function NavBar({ className }: NavBarProps) {
   const items = [
     { name: 'Accueil', path: '/', icon: Home },
     { name: 'Services', path: '/services', icon: Briefcase },
-    { name: 'À propos', path: '/about', icon: User },
+    { name: 'Notre histoire', path: '/about', icon: User },
     { name: 'Contact', path: '/contact', icon: FileText }
   ];
 
