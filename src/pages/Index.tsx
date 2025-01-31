@@ -205,10 +205,10 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="mt-[-4rem]"> {/* Changed from -8rem to -4rem to reduce spacing */}
+      <div className="mt-[-8rem]">
         {/* Limited Offer Section */}
         {remainingSpots > 0 && (
-          <div className="relative h-[100px] mb-4"> {/* Changed height from 200px to 100px and mb-8 to mb-4 */}
+          <div className="relative h-[200px] mb-8">
             <WavyBackground
               colors={["#9333EA", "#A855F7", "#C084FC", "#E879F9"]}
               waveWidth={50}
@@ -216,7 +216,7 @@ const Index = () => {
               blur={5}
               speed="slow"
               waveOpacity={0.3}
-              className="absolute inset-0 top-[125px] z-0" /* Changed from top-[250px] to top-[125px] */
+              className="absolute inset-0 top-[250px] z-0"
             />
             <div className="relative z-10 h-full flex items-center justify-center">
               <div className="max-w-3xl w-full mx-auto">
