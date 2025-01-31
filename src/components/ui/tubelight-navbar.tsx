@@ -1,80 +1,51 @@
-import * as React from "react"
-import { Link, useLocation } from "react-router-dom"
-import { LucideIcon } from "lucide-react"
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+"use client";
+
+import * as React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 interface NavItem {
-  name: string
-  path: string
-  icon: LucideIcon
+  name: string;
+  path: string;
+  icon?: React.ElementType;
 }
 
 interface NavBarProps {
-  items: NavItem[]
-  className?: string
+  items: NavItem[];
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items }: NavBarProps) {
   const location = useLocation();
-  const [isMobile, setIsMobile] = React.useState(false)
+  const [activeItem, setActiveItem] = React.useState(location.pathname);
+  const [hoveredItem, setHoveredItem] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  // Trouve l'item actif en fonction de l'URL courante
-  const activeItem = items.find(item => item.path === location.pathname) || items[0];
+    setActiveItem(location.pathname);
+  }, [location]);
 
   return (
-    <div className={cn("z-50", className)}>
-      <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
-        {items.map((item) => {
-          const Icon = item.icon
-          const isActive = item.path === location.pathname
+    <nav className="flex items-center gap-4">
+      {items.map((item) => {
+        const isActive = activeItem === item.path;
+        const isHovered = hoveredItem === item.path;
 
-          return (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                "text-foreground/80 hover:text-primary",
-                isActive && "bg-muted text-primary"
-              )}
-            >
-              <span className="hidden md:inline">{item.name}</span>
-              <span className="md:hidden">
-                <Icon size={18} strokeWidth={2.5} />
-              </span>
-              {isActive && (
-                <motion.div
-                  layoutId="lamp"
-                  className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
-                  initial={false}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30,
-                  }}
-                >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-t-full">
-                    <div className="absolute w-12 h-6 bg-primary/20 rounded-full blur-md -top-2 -left-2" />
-                    <div className="absolute w-8 h-6 bg-primary/20 rounded-full blur-md -top-1" />
-                    <div className="absolute w-4 h-4 bg-primary/20 rounded-full blur-sm top-0 left-2" />
-                  </div>
-                </motion.div>
-              )}
-            </Link>
-          )
-        })}
-      </div>
-    </div>
-  )
+        return (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={`relative px-3 py-1.5 text-sm font-medium transition-colors duration-500 hover:text-primary ${
+              isActive ? "text-primary" : "text-white"
+            } flex items-center gap-2`}
+            onMouseEnter={() => setHoveredItem(item.path)}
+            onMouseLeave={() => setHoveredItem(null)}
+          >
+            {item.icon && <item.icon size={16} />}
+            <span>{item.name}</span>
+            {(isActive || isHovered) && (
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-primary transform origin-left transition-transform duration-300 ease-out" />
+            )}
+          </Link>
+        );
+      })}
+    </nav>
+  );
 }
