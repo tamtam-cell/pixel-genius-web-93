@@ -28,7 +28,7 @@ export function HeroSection() {
         <div className="flex justify-center mt-8">
           <motion.button
             onClick={() => navigate('/contact')}
-            className="card-hover bg-white/80 backdrop-blur-sm text-black px-8 py-3 rounded-md font-medium text-sm"
+            className="card-hover bg-white/80 backdrop-blur-sm text-black px-8 py-3 rounded-md font-medium text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
