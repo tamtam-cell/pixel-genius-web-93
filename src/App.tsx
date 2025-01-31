@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Squares } from "@/components/ui/squares-background";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import Header from "./components/Header";
@@ -68,16 +67,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <div className="flex flex-col min-h-screen relative">
-          <div className="absolute inset-0 -z-10">
-            <Squares 
-              direction="diagonal"
-              speed={0.5}
-              squareSize={40}
-              borderColor="#333" 
-              hoverFillColor="#222"
-            />
-          </div>
+        <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
             <AnimatedRoutes />
