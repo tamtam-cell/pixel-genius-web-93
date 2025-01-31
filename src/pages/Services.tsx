@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
 const formSchema = z.object({
-  offer: z.enum(["starter", "business", "premium"], {
+  offer: z.enum(["complete", "premium", "magique"], {
     required_error: "Veuillez sélectionner une offre",
   }),
   siteType: z.enum(["vitrine", "ecommerce", "service"], {
@@ -56,7 +56,7 @@ const Services = () => {
   };
 
   const handleOfferChange = (value: string) => {
-    form.setValue("offer", value as "starter" | "business" | "premium");
+    form.setValue("offer", value as "complete" | "premium" | "magique");
     setShowSiteTypeFields(true);
   };
 
@@ -92,23 +92,12 @@ const Services = () => {
                     >
                       <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
                         <FormControl>
-                          <RadioGroupItem value="starter" />
+                          <RadioGroupItem value="complete" />
                         </FormControl>
                         <div className="space-y-1">
-                          <FormLabel className="font-semibold">Starter</FormLabel>
+                          <FormLabel className="font-semibold">Offre Complète</FormLabel>
                           <p className="text-sm text-muted-foreground">
                             Idéal pour les petites entreprises - Site simple et efficace
-                          </p>
-                        </div>
-                      </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
-                        <FormControl>
-                          <RadioGroupItem value="business" />
-                        </FormControl>
-                        <div className="space-y-1">
-                          <FormLabel className="font-semibold">Business</FormLabel>
-                          <p className="text-sm text-muted-foreground">
-                            Pour les entreprises en croissance - Fonctionnalités avancées
                           </p>
                         </div>
                       </FormItem>
@@ -118,6 +107,17 @@ const Services = () => {
                         </FormControl>
                         <div className="space-y-1">
                           <FormLabel className="font-semibold">Premium</FormLabel>
+                          <p className="text-sm text-muted-foreground">
+                            Pour les entreprises en croissance - Fonctionnalités avancées
+                          </p>
+                        </div>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
+                        <FormControl>
+                          <RadioGroupItem value="magique" />
+                        </FormControl>
+                        <div className="space-y-1">
+                          <FormLabel className="font-semibold">Magique</FormLabel>
                           <p className="text-sm text-muted-foreground">
                             Solution complète pour les grandes entreprises
                           </p>
