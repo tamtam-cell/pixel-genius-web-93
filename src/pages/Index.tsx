@@ -8,6 +8,7 @@ import { SplineSceneBasic } from "@/components/blocks/SplineSceneBasic";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { Timeline } from "@/components/ui/timeline";
 
 const Index = () => {
   const navigate = useNavigate();
