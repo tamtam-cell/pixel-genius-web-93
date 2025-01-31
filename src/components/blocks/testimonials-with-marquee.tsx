@@ -27,7 +27,7 @@ export function TestimonialsSection({
       <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
         <div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
           <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
-            Nous donnons vie à de plus en plus de projet chaque jour
+            Témoignages de Nos Clients Satisfaits
           </h2>
           <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
             Rejoignez les entreprises qui construisent déjà leur avenir à nos côtés
