@@ -609,6 +609,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
           <SplineSceneBasic />
         </div>
+
+        <Timeline data={timelineData} />
       </div>
     </div>
   );
