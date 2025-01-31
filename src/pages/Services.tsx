@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
+import { Link } from "react-router-dom";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -286,6 +287,13 @@ const Services = () => {
           </div>
         </form>
       </Form>
+
+      <div className="mt-16 text-center space-y-4">
+        <p className="text-lg font-medium">Pas convaincu? Appellez-nous!</p>
+        <Button asChild variant="outline" className="mx-auto">
+          <Link to="/contact">Nous Contacter</Link>
+        </Button>
+      </div>
     </div>
   );
 };
