@@ -1,27 +1,15 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { LampContainer } from "@/components/ui/lamp";
 import { useNavigate } from "react-router-dom";
-import { SparklesCore } from "@/components/ui/sparkles";
 
 export function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-[40rem] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden">
-      <div className="w-full absolute inset-0 h-screen">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-          speed={1}
-        />
-      </div>
-      <div className="relative z-50 flex flex-col items-center px-5">
+    <LampContainer>
+      <div className="relative w-full h-full">
         <motion.h1
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,11 +18,11 @@ export function HeroSection() {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="mt-8 bg-gradient-to-br from-white to-white/80 py-4 bg-clip-text text-center font-light tracking-wide text-transparent"
+          className="mt-8 bg-gradient-to-br from-white to-white/80 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent"
         >
-          <span className="text-2xl md:text-4xl font-extralight tracking-[.25em]">Imaginez l'Impossible</span>
+          <span className="text-2xl md:text-4xl">Imaginez l'Impossible</span>
           <br />
-          <span className="text-4xl md:text-7xl font-extralight tracking-tight">Créons-le Ensemble</span>
+          <span className="text-4xl md:text-7xl">Créons-le Ensemble</span>
         </motion.h1>
 
         <div className="flex justify-center mt-8">
@@ -50,6 +38,6 @@ export function HeroSection() {
           </motion.button>
         </div>
       </div>
-    </div>
+    </LampContainer>
   );
 }
