@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/blocks/HeroSection";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { Timeline } from "@/components/ui/timeline";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -215,8 +216,13 @@ const Index = () => {
     <div className="min-h-screen">
       <HeroSection />
       
-      {/* Limited Offer Section */}
-      {remainingSpots > 0 && (
+      <WavyBackground 
+        className="max-w-4xl mx-auto py-20"
+        blur={10}
+        speed="slow"
+        colors={["#9b87f5", "#7E69AB", "#D6BCFA"]}
+        waveOpacity={0.3}
+      >
         <div className="cyber-border card-hover p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-left">
@@ -236,7 +242,7 @@ const Index = () => {
             </button>
           </div>
         </div>
-      )}
+      </WavyBackground>
 
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
