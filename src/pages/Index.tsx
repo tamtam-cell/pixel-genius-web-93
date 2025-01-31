@@ -5,10 +5,10 @@ import { toast } from "sonner";
 import { HeroSection } from "@/components/blocks/HeroSection";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { SplineSceneBasic } from "@/components/blocks/SplineSceneBasic";
+import { CanvasTimeline } from "@/components/blocks/CanvasTimeline";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { Timeline } from "@/components/ui/timeline";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -549,6 +549,9 @@ const Index = () => {
           description="Découvrez comment notre expertise technique et notre approche stratégique transforment les projets de nos clients"
           testimonials={testimonials}
         />
+
+        {/* Process Timeline Canvas */}
+        <CanvasTimeline />
 
         <section className="py-24 relative overflow-hidden">
           <div className="container mx-auto px-4">
