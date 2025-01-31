@@ -14,9 +14,9 @@ export function HeroSection() {
   };
 
   React.useEffect(() => {
-    // Load the Playfair Display font
+    // Load the Inter font
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
   }, []);
@@ -38,7 +38,11 @@ export function HeroSection() {
         >
           <span className="text-2xl md:text-4xl font-sites-web">Imaginez l'Impossible</span>
           <br />
-          <span className="text-4xl md:text-7xl font-sites-web">Créons-le Ensemble</span>
+          <span className="text-4xl md:text-7xl" style={{ 
+            fontFamily: 'Inter',
+            fontWeight: '200',
+            letterSpacing: '-0.05em'
+          }}>Créons-le Ensemble</span>
         </motion.h1>
 
         <motion.div
