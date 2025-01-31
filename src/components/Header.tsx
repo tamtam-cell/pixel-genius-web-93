@@ -17,19 +17,16 @@ const Header = () => {
     <header className="fixed w-full bg-transparent z-50 border-b border-[#9b87f5]/20">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="relative group">
-              <div className="text-2xl font-bold text-white transform transition-all duration-300 group-hover:scale-105">
-                <span className="golden-text">PIXEL</span>
-                <span className="relative inline-block golden-text">
-                  CRAFT
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#FFD700] rounded-full opacity-75 animate-pulse"></span>
-                  <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-[#FFD700] rounded-full opacity-20 animate-ping"></span>
-                </span>
-                <span className="golden-text">LAB</span>
-              </div>
-              <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-transparent"></div>
-              <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-[#FFD700] to-[#FDB931] group-hover:w-full transition-all duration-300"></div>
+          <Link to="/" className="flex items-center space-x-4">
+            <div className="relative group flex items-center">
+              <img 
+                src="/lovable-uploads/3b590dfc-0a26-49a7-b634-94697cbebe72.png" 
+                alt="PixelCraftLab Logo" 
+                className="h-8 w-auto transform transition-all duration-300 group-hover:scale-105"
+              />
+              <span className="ml-3 text-xl font-bold text-white [text-shadow:_0_0_15px_rgb(255_255_255),_0_0_30px_rgb(255_255_255)]">
+                PixelCraftLab
+              </span>
             </div>
           </Link>
 
