@@ -22,6 +22,9 @@ export function RainbowButton({
         // dark mode colors - enhanced contrast
         "dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.8)_80%,rgba(255,255,255,0.2)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]",
         
+        // default text styles
+        "text-lg font-bold tracking-wider",
+        
         className
       )}
       {...props}
