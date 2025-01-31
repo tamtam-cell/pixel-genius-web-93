@@ -1,3 +1,5 @@
+@import url('https://use.typekit.net/[your-kit-code].css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

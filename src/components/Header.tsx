@@ -24,7 +24,7 @@ const Header = () => {
                 alt="PixelCraftLab Logo" 
                 className="h-8 w-auto transform transition-all duration-300 group-hover:scale-105"
               />
-              <span className="ml-3 text-xl font-bold text-white [text-shadow:_0_0_15px_rgb(255_255_255),_0_0_30px_rgb(255_255_255)]">
+              <span className="ml-3 text-xl font-bold tracking-wider uppercase text-white [text-shadow:_0_0_15px_rgb(255_255_255),_0_0_30px_rgb(255_255_255)] font-['Futura_PT']">
                 PixelCraftLab
               </span>
             </div>
