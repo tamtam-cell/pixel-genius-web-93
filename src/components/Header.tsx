@@ -21,13 +21,22 @@ const Header = () => {
             <div className="relative group">
               <div className="flex items-center">
                 {/* Logo Symbol */}
-                <div className="relative w-10 h-10 mr-4 transform transition-transform duration-700 group-hover:rotate-180">
-                  {/* Inner rotating squares */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white to-[#9b87f5] rounded-sm rotate-45 transform transition-all duration-700 group-hover:scale-90"></div>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#9b87f5] to-purple-300 rounded-sm rotate-0 transform transition-all duration-700 group-hover:rotate-90 group-hover:scale-75"></div>
-                  {/* Glowing dots */}
+                <div className="relative w-12 h-12 mr-4 transform transition-all duration-1000 group-hover:rotate-[360deg]">
+                  {/* Core squares */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white to-[#9b87f5] rounded-sm rotate-45 transform transition-all duration-1000 group-hover:scale-90 group-hover:rotate-[225deg]"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#9b87f5] to-purple-300 rounded-sm rotate-0 transform transition-all duration-1000 group-hover:scale-75 group-hover:rotate-[135deg]"></div>
+                  
+                  {/* Additional decorative elements */}
+                  <div className="absolute inset-[2px] bg-gradient-to-br from-white/20 to-transparent rounded-sm rotate-22.5 transform transition-all duration-1000 group-hover:rotate-[405deg] opacity-50"></div>
+                  
+                  {/* Corner dots with individual animations */}
                   <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#9b87f5] rounded-full animate-pulse delay-150"></div>
+                  <div className="absolute -top-1 -left-1 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse delay-300"></div>
+                  <div className="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-purple-200 rounded-full animate-pulse delay-450"></div>
+                  
+                  {/* Inner glowing effect */}
+                  <div className="absolute inset-2 bg-gradient-to-tr from-white/10 to-transparent rounded-sm blur-sm transform transition-all duration-1000 group-hover:rotate-180"></div>
                 </div>
 
                 {/* Logo Text */}
@@ -49,8 +58,9 @@ const Header = () => {
                 <div className="w-full h-full bg-gradient-to-r from-transparent via-[#9b87f5] to-transparent transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </div>
 
-              {/* Glowing background effect */}
-              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#9b87f5]/0 via-[#9b87f5]/10 to-[#9b87f5]/0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700"></div>
+              {/* Enhanced glowing background effect */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#9b87f5]/0 via-[#9b87f5]/10 to-[#9b87f5]/0 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+              <div className="absolute inset-0 -z-20 bg-gradient-to-tr from-purple-500/0 via-purple-400/5 to-white/0 opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-1000 delay-100"></div>
             </div>
           </Link>
 
