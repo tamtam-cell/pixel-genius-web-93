@@ -8,6 +8,11 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 export function HeroSection() {
   const navigate = useNavigate();
 
+  const handleClick = () => {
+    console.log("Button clicked, navigating to /services");
+    navigate('/services');
+  };
+
   return (
     <LampContainer>
       <div className="relative w-full h-full">
@@ -32,7 +37,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            <RainbowButton onClick={() => navigate('/services')}>
+            <RainbowButton onClick={handleClick}>
               COMMENCER
             </RainbowButton>
           </motion.div>
