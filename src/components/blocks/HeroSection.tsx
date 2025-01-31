@@ -28,7 +28,7 @@ export function HeroSection() {
 
         <WavyBackground 
           className="w-full"
-          containerClassName="h-40 relative"
+          containerClassName="h-[60vh] relative" // Increased height to match the reference image
           colors={["#9333EA", "#A855F7", "#C084FC"]}
           waveWidth={150}
           backgroundFill="transparent"
