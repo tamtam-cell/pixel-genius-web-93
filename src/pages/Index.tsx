@@ -411,8 +411,10 @@ const Index = () => {
               </h1>
               
               <div className="text-center space-y-4 mb-12">
-                <p className="text-lg font-medium">Pas convaincu? Appellez-nous!</p>
-                <Button asChild variant="outline" className="mx-auto">
+                <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
+                  Pas convaincu? Appellez-nous!
+                </p>
+                <Button asChild variant="outline" className="mx-auto hover:bg-primary/20">
                   <Link to="/contact">Nous Contacter</Link>
                 </Button>
               </div>
@@ -633,4 +635,3 @@ const Index = () => {
 };
 
 export default Index;
-
