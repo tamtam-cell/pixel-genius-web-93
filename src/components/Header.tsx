@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b">
+    <header className="fixed w-full bg-transparent backdrop-blur-md z-50 border-b">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
