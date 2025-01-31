@@ -33,7 +33,7 @@ export function NavBar({ items }: NavBarProps) {
             key={item.path}
             to={item.path}
             className={`relative px-3 py-1.5 text-sm font-medium transition-colors duration-500 hover:text-primary ${
-              isActive ? "text-primary" : "text-white"
+              isActive ? "text-white [text-shadow:_0_0_15px_rgb(255_255_255),_0_0_30px_rgb(255_255_255)]" : "text-white [text-shadow:_0_0_10px_rgb(255_255_255)]"
             } flex items-center gap-2`}
             onMouseEnter={() => setHoveredItem(item.path)}
             onMouseLeave={() => setHoveredItem(null)}
