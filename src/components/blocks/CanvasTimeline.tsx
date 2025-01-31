@@ -57,6 +57,7 @@ const timelineData: TimelineEntry[] = [
 
 export function CanvasTimeline() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -71,22 +72,40 @@ export function CanvasTimeline() {
   }, []);
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Ambient light effect */}
+    <section 
+      className="py-24 relative overflow-hidden"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      {/* Enhanced ambient light effect */}
       <div 
-        className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+        className="pointer-events-none fixed inset-0 z-30 transition-all duration-500"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(155, 135, 245, 0.15), transparent 40%)`,
+          background: `
+            radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, 
+              rgba(155, 135, 245, ${isHovering ? '0.25' : '0.15'}), 
+              transparent 45%
+            ),
+            radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, 
+              rgba(155, 135, 245, ${isHovering ? '0.15' : '0.1'}), 
+              transparent 35%
+            )
+          `,
+          opacity: isHovering ? 1 : 0.7,
         }}
       />
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 relative">
-          {/* Spotlight effect for title */}
+          {/* Enhanced spotlight effect for title */}
           <div 
-            className="absolute inset-0 -z-10"
+            className="absolute inset-0 -z-10 transition-opacity duration-300"
             style={{
-              background: `radial-gradient(circle at 50% 50%, rgba(155, 135, 245, 0.2) 0%, transparent 70%)`,
+              background: `
+                radial-gradient(circle at 50% 50%, rgba(155, 135, 245, 0.3) 0%, transparent 70%),
+                radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(155, 135, 245, 0.15) 0%, transparent 40%)
+              `,
+              opacity: isHovering ? 1 : 0.7,
             }}
           />
           <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
@@ -118,14 +137,23 @@ export function CanvasTimeline() {
                 e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
               }}
             >
-              {/* Card glow effect */}
-              <div className="absolute -inset-px bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-500" />
+              {/* Enhanced card glow effect */}
+              <div className="absolute -inset-px bg-gradient-to-r from-primary/30 via-purple-500/30 to-primary/30 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500" />
               
-              {/* Interactive spotlight */}
+              {/* Enhanced interactive spotlight */}
               <div 
-                className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-all duration-300"
                 style={{
-                  background: `radial-gradient(120px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(155, 135, 245, 0.15), transparent 40%)`
+                  background: `
+                    radial-gradient(150px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                      rgba(155, 135, 245, 0.25), 
+                      transparent 45%
+                    ),
+                    radial-gradient(300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                      rgba(155, 135, 245, 0.15), 
+                      transparent 35%
+                    )
+                  `
                 }}
               />
               
