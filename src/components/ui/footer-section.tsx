@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/tooltip"
 import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter } from "lucide-react"
 import { Link } from "react-router-dom"
-import { Waves } from "@/components/ui/waves-background"
 
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(true)
@@ -29,23 +28,8 @@ function Footerdemo() {
   };
 
   return (
-    <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
-      <div className="absolute inset-0 z-0">
-        <Waves
-          lineColor={isDarkMode ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)"}
-          backgroundColor="transparent"
-          waveSpeedX={0.03}
-          waveSpeedY={0.015}
-          waveAmpX={60}
-          waveAmpY={30}
-          friction={0.95}
-          tension={0.02}
-          maxCursorMove={150}
-          xGap={8}
-          yGap={24}
-        />
-      </div>
-      <div className="container relative z-10 mx-auto px-4 py-12 md:px-6 lg:px-8">
+    <footer className="border-t bg-background text-foreground transition-colors duration-300">
+      <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
             <h2 className="mb-4 text-3xl font-bold tracking-tight">Restez Connecté</h2>
@@ -56,7 +40,7 @@ function Footerdemo() {
               <Input
                 type="email"
                 placeholder="Votre email"
-                className="pr-12 backdrop-blur-sm"
+                className="pr-12"
               />
               <Button
                 type="submit"
