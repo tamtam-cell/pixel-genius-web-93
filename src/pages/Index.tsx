@@ -189,16 +189,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="relative z-[-1] bg-slate-950 w-full h-[85vh]">
+      <div className="relative z-[-1] bg-slate-950 w-full h-[100vh]">
         <div className="relative z-10 h-full flex items-center justify-center">
           <HeroSection />
         </div>
       </div>
 
-      <div className="mt-[-8rem]">
+      <div className="mt-[-8rem] w-full">
         {/* Limited Offer Section */}
         {remainingSpots > 0 && (
-          <div className="relative h-[200px] mb-8">
+          <div className="relative h-[200px] mb-8 w-full">
             <WavyBackground
               colors={["#9333EA", "#A855F7", "#C084FC", "#E879F9"]}
               waveWidth={50}
@@ -206,10 +206,10 @@ const Index = () => {
               blur={5}
               speed="slow"
               waveOpacity={0.3}
-              className="absolute inset-0 top-[250px] z-0"
+              className="absolute inset-0 top-[250px] z-0 w-full"
             />
-            <div className="relative z-10 h-full flex items-center justify-center">
-              <div className="max-w-3xl w-full mx-auto">
+            <div className="relative z-10 h-full flex items-center justify-center w-full">
+              <div className="max-w-full w-full mx-4 md:mx-8 lg:mx-12">
                 <div className="cyber-border card-hover p-6 rounded-xl text-center bg-background/40 backdrop-blur-sm">
                   <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <div className="text-left">
