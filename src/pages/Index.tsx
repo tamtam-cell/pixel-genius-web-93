@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { HeroSection } from "@/components/blocks/HeroSection";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
-import { Timeline } from "@/components/ui/timeline";
+import { SplineSceneBasic } from "@/components/blocks/SplineSceneBasic";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
@@ -604,6 +604,11 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Notre Histoire Section */}
+        <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+          <SplineSceneBasic />
+        </div>
 
         <Timeline data={timelineData} />
       </div>
