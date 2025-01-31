@@ -17,16 +17,19 @@ const Header = () => {
     <header className="fixed w-full bg-transparent z-50 border-b border-[#9b87f5]/20">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-4">
-            <div className="relative group flex items-center">
-              <img 
-                src="/lovable-uploads/3b590dfc-0a26-49a7-b634-94697cbebe72.png" 
-                alt="PixelCraftLab Logo" 
-                className="h-8 w-auto transform transition-all duration-300 group-hover:scale-105"
-              />
-              <span className="ml-3 text-xl font-bold tracking-wider uppercase text-white [text-shadow:_0_0_15px_rgb(255_255_255),_0_0_30px_rgb(255_255_255)] font-['Futura_PT']">
-                PixelCraftLab
-              </span>
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="relative group">
+              <div className="text-2xl font-bold text-white transform transition-all duration-300 group-hover:scale-105 [text-shadow:_0_0_15px_rgb(155_135_245),_0_0_30px_rgb(155_135_245)]">
+                Pixel
+                <span className="relative inline-block text-white font-bold [text-shadow:_0_0_15px_rgb(255_255_255),_0_0_30px_rgb(255_255_255)]">
+                  Craft
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#9b87f5] rounded-full opacity-75 animate-pulse"></span>
+                  <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-[#9b87f5] rounded-full opacity-20 animate-ping"></span>
+                </span>
+                <span className="text-[#9b87f5] [text-shadow:_0_0_15px_rgb(155_135_245),_0_0_30px_rgb(155_135_245)]">Lab</span>
+              </div>
+              <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#9b87f5] via-[#7E69AB] to-transparent"></div>
+              <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-[#9b87f5] to-[#6E59A5] group-hover:w-full transition-all duration-300"></div>
             </div>
           </Link>
 
