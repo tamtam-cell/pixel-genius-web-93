@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/blocks/HeroSection";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { Timeline } from "@/components/ui/timeline";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -214,6 +215,16 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
+      
+      <WavyBackground 
+        className="max-w-4xl mx-auto"
+        colors={["#9333EA", "#A855F7", "#C084FC", "#E879F9"]}
+        backgroundFill="#0A0A0A"
+        blur={5}
+        speed="slow"
+        waveWidth={100}
+        waveOpacity={0.3}
+      />
       
       {/* Limited Offer Section */}
       {remainingSpots > 0 && (
