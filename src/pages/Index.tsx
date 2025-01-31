@@ -9,7 +9,6 @@ import AnimatedGradientBackground from "@/components/ui/animated-gradient-backgr
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Timeline } from "@/components/ui/timeline";
-import { CanvasTimeline, TimelineEntry } from "@/components/blocks/CanvasTimeline";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -17,45 +16,6 @@ const Index = () => {
   const [remainingSpots, setRemainingSpots] = useState(5);
   const [selectedOffer, setSelectedOffer] = useState<string | null>(null);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
-
-  // Define timelineData with the correct type
-  const timelineData: TimelineEntry[] = [
-    {
-      title: "Collecte des Besoins",
-      description: "Nous analysons en détail vos besoins via notre formulaire intelligent sur la page Services",
-      date: "Étape 1",
-      icon: "📋",
-      content: "Utilisation d'un formulaire intelligent adaptatif"
-    },
-    {
-      title: "Design Personnalisé",
-      description: "Nos designers créent une maquette unique reflétant votre identité visuelle",
-      date: "Étape 2",
-      icon: "🎨",
-      content: "Création d'une identité visuelle unique"
-    },
-    {
-      title: "Développement Agile",
-      description: "Notre équipe développe votre site avec les dernières technologies",
-      date: "Étape 3",
-      icon: "⚡",
-      content: "Utilisation des dernières technologies web"
-    },
-    {
-      title: "Tests & Optimisation",
-      description: "Chaque fonctionnalité est rigoureusement testée pour une expérience optimale",
-      date: "Étape 4",
-      icon: "🔍",
-      content: "Tests approfondis et optimisation continue"
-    },
-    {
-      title: "Mise en Production",
-      description: "Votre site est déployé avec un support technique continu",
-      date: "Étape 5",
-      icon: "🚀",
-      content: "Déploiement sécurisé et support dédié"
-    }
-  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -291,36 +251,106 @@ const Index = () => {
     }
   ];
 
-  const processSteps = [
+  const timelineData = [
     {
-      icon: "📋",
-      title: "Collecte des Besoins",
-      description: "Nous commençons par analyser vos besoins via notre formulaire détaillé sur la page Services, permettant une compréhension approfondie de votre projet.",
-      highlight: "Formulaire intelligent adaptatif"
+      title: "2024",
+      content: (
+        <div>
+          <p className="text-muted-foreground text-sm font-normal mb-8">
+            Lancement de notre nouvelle plateforme d'innovation numérique et expansion de nos services premium
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Innovation Continue</h4>
+              <p className="text-sm text-muted-foreground">Développement de solutions sur mesure</p>
+            </div>
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Excellence Technique</h4>
+              <p className="text-sm text-muted-foreground">Adoption des dernières technologies</p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: "🎨",
-      title: "Design Personnalisé",
-      description: "Nos designers créent une maquette unique reflétant votre identité visuelle et vos objectifs commerciaux.",
-      highlight: "Design sur-mesure"
+      title: "2023",
+      content: (
+        <div>
+          <p className="text-muted-foreground text-sm font-normal mb-8">
+            Expansion majeure et reconnaissance internationale
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Croissance Rapide</h4>
+              <p className="text-sm text-muted-foreground">Doublement de notre équipe technique</p>
+            </div>
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Innovation</h4>
+              <p className="text-sm text-muted-foreground">Lancement de notre plateforme cloud</p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: "⚡",
-      title: "Développement Agile",
-      description: "Notre équipe développe votre site avec les dernières technologies, en privilégiant performance et innovation.",
-      highlight: "Technologies de pointe"
+      title: "2022",
+      content: (
+        <div>
+          <p className="text-muted-foreground text-sm font-normal mb-8">
+            Développement de solutions innovantes et expansion de notre expertise
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Nouveaux Services</h4>
+              <p className="text-sm text-muted-foreground">Introduction de l'IA dans nos solutions</p>
+            </div>
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Partenariats</h4>
+              <p className="text-sm text-muted-foreground">Collaboration avec des leaders du marché</p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: "🔍",
-      title: "Tests & Optimisation",
-      description: "Chaque fonctionnalité est rigoureusement testée pour garantir une expérience utilisateur optimale.",
-      highlight: "Qualité garantie"
+      title: "2021",
+      content: (
+        <div>
+          <p className="text-muted-foreground text-sm font-normal mb-8">
+            Consolidation de notre expertise et expansion de notre équipe
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Expertise</h4>
+              <p className="text-sm text-muted-foreground">Certification de notre équipe</p>
+            </div>
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Croissance</h4>
+              <p className="text-sm text-muted-foreground">Ouverture de nouveaux bureaux</p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: "🚀",
-      title: "Mise en Production",
-      description: "Après validation, votre site est déployé avec un support technique continu pour assurer votre satisfaction.",
-      highlight: "Support dédié"
+      title: "2020",
+      content: (
+        <div>
+          <p className="text-muted-foreground text-sm font-normal mb-8">
+            Fondation de PixelCraftLab et premiers pas dans l'innovation numérique
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Création</h4>
+              <p className="text-sm text-muted-foreground">Naissance de notre vision</p>
+            </div>
+            <div className="cyber-border p-4 rounded-xl">
+              <h4 className="text-primary font-semibold mb-2">Premiers Succès</h4>
+              <p className="text-sm text-muted-foreground">Premiers clients satisfaits</p>
+            </div>
+          </div>
+        </div>
+      ),
     }
   ];
 
@@ -520,8 +550,61 @@ const Index = () => {
           testimonials={testimonials}
         />
 
-        {/* New Canvas Timeline Section */}
-        <CanvasTimeline data={timelineData} />
+        <section className="py-24 relative overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="relative">
+              <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-primary to-purple-200 tracking-tight leading-none">
+                <span className="block text-lg text-primary/80 font-normal mb-2">Découvrez</span>
+                Technologies du Futur
+                <span className="block text-base text-muted-foreground/80 font-normal mt-4 max-w-2xl mx-auto">
+                  Innovation et Excellence Technique pour votre Succès Digital
+                </span>
+              </h2>
+              <div className="absolute -inset-x-20 -top-20 -bottom-20 opacity-50 bg-gradient-to-r from-primary/20 via-purple-500/5 to-primary/20 blur-3xl -z-10" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+              {[
+                {
+                  icon: Globe,
+                  title: "Solutions Web",
+                  description:
+                    "Applications web modernes et performantes.",
+                },
+                {
+                  icon: Computer,
+                  title: "Design Responsive",
+                  description:
+                    "Interfaces adaptatives pour tous les écrans.",
+                },
+                {
+                  icon: Smartphone,
+                  title: "Mobile First",
+                  description:
+                    "Expérience mobile optimisée en priorité.",
+                },
+                {
+                  icon: Users,
+                  title: "UX Centrée Utilisateur",
+                  description:
+                    "Design pensé pour vos utilisateurs.",
+                },
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="group relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-500 hover:bg-primary/5"
+                >
+                  <div className="relative mb-8">
+                    <div className="absolute inset-0 bg-primary/10 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
+                    <feature.icon className="relative w-16 h-16 text-primary transform group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Notre Histoire Section */}
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
