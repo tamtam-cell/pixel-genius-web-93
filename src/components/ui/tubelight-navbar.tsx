@@ -1,6 +1,4 @@
-"use client";
-
-import * as React from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 interface NavItem {
@@ -14,18 +12,13 @@ interface NavBarProps {
 }
 
 export function NavBar({ items }: NavBarProps) {
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const location = useLocation();
-  const [activeItem, setActiveItem] = React.useState(location.pathname);
-  const [hoveredItem, setHoveredItem] = React.useState<string | null>(null);
-
-  React.useEffect(() => {
-    setActiveItem(location.pathname);
-  }, [location]);
 
   return (
-    <nav className="flex items-center gap-4">
+    <nav className="flex items-center space-x-4">
       {items.map((item) => {
-        const isActive = activeItem === item.path;
+        const isActive = location.pathname === item.path;
         const isHovered = hoveredItem === item.path;
 
         return (
@@ -40,7 +33,6 @@ export function NavBar({ items }: NavBarProps) {
             onMouseEnter={() => setHoveredItem(item.path)}
             onMouseLeave={() => setHoveredItem(null)}
           >
-            {item.icon && <item.icon size={16} />}
             <span>{item.name}</span>
             {(isActive || isHovered) && (
               <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white transform origin-left transition-transform duration-300 ease-out" />
