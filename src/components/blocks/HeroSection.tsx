@@ -14,9 +14,9 @@ export function HeroSection() {
   };
 
   React.useEffect(() => {
-    // Load the Inter font
+    // Load the Playfair Display font
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
   }, []);
@@ -36,9 +36,9 @@ export function HeroSection() {
         <motion.h1
           className="mt-8 bg-gradient-to-br from-white to-white/80 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent"
         >
-          <span className="text-2xl md:text-4xl font-inter">Imaginez l'Impossible</span>
+          <span className="text-2xl md:text-4xl font-sites-web">Imaginez l'Impossible</span>
           <br />
-          <span className="text-4xl md:text-7xl font-inter tracking-tighter">Créons-le Ensemble</span>
+          <span className="text-4xl md:text-7xl font-sites-web">Créons-le Ensemble</span>
         </motion.h1>
 
         <motion.div
