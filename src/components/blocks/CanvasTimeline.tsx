@@ -57,6 +57,7 @@ const timelineData: TimelineEntry[] = [
 
 export function CanvasTimeline() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [pathPoints, setPathPoints] = useState<{ x: number; y: number }[]>([]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -72,11 +73,16 @@ export function CanvasTimeline() {
 
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Ambient light effect */}
+      {/* Path light effect */}
       <div 
-        className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+        className="fixed inset-0 z-30 pointer-events-none"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(155, 135, 245, 0.15), transparent 40%)`,
+          background: `
+            radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(155, 135, 245, 0.15), transparent 40%),
+            linear-gradient(to bottom, transparent, rgba(155, 135, 245, 0.05) 50%, transparent)
+          `,
+          maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
         }}
       />
 
@@ -116,8 +122,30 @@ export function CanvasTimeline() {
                 const y = e.clientY - rect.top;
                 e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
                 e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+
+                // Update path points for the light trail
+                setPathPoints(prev => {
+                  const newPoint = { x: e.clientX, y: e.clientY };
+                  return [...prev.slice(-5), newPoint];
+                });
               }}
             >
+              {/* Light trail effect */}
+              {pathPoints.map((point, i) => (
+                <div
+                  key={i}
+                  className="fixed pointer-events-none z-30 opacity-50 transition-opacity duration-500"
+                  style={{
+                    left: point.x - 25,
+                    top: point.y - 25,
+                    width: '50px',
+                    height: '50px',
+                    background: `radial-gradient(circle at center, rgba(155, 135, 245, ${0.2 - (i * 0.04)}) 0%, transparent 70%)`,
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                />
+              ))}
+
               {/* Card glow effect */}
               <div className="absolute -inset-px bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-500" />
               
