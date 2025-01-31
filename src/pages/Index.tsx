@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { HeroSection } from "@/components/blocks/HeroSection";
+import { GradientSection } from "@/components/blocks/GradientSection";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { Timeline } from "@/components/ui/timeline";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
@@ -214,6 +215,21 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
+      
+      <div className="flex justify-center mt-8">
+        <motion.button
+          onClick={() => navigate('/contact')}
+          className="card-hover bg-white/80 backdrop-blur-sm text-black px-8 py-3 rounded-md font-medium text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          whileHover={{ scale: 1.05 }}
+        >
+          COMMENCER
+        </motion.button>
+      </div>
+
+      <GradientSection />
       
       {/* Limited Offer Section */}
       {remainingSpots > 0 && (
