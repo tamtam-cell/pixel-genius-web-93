@@ -39,7 +39,10 @@ export function HeroSection() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="mt-8"
         >
-          <RainbowButton onClick={handleClick}>
+          <RainbowButton 
+            onClick={handleClick}
+            className="text-lg font-bold tracking-wider"
+          >
             COMMENCER
           </RainbowButton>
         </motion.div>
