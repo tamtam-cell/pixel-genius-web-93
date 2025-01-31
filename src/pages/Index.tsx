@@ -309,7 +309,7 @@ const Index = () => {
             />
             
             {offer.isPopular && (
-              <div className="absolute -top-4 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10 text-center shadow-lg">
+              <div className="absolute -top-2 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10 text-center shadow-lg">
                 Plus Populaire
               </div>
             )}
@@ -426,3 +426,4 @@ const Index = () => {
 };
 
 export default Index;
+
