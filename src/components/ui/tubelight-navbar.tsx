@@ -32,8 +32,8 @@ export function NavBar({ items }: NavBarProps) {
           <Link
             key={item.path}
             to={item.path}
-            className={`relative px-3 py-1.5 text-sm font-medium transition-colors duration-500 hover:text-[#D6BCFA] ${
-              isActive ? "text-[#D6BCFA] [text-shadow:_0_0_20px_rgb(214_188_250),_0_0_40px_rgb(214_188_250),_0_0_60px_rgb(214_188_250)]" : "text-white [text-shadow:_0_0_15px_rgb(255_255_255)]"
+            className={`relative px-3 py-1.5 text-sm font-medium transition-all duration-500 hover:text-[#D6BCFA] hover:scale-110 ${
+              isActive ? "text-[#D6BCFA] [text-shadow:_0_0_20px_rgb(214_188_250),_0_0_40px_rgb(214_188_250),_0_0_60px_rgb(214_188_250)] scale-110" : "text-white [text-shadow:_0_0_15px_rgb(255_255_255)]"
             } flex items-center gap-2`}
             onMouseEnter={() => setHoveredItem(item.path)}
             onMouseLeave={() => setHoveredItem(null)}
