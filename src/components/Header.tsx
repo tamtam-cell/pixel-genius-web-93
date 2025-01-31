@@ -44,14 +44,14 @@ const Header = () => {
 
                 {/* Logo Text */}
                 <div className="flex items-baseline">
-                  <span className="text-2xl font-light tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">
-                    nova
+                  <span className="text-2xl font-bold tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">
+                    PIXEL
                   </span>
                   <span className="text-2xl font-bold tracking-wider bg-gradient-to-r from-white to-[#9b87f5] bg-clip-text text-transparent mx-0.5 transition-all duration-300 group-hover:tracking-widest">
-                    tech
+                    CRAFT
                   </span>
-                  <span className="text-2xl font-light tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">
-                    hub
+                  <span className="text-2xl font-bold tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">
+                    LAB
                   </span>
                 </div>
               </div>
