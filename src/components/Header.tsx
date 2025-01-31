@@ -19,23 +19,33 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <div className="relative group">
-              <div className="flex items-center space-x-1">
-                <span className="text-3xl font-extrabold bg-gradient-to-r from-white via-[#9b87f5] to-white bg-clip-text text-transparent animate-gradient-x transform transition-all duration-300 group-hover:scale-105 [text-shadow:_2px_2px_4px_rgba(155,135,245,0.3)]">
-                  Pixel
-                </span>
-                <span className="relative text-3xl font-extrabold">
-                  <span className="bg-gradient-to-r from-[#9b87f5] via-white to-[#9b87f5] bg-clip-text text-transparent animate-pulse">
-                    Craft
+              <div className="flex items-center space-x-2">
+                <div className="relative">
+                  <span className="text-4xl font-black bg-gradient-to-br from-white via-[#9b87f5] to-purple-300 bg-clip-text text-transparent animate-gradient-x transform transition-all duration-500 group-hover:scale-105 [text-shadow:_4px_4px_8px_rgba(155,135,245,0.4)]">
+                    Pixel
                   </span>
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full opacity-75 animate-ping"></span>
-                  <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-[#9b87f5] rounded-full opacity-20 animate-pulse"></span>
-                </span>
-                <span className="text-3xl font-extrabold bg-gradient-to-r from-[#9b87f5] via-white to-[#9b87f5] bg-clip-text text-transparent animate-gradient-x">
-                  Lab
-                </span>
+                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-white rounded-full opacity-75 animate-ping"></div>
+                </div>
+                <div className="relative">
+                  <span className="text-4xl font-black">
+                    <span className="bg-gradient-to-r from-purple-300 via-white to-[#9b87f5] bg-clip-text text-transparent animate-pulse">
+                      Craft
+                    </span>
+                    <span className="absolute -top-2 -right-2 w-3 h-3 bg-white rounded-full opacity-60 animate-ping"></span>
+                    <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#9b87f5] rounded-full opacity-40 animate-pulse"></span>
+                  </span>
+                </div>
+                <div className="relative">
+                  <span className="text-4xl font-black bg-gradient-to-bl from-[#9b87f5] via-white to-purple-300 bg-clip-text text-transparent animate-gradient-x">
+                    Lab
+                  </span>
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full opacity-75 animate-ping"></div>
+                </div>
               </div>
-              <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#9b87f5] via-white to-[#9b87f5] opacity-50"></div>
-              <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-white via-[#9b87f5] to-white group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute -bottom-2 left-0 w-full h-[3px]">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-300 via-white to-[#9b87f5] opacity-60 blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-[#9b87f5] to-white w-0 group-hover:w-full transition-all duration-700"></div>
+              </div>
             </div>
           </Link>
 
