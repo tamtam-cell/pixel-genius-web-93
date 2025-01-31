@@ -489,12 +489,12 @@ const Index = () => {
           testimonials={testimonials}
         />
 
-        <section className="py-16 bg-background/50">
+        <section className="py-24 relative overflow-hidden">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
+            <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
               Technologies du Futur
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
               {[
                 {
                   icon: Globe,
@@ -523,11 +523,14 @@ const Index = () => {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center p-4 transition-all duration-300 hover:bg-primary/5 rounded-lg"
+                  className="group relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-500 hover:bg-primary/5"
                 >
-                  <feature.icon className="w-12 h-12 mb-4 text-primary" />
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <div className="relative mb-8">
+                    <div className="absolute inset-0 bg-primary/10 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
+                    <feature.icon className="relative w-16 h-16 text-primary transform group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
