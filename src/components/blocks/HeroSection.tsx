@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 import { useNavigate } from "react-router-dom";
-import { WavyBackground } from "@/components/ui/wavy-background";
 
 export function HeroSection() {
   const navigate = useNavigate();
@@ -27,17 +26,6 @@ export function HeroSection() {
         </motion.h1>
 
         <div className="flex justify-center mt-8">
-          <WavyBackground 
-            className="absolute -z-10 max-w-[300px]"
-            colors={["#9333EA", "#A855F7", "#C084FC", "#E879F9"]}
-            backgroundFill="#0A0A0A"
-            blur={5}
-            speed="slow"
-            waveWidth={50}
-            waveOpacity={0.3}
-            containerClassName="h-[100px]"
-          >
-          </WavyBackground>
           <motion.button
             onClick={() => navigate('/contact')}
             className="card-hover bg-white/80 backdrop-blur-sm text-black px-8 py-3 rounded-md font-medium text-lg"
