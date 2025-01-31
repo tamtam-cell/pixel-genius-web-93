@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 import { useNavigate } from "react-router-dom";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { GooeyText } from "@/components/ui/gooey-text";
 
 export function HeroSection() {
   const navigate = useNavigate();
@@ -33,13 +34,23 @@ export function HeroSection() {
         }}
         className="relative w-full h-full flex flex-col items-center justify-center"
       >
-        <motion.h1
-          className="mt-8 bg-gradient-to-br from-white to-white/80 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent"
+        <motion.div
+          className="mt-8 text-center font-medium tracking-tight"
         >
-          <span className="text-xl md:text-2xl font-sites-web">Imaginez l'Impossible</span>
-          <br />
-          <span className="text-4xl md:text-7xl font-sites-web font-semibold">Créons-le Ensemble</span>
-        </motion.h1>
+          <span className="text-xl md:text-2xl font-sites-web block mb-4 bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent">
+            Imaginez l'Impossible
+          </span>
+          <GooeyText
+            texts={["Créons", "Innovons", "Développons", "Grandissons"]}
+            morphTime={1}
+            cooldownTime={0.5}
+            className="font-sites-web font-semibold"
+            textClassName="bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent"
+          />
+          <span className="text-4xl md:text-7xl font-sites-web font-semibold block mt-4 bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent">
+            Ensemble
+          </span>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
