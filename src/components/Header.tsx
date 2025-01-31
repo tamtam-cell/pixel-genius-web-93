@@ -20,13 +20,11 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             <div className="relative group">
               <div className="flex items-center">
-                {/* Logo mis à jour */}
-                <div className="relative w-16 h-16 mr-4">
-                  <img 
-                    src="/lovable-uploads/43f7d6ac-0267-43c1-9e82-0b3b8057ea36.png" 
-                    alt="PixelCraftLab Logo"
-                    className="w-full h-full object-contain mix-blend-screen"
-                  />
+                {/* Logo créé en CSS */}
+                <div className="relative w-16 h-16 mr-4 flex items-center justify-center">
+                  <div className="absolute w-12 h-12 bg-gradient-to-br from-primary via-purple-500 to-primary/80 rounded-lg transform rotate-45 animate-pulse"></div>
+                  <div className="absolute w-8 h-8 bg-background rounded-md transform rotate-45"></div>
+                  <div className="absolute w-6 h-6 bg-gradient-to-r from-primary to-purple-500 rounded-sm transform -rotate-45"></div>
                 </div>
 
                 {/* Logo Text */}
