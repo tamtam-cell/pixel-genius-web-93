@@ -81,18 +81,25 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 origin-bottom"
+                  className="absolute inset-0 origin-bottom bg-background"
                 >
-                  <img
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    className="h-full w-full rounded-3xl object-cover object-center"
-                  />
+                  <div className="relative h-full w-full overflow-hidden rounded-3xl bg-background">
+                    <img
+                      src={testimonial.src}
+                      alt={testimonial.name}
+                      className="h-full w-full rounded-3xl object-cover object-center"
+                      style={{
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden"
+                      }}
+                    />
+                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>
           </div>
         </div>
+
         <div className="flex justify-between flex-col py-4">
           <motion.div
             key={active}
