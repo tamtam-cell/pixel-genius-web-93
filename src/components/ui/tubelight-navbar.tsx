@@ -44,7 +44,7 @@ export function NavBar({ items }: NavBarProps) {
         initial={false}
         animate={{
           width: "30px",
-          x: items.findIndex(item => item.path === location.pathname) * (16 + 48), // 16px pour space-x-4 et ~48px pour la largeur moyenne d'un lien
+          x: items.findIndex(item => item.path === location.pathname) * (16 + 48) + 24, // Ajout de 24px (la moitié de 48px) pour centrer
         }}
         transition={{
           type: "spring",
