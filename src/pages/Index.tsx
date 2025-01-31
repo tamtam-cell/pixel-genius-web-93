@@ -206,7 +206,7 @@ const Index = () => {
               blur={5}
               speed="slow"
               waveOpacity={0.3}
-              className="absolute inset-0 top-[150px] z-0"
+              className="absolute inset-0 top-[250px] z-0"
             />
             <div className="relative z-10 h-full flex items-center justify-center">
               <div className="max-w-3xl w-full mx-auto">
