@@ -167,6 +167,86 @@ const Index = () => {
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
       },
       text: "L'alliance parfaite entre expertise technique et vision stratégique pour une transformation digitale réussie.",
+    },
+    {
+      author: {
+        name: "Mathieu Dubois",
+        handle: "@mathieu.dubois@techstartup.fr",
+        avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "L'expertise technique de l'équipe a permis d'optimiser nos processus de développement de 70%. Un véritable game-changer pour notre startup !",
+    },
+    {
+      author: {
+        name: "Charlotte Martin",
+        handle: "@charlotte.martin@digitalagency.com",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "La transformation numérique de notre agence a été un succès total grâce à leur accompagnement stratégique et leur expertise technique pointue.",
+    },
+    {
+      author: {
+        name: "Alexandre Leroy",
+        handle: "@alex.leroy@innovtech.fr",
+        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "L'implémentation de leur solution d'IA a augmenté notre productivité de 45%. Un investissement qui a largement dépassé nos attentes.",
+    },
+    {
+      author: {
+        name: "Émilie Bernard",
+        handle: "@emilie.bernard@webdesign.fr",
+        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Leur approche innovante du design et du développement nous a permis de créer une expérience utilisateur exceptionnelle.",
+    },
+    {
+      author: {
+        name: "François Dupont",
+        handle: "@francois.dupont@techlead.com",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "La mise en place de leur architecture microservices a réduit nos coûts d'infrastructure de 60%. Une expertise technique remarquable.",
+    },
+    {
+      author: {
+        name: "Aurélie Rousseau",
+        handle: "@aurelie.rousseau@digital.fr",
+        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Leur solution de e-commerce personnalisée a boosté nos ventes en ligne de 85%. Un partenariat qui a transformé notre business.",
+    },
+    {
+      author: {
+        name: "Vincent Lambert",
+        handle: "@vincent.lambert@devops.fr",
+        avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "L'automatisation de nos processus DevOps a réduit notre time-to-market de 65%. Une expertise technique inégalée.",
+    },
+    {
+      author: {
+        name: "Sophie Moreau",
+        handle: "@sophie.moreau@uxdesign.com",
+        avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "La refonte UX de notre plateforme a augmenté notre taux de conversion de 40%. Un impact business significatif.",
+    },
+    {
+      author: {
+        name: "Laurent Petit",
+        handle: "@laurent.petit@startup.com",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "Leur expertise en cloud computing nous a permis de réduire nos coûts d'hébergement de 50%. Une équipe vraiment compétente.",
+    },
+    {
+      author: {
+        name: "Marie-Claire Durand",
+        handle: "@marieclaire.durand@tech.fr",
+        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      },
+      text: "L'intégration de leur solution IoT a révolutionné notre processus de production. Une innovation technique remarquable.",
     }
   ];
 
