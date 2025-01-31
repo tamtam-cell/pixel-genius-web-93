@@ -21,46 +21,38 @@ const Header = () => {
             <div className="relative group">
               <div className="flex items-center">
                 {/* Logo Symbol */}
-                <div className="relative w-12 h-12 mr-4 transform transition-all duration-1000 group-hover:rotate-[360deg]">
-                  {/* Core squares */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white to-[#9b87f5] rounded-sm rotate-45 transform transition-all duration-1000 group-hover:scale-90 group-hover:rotate-[225deg]"></div>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#9b87f5] to-purple-300 rounded-sm rotate-0 transform transition-all duration-1000 group-hover:scale-75 group-hover:rotate-[135deg]"></div>
+                <div className="relative w-12 h-12 mr-4">
+                  {/* Main shape */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white to-[#9b87f5] rounded-md transform rotate-45 group-hover:rotate-[225deg] transition-all duration-700"></div>
                   
-                  {/* Additional decorative elements */}
-                  <div className="absolute inset-[2px] bg-gradient-to-br from-white/20 to-transparent rounded-sm rotate-22.5 transform transition-all duration-1000 group-hover:rotate-[405deg] opacity-50"></div>
+                  {/* Inner shape */}
+                  <div className="absolute inset-[3px] bg-background rounded-[4px] transform rotate-45 group-hover:rotate-[225deg] transition-all duration-700">
+                    <div className="absolute inset-[3px] bg-gradient-to-tr from-[#9b87f5] to-white rounded-sm transform -rotate-90 group-hover:rotate-90 transition-all duration-700"></div>
+                  </div>
                   
-                  {/* Corner dots with individual animations */}
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#9b87f5] rounded-full animate-pulse delay-150"></div>
-                  <div className="absolute -top-1 -left-1 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse delay-300"></div>
-                  <div className="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-purple-200 rounded-full animate-pulse delay-450"></div>
-                  
-                  {/* Inner glowing effect */}
-                  <div className="absolute inset-2 bg-gradient-to-tr from-white/10 to-transparent rounded-sm blur-sm transform transition-all duration-1000 group-hover:rotate-180"></div>
+                  {/* Decorative dots */}
+                  <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-white rounded-full"></div>
+                  <div className="absolute bottom-0 left-0 w-1.5 h-1.5 bg-[#9b87f5] rounded-full"></div>
                 </div>
 
                 {/* Logo Text */}
-                <div className="flex items-baseline space-x-1">
-                  <span className="text-3xl tracking-tight font-extralight text-white transition-all duration-300 group-hover:tracking-wide">
+                <div className="flex items-baseline">
+                  <span className="text-2xl font-light tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">
                     pixel
                   </span>
-                  <span className="text-3xl tracking-tight font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent transition-all duration-300 group-hover:tracking-wide">
+                  <span className="text-2xl font-bold tracking-wider bg-gradient-to-r from-white to-[#9b87f5] bg-clip-text text-transparent mx-0.5 transition-all duration-300 group-hover:tracking-widest">
                     craft
                   </span>
-                  <span className="text-3xl tracking-tight font-extralight text-white transition-all duration-300 group-hover:tracking-wide">
+                  <span className="text-2xl font-light tracking-wider text-white transition-all duration-300 group-hover:tracking-widest">
                     lab
                   </span>
                 </div>
               </div>
               
-              {/* Hover Effect Line */}
+              {/* Hover line effect */}
               <div className="absolute -bottom-1 left-0 w-full h-[2px] overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-r from-transparent via-[#9b87f5] to-transparent transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </div>
-
-              {/* Enhanced glowing background effect */}
-              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#9b87f5]/0 via-[#9b87f5]/10 to-[#9b87f5]/0 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
-              <div className="absolute inset-0 -z-20 bg-gradient-to-tr from-purple-500/0 via-purple-400/5 to-white/0 opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-1000 delay-100"></div>
             </div>
           </Link>
 
