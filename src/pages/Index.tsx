@@ -17,40 +17,6 @@ const Index = () => {
   const [selectedOffer, setSelectedOffer] = useState<string | null>(null);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
-  // Define timelineData
-  const timelineData = [
-    {
-      title: "Collecte des Besoins",
-      description: "Nous analysons en détail vos besoins via notre formulaire intelligent sur la page Services",
-      date: "Étape 1",
-      icon: "📋"
-    },
-    {
-      title: "Design Personnalisé",
-      description: "Nos designers créent une maquette unique reflétant votre identité visuelle",
-      date: "Étape 2",
-      icon: "🎨"
-    },
-    {
-      title: "Développement Agile",
-      description: "Notre équipe développe votre site avec les dernières technologies",
-      date: "Étape 3",
-      icon: "⚡"
-    },
-    {
-      title: "Tests & Optimisation",
-      description: "Chaque fonctionnalité est rigoureusement testée pour une expérience optimale",
-      date: "Étape 4",
-      icon: "🔍"
-    },
-    {
-      title: "Mise en Production",
-      description: "Votre site est déployé avec un support technique continu",
-      date: "Étape 5",
-      icon: "🚀"
-    }
-  ];
-
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
