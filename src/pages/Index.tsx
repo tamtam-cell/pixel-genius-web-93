@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/blocks/HeroSection";
 import { TestimonialsSection } from "@/components/blocks/testimonials-with-marquee";
 import { Timeline } from "@/components/ui/timeline";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -217,25 +218,36 @@ const Index = () => {
       <div className="mt-[-2rem]">
         {/* Limited Offer Section */}
         {remainingSpots > 0 && (
-          <div className="cyber-border card-hover p-6 rounded-xl text-center mb-8 max-w-3xl mx-auto bg-background/40 backdrop-blur-sm">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="text-left">
-                <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-                  Offre Limitée ! Plus que {remainingSpots} place{remainingSpots > 1 ? 's' : ''} disponibles
-                </h3>
-                <p className="text-purple-200/80 text-sm">
-                  Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
-                </p>
+          <WavyBackground
+            colors={["#9333EA", "#A855F7", "#C084FC", "#E879F9"]}
+            waveWidth={50}
+            backgroundFill="#0A0A0A"
+            blur={5}
+            speed="slow"
+            waveOpacity={0.3}
+            className="w-full"
+            containerClassName="max-w-3xl mx-auto"
+          >
+            <div className="cyber-border card-hover p-6 rounded-xl text-center mb-8 bg-background/40 backdrop-blur-sm">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="text-left">
+                  <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
+                    Offre Limitée ! Plus que {remainingSpots} place{remainingSpots > 1 ? 's' : ''} disponibles
+                  </h3>
+                  <p className="text-purple-200/80 text-sm">
+                    Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
+                  </p>
+                </div>
+                <button
+                  onClick={handleOfferClick}
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)]"
+                >
+                  J'en profite
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
-              <button
-                onClick={handleOfferClick}
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)]"
-              >
-                J'en profite
-                <ArrowRight className="w-4 h-4" />
-              </button>
             </div>
-          </div>
+          </WavyBackground>
         )}
       </div>
 
