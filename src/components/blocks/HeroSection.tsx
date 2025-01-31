@@ -2,8 +2,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <LampContainer>
       <div className="relative w-full h-full">
@@ -21,6 +25,21 @@ export function HeroSection() {
           <br />
           <span className="text-4xl md:text-7xl">Créons-le Ensemble</span>
         </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          className="mt-12 flex justify-center"
+        >
+          <Button
+            onClick={() => navigate('/contact')}
+            size="lg"
+            className="text-lg font-semibold"
+          >
+            COMMENCER
+          </Button>
+        </motion.div>
       </div>
     </LampContainer>
   );
