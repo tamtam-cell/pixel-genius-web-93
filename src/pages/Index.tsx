@@ -11,6 +11,7 @@ import { WavyBackground } from "@/components/ui/wavy-background";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Timeline } from "@/components/ui/timeline";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -401,12 +402,21 @@ const Index = () => {
         {/* Pricing Cards with Scroll Animation */}
         <ContainerScroll
           titleComponent={
-            <h1 className="text-4xl font-semibold text-foreground mb-8">
-              Nos Offres <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
-                Sur Mesure
-              </span>
-            </h1>
+            <>
+              <h1 className="text-4xl font-semibold text-foreground mb-8">
+                Nos Offres <br />
+                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
+                  Sur Mesure
+                </span>
+              </h1>
+              
+              <div className="text-center space-y-4 mb-12">
+                <p className="text-lg font-medium">Pas convaincu? Appellez-nous!</p>
+                <Button asChild variant="outline" className="mx-auto">
+                  <Link to="/contact">Nous Contacter</Link>
+                </Button>
+              </div>
+            </>
           }
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-h-[600px] overflow-y-auto p-4 scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent">
@@ -623,3 +633,4 @@ const Index = () => {
 };
 
 export default Index;
+
