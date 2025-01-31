@@ -10,7 +10,7 @@ export function HeroSection() {
 
   return (
     <LampContainer>
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full min-h-[600px]">
         <Waves
           lineColor={theme === "dark" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)"}
           backgroundColor="transparent"
@@ -23,7 +23,7 @@ export function HeroSection() {
           maxCursorMove={120}
           xGap={12}
           yGap={36}
-          className="absolute inset-0 h-full"
+          className="absolute inset-0 h-full w-full"
         />
         <motion.h1
           initial={{ opacity: 0.5, y: 100 }}
