@@ -89,15 +89,7 @@ export default {
             'background-size': '200% 200%',
             'background-position': 'left center'
           },
-          '25%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          },
           '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '75%': {
             'background-size': '200% 200%',
             'background-position': 'right center'
           },
@@ -111,7 +103,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'marquee': 'marquee var(--duration) linear infinite',
-        'gradient-x': 'gradient-x 8s ease-in-out infinite',
+        'gradient-x': 'gradient-x 3s ease-in-out infinite',
       }
     }
   },

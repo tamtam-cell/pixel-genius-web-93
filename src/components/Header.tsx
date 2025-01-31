@@ -17,34 +17,28 @@ const Header = () => {
     <header className="fixed w-full bg-transparent z-50 border-b border-[#9b87f5]/20">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center">
             <div className="relative group">
-              <div className="flex items-center space-x-2">
-                <div className="relative">
-                  <span className="text-4xl font-black bg-gradient-to-br from-white via-[#9b87f5] to-purple-300 bg-clip-text text-transparent animate-gradient-x transform transition-all duration-500 group-hover:scale-105 [text-shadow:_4px_4px_8px_rgba(155,135,245,0.4)]">
-                    Pixel
-                  </span>
-                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-white rounded-full opacity-75 animate-ping"></div>
-                </div>
-                <div className="relative">
-                  <span className="text-4xl font-black">
-                    <span className="bg-gradient-to-r from-purple-300 via-white to-[#9b87f5] bg-clip-text text-transparent animate-pulse">
-                      Craft
-                    </span>
-                    <span className="absolute -top-2 -right-2 w-3 h-3 bg-white rounded-full opacity-60 animate-ping"></span>
-                    <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#9b87f5] rounded-full opacity-40 animate-pulse"></span>
-                  </span>
-                </div>
-                <div className="relative">
-                  <span className="text-4xl font-black bg-gradient-to-bl from-[#9b87f5] via-white to-purple-300 bg-clip-text text-transparent animate-gradient-x">
-                    Lab
-                  </span>
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full opacity-75 animate-ping"></div>
+              <div className="flex items-center">
+                <div className="relative flex items-center space-x-1">
+                  {/* Logo Symbol */}
+                  <div className="w-8 h-8 relative mr-3">
+                    <div className="absolute inset-0 bg-white rounded-sm rotate-45 transform transition-transform duration-300 group-hover:rotate-90"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5] to-purple-300 rounded-sm rotate-0 transform transition-transform duration-300 group-hover:rotate-45"></div>
+                  </div>
+                  
+                  {/* Logo Text */}
+                  <div className="flex items-baseline space-x-0">
+                    <span className="text-2xl tracking-tight font-light text-white">pixel</span>
+                    <span className="text-2xl tracking-tight font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">craft</span>
+                    <span className="text-2xl tracking-tight font-light text-white">lab</span>
+                  </div>
                 </div>
               </div>
-              <div className="absolute -bottom-2 left-0 w-full h-[3px]">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-300 via-white to-[#9b87f5] opacity-60 blur-sm"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-[#9b87f5] to-white w-0 group-hover:w-full transition-all duration-700"></div>
+              
+              {/* Hover Effect Line */}
+              <div className="absolute -bottom-1 left-0 w-full h-[1px] overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-r from-transparent via-white to-transparent transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </div>
             </div>
           </Link>
