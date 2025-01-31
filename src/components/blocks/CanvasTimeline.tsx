@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Clipboard, Palette, Code, Bug, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
 export interface TimelineEntry {
   icon: typeof Clipboard | typeof Palette | typeof Code | typeof Bug | typeof CheckCircle;
@@ -55,10 +56,39 @@ const timelineData: TimelineEntry[] = [
 ];
 
 export function CanvasTimeline() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <section className="py-24 relative overflow-hidden">
+      {/* Ambient light effect */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(155, 135, 245, 0.15), transparent 40%)`,
+        }}
+      />
+
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative">
+          {/* Spotlight effect for title */}
+          <div 
+            className="absolute inset-0 -z-10"
+            style={{
+              background: `radial-gradient(circle at 50% 50%, rgba(155, 135, 245, 0.2) 0%, transparent 70%)`,
+            }}
+          />
           <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
             Notre Parcours de Création
           </h2>
@@ -76,12 +106,28 @@ export function CanvasTimeline() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
               className={cn(
-                "cyber-border relative",
+                "cyber-border relative group",
                 index % 2 === 0 ? "ml-0 mr-auto" : "ml-auto mr-0",
                 "max-w-3xl w-full"
               )}
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+                e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+              }}
             >
+              {/* Card glow effect */}
               <div className="absolute -inset-px bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-500" />
+              
+              {/* Interactive spotlight */}
+              <div 
+                className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: `radial-gradient(120px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(155, 135, 245, 0.15), transparent 40%)`
+                }}
+              />
               
               <div className="relative flex flex-col md:flex-row gap-8 p-6 bg-background/40 backdrop-blur-sm rounded-xl">
                 {item.image && (
