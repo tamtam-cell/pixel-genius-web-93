@@ -244,9 +244,9 @@ const Index = () => {
                 <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
                   Pas convaincu? Appellez-nous!
                 </p>
-                <Button asChild variant="outline" className="mx-auto hover:bg-primary/20">
+                <RainbowButton asChild>
                   <Link to="/contact">Nous Contacter</Link>
-                </Button>
+                </RainbowButton>
               </div>
             </>
           }
