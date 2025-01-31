@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
@@ -5,7 +6,7 @@ import { LampContainer } from "@/components/ui/lamp";
 export function HeroSection() {
   return (
     <LampContainer>
-      <div className="relative w-full h-full -mt-20">
+      <div className="relative w-full h-full">
         <motion.h1
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
