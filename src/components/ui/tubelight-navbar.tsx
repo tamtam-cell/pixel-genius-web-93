@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface NavItem {
   name: string;
   path: string;
-  icon?: React.ElementType;
 }
 
 interface NavBarProps {
@@ -16,7 +16,7 @@ export function NavBar({ items }: NavBarProps) {
   const location = useLocation();
 
   return (
-    <nav className="flex items-center space-x-4">
+    <nav className="flex items-center space-x-4 relative">
       {items.map((item) => {
         const isActive = location.pathname === item.path;
         const isHovered = hoveredItem === item.path;
@@ -27,19 +27,31 @@ export function NavBar({ items }: NavBarProps) {
             to={item.path}
             className={`relative px-3 py-1.5 text-base transition-all duration-500 hover:scale-110 ${
               isActive 
-                ? "text-white scale-110" 
+                ? "text-white" 
                 : "text-white"
-            } flex items-center gap-2`}
+            }`}
             onMouseEnter={() => setHoveredItem(item.path)}
             onMouseLeave={() => setHoveredItem(null)}
           >
             <span>{item.name}</span>
-            {(isActive || isHovered) && (
-              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white transform origin-left transition-transform duration-300 ease-out" />
-            )}
           </Link>
         );
       })}
+      
+      {/* Barre qui glisse */}
+      <motion.div
+        className="absolute bottom-0 h-0.5 bg-primary"
+        initial={false}
+        animate={{
+          width: "30px",
+          x: items.findIndex(item => item.path === location.pathname) * (16 + 48), // 16px pour space-x-4 et ~48px pour la largeur moyenne d'un lien
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 500,
+          damping: 30
+        }}
+      />
     </nav>
   );
 }
