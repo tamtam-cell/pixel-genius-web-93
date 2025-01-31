@@ -1,4 +1,4 @@
-import { ArrowRight, Globe, Computer, Smartphone, Users, Clock } from "lucide-react";
+import { ArrowRight, Globe, Computer, Smartphone, Users, Clock, ShieldCheck } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
