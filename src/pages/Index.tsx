@@ -10,6 +10,7 @@ import AnimatedGradientBackground from "@/components/ui/animated-gradient-backgr
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Timeline } from "@/components/ui/timeline";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -360,42 +361,44 @@ const Index = () => {
       <HeroSection />
       <div className="mt-[-2rem]">
         {/* Limited Offer Section */}
-        {remainingSpots > 0 && (
-          <div className="relative h-[200px] mb-8">
-            <WavyBackground
-              colors={["#9333EA", "#A855F7", "#C084FC", "#E879F9"]}
-              waveWidth={50}
-              backgroundFill="#0A0A0A"
-              blur={5}
-              speed="slow"
-              waveOpacity={0.3}
-              className="absolute inset-0 -top-[300px] z-0"
-            />
-            <div className="relative z-10 h-full flex items-center justify-center">
-              <div className="max-w-3xl w-full mx-auto">
-                <div className="cyber-border card-hover p-6 rounded-xl text-center bg-background/40 backdrop-blur-sm">
-                  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div className="text-left">
-                      <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-                        Offre Limitée ! Plus que {remainingSpots} place{remainingSpots > 1 ? 's' : ''} disponibles
-                      </h3>
-                      <p className="text-purple-200/80 text-sm">
-                        Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
-                      </p>
-                    </div>
-                    <button
-                      onClick={handleOfferClick}
-                      className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)]"
-                    >
-                      J'en profite
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+
+{/* Limited Offer Section */}
+{remainingSpots > 0 && (
+  <div className="relative h-[200px] mb-8">
+    <WavyBackground
+      colors={["#9333EA", "#A855F7", "#C084FC", "#E879F9"]}
+      waveWidth={50}
+      backgroundFill="#0A0A0A"
+      blur={5}
+      speed="slow"
+      waveOpacity={0.3}
+      className="absolute inset-0 -top-[300px] z-0"
+    />
+    <div className="relative z-10 h-full flex items-center justify-center">
+      <div className="max-w-3xl w-full mx-auto">
+        <div className="cyber-border card-hover p-6 rounded-xl text-center bg-background/40 backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-left">
+              <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
+                Offre Limitée ! Plus que {remainingSpots} place{remainingSpots > 1 ? 's' : ''} disponibles
+              </h3>
+              <p className="text-purple-200/80 text-sm">
+                Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
+              </p>
             </div>
+            <RainbowButton
+              onClick={handleOfferClick}
+              className="inline-flex items-center gap-2"
+            >
+              J'en profite
+              <ArrowRight className="w-4 h-4" />
+            </RainbowButton>
           </div>
-        )}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
         {/* Pricing Cards with Scroll Animation */}
         <ContainerScroll
