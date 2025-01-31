@@ -25,7 +25,7 @@ const Header = () => {
                   <img 
                     src="/lovable-uploads/23b2c862-4d9c-4aa4-9758-102095150904.png" 
                     alt="PixelCraftLab Logo"
-                    className="w-full h-full object-contain filter hue-rotate-[20deg] brightness-110"
+                    className="w-full h-full object-contain filter hue-rotate-[280deg] brightness-150"
                   />
                 </div>
 
