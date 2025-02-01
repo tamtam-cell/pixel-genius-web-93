@@ -62,7 +62,7 @@ export const AnimatedTestimonials = ({
                     rotate: randomRotateY(),
                   }}
                   animate={{
-                    opacity: isActive(index) ? 1 : 0.3,
+                    opacity: isActive(index) ? 1 : 0,
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
                     rotate: isActive(index) ? 0 : randomRotateY(),
@@ -87,7 +87,7 @@ export const AnimatedTestimonials = ({
                     <img
                       src={testimonial.src}
                       alt={testimonial.name}
-                      className="h-full w-full rounded-3xl object-cover object-center opacity-100"
+                      className="h-full w-full rounded-3xl object-cover object-center"
                       style={{
                         backfaceVisibility: "hidden",
                         WebkitBackfaceVisibility: "hidden"
