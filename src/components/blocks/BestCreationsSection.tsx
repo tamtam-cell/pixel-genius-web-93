@@ -6,42 +6,42 @@ export function BestCreationsSection() {
     {
       title: "Restaurant Gastronomique",
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop",
-      description: "Une vitrine web exceptionnelle développée avec React et Next.js, intégrant des animations 3D personnalisées et une galerie photo haute performance. Interface primée pour son design innovant et son expérience utilisateur immersive.",
+      description: "Notre équipe a relevé un défi passionnant : traduire l'excellence culinaire en expérience digitale. En collaboration étroite avec le chef étoilé, nous avons développé une interface React/Next.js où chaque animation reflète la précision d'un geste culinaire. L'intégration d'un configurateur 3D pour la disposition des tables a particulièrement séduit le client, augmentant les réservations de 150%. Notre plus grande fierté ? Voir le restaurant afficher complet chaque soir depuis le lancement.",
       link: "#",
       type: "vitrine"
     },
     {
       title: "Studio d'Architecture",
       image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2940&auto=format&fit=crop",
-      description: "Portfolio architectural avant-gardiste utilisant Three.js pour des visualisations 3D interactives. Optimisé SEO avec plus de 200% d'augmentation du trafic organique et intégration CMS headless pour une gestion de contenu fluide.",
+      description: "Face au défi de présenter des espaces complexes en 3D, notre équipe a innové en développant une solution Three.js sur-mesure. Un moment clé fut la création d'un système de visite virtuelle temps réel, nécessitant trois mois de R&D intensive. Le résultat ? Une expérience immersive saluée par la presse spécialisée et une augmentation spectaculaire du trafic organique de 200%. Le studio nous a depuis confié la réalisation de leur application mobile.",
       link: "#",
       type: "vitrine"
     },
     {
       title: "Boutique de Mode",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop",
-      description: "E-commerce nouvelle génération avec React et Node.js. Performance exceptionnelle (score Lighthouse 98/100), intégration multi-PSP, et système de recommandation IA personnalisé augmentant les ventes de 45%.",
+      description: "L'optimisation a été notre obsession sur ce projet e-commerce. Notre équipe a passé d'innombrables nuits à peaufiner chaque milliseconde de chargement, aboutissant à un score Lighthouse de 98/100. L'intégration de notre système IA de recommandation personnalisée fut un véritable défi technique, mais quel succès ! Les ventes ont bondi de 45% dès le premier mois. Notre plus belle récompense ? Le sourire de la fondatrice découvrant les premiers résultats.",
       link: "#",
       type: "ecommerce"
     },
     {
       title: "Artisanat Local",
       image: "https://images.unsplash.com/photo-1489367874814-f5d040621dd8?q=80&w=2940&auto=format&fit=crop",
-      description: "Marketplace innovante développée avec Next.js et Stripe Connect. Système de géolocalisation avancé, chat temps réel entre artisans et clients, et dashboard analytique complet multipliant par 3 les ventes des artisans.",
+      description: "Ce projet né pendant le confinement visait à soutenir les artisans locaux. Notre équipe a développé une marketplace Next.js intégrant un système de géolocalisation complexe. Le plus grand défi ? Implémenter un chat temps réel stable entre artisans et clients, résolu après deux sprints intensifs. Aujourd'hui, la plateforme compte plus de 500 artisans actifs et leurs ventes ont triplé. Une belle histoire de résilience collective !",
       link: "#",
       type: "ecommerce"
     },
     {
       title: "Formation en Ligne",
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop",
-      description: "LMS dernière génération avec React et GraphQL. Système de progression IA, streaming vidéo adaptatif, et gamification avancée. Taux de complétion des cours augmenté de 80% grâce à l'expérience utilisateur optimisée.",
+      description: "La transformation d'une école traditionnelle en leader du digital learning fut un projet ambitieux. Notre innovation majeure ? Un système de progression IA analysant le rythme d'apprentissage de chaque étudiant. L'implémentation du streaming adaptatif fut complexe, nécessitant une collaboration étroite avec des experts en pédagogie. Résultat : le taux de complétion des cours a grimpé à 80%, un record dans le secteur. L'école est aujourd'hui citée en exemple dans le monde de l'EdTech.",
       link: "#",
       type: "digital"
     },
     {
       title: "Templates Premium",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
-      description: "Marketplace digitale exclusive construite avec Next.js et Typescript. Système de prévisualisation en temps réel, protection DRM innovante, et intégration Web3 pour les licences. Plus de 10,000 créateurs satisfaits.",
+      description: "Ce projet représentait un défi technique majeur : créer une marketplace de templates avec prévisualisation instantanée. Notre équipe a développé un système unique de protection DRM, fruit de six mois de recherche. L'intégration Web3 pour la gestion des licences fut une première dans le secteur. Aujourd'hui, avec plus de 10,000 créateurs actifs et un taux de satisfaction de 98%, la plateforme est devenue une référence. Notre fierté ? Voir des designs créés sur notre plateforme utilisés par des marques internationales.",
       link: "#",
       type: "digital"
     }
@@ -55,7 +55,7 @@ export function BestCreationsSection() {
             Nos Meilleures Créations
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-light tracking-wide">
-            Découvrez nos réalisations les plus innovantes, alliant technologie de pointe et design d'exception
+            Découvrez nos réalisations les plus innovantes, où chaque projet raconte une histoire unique d'excellence technique et de créativité
           </p>
         </div>
 
