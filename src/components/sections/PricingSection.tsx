@@ -116,7 +116,7 @@ const PricingCard = ({
         <div className="space-y-2">
           {stock <= 3 && (
             <p className="text-sm text-center font-medium bg-primary/10 py-2 rounded-md backdrop-blur-sm">
-              Plus que {stock} place{stock > 1 ? 's' : ''} !
+              Plus que {stock} place{stock > 1 ? 's' : ''} Bonus !
             </p>
           )}
         </div>
