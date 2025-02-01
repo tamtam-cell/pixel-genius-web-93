@@ -38,6 +38,18 @@ const Services = () => {
   const [showBrandFields, setShowBrandFields] = useState(false);
   const [siteType, setSiteType] = useState<"vitrine" | "ecommerce" | "service">();
 
+  useEffect(() => {
+    if (state?.scrollToCards) {
+      const cardsElement = document.querySelector('[name="offers-section"]');
+      if (cardsElement) {
+        setTimeout(() => {
+          cardsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          console.log("Scrolling to offers section");
+        }, 100);
+      }
+    }
+  }, [state?.scrollToCards]);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -72,15 +84,6 @@ const Services = () => {
     toast.success(`Offre ${offerType} sélectionnée`);
   };
 
-  useEffect(() => {
-    if (state?.scrollToCards) {
-      const cardsElement = document.querySelector('.cyber-border');
-      if (cardsElement) {
-        cardsElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-  }, [state?.scrollToCards]);
-
   return (
     <div className="w-full px-4 pt-32 pb-16">
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-white to-primary/80 bg-clip-text text-transparent font-sites-web">
@@ -105,7 +108,7 @@ const Services = () => {
                     Choisissez votre offre
                   </FormLabel>
                   <FormControl>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-8 max-w-[2000px] mx-auto">
+                    <div name="offers-section" className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-8 max-w-[2000px] mx-auto">
                       <div className="relative group">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                         <GlareCard 
