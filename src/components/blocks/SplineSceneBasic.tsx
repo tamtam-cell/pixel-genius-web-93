@@ -17,7 +17,7 @@ export function SplineSceneBasic() {
             Notre Histoire
           </h1>
           <p className="mt-4 text-neutral-300 max-w-lg leading-relaxed">
-            Depuis 2020, nous façonnons l'avenir numérique avec passion et précision. Notre voyage est une symphonie d'innovation où chaque projet devient une œuvre unique, alliant expertise technique et créativité visionnaire.
+            Depuis 2020, nous orchestrons une symphonie digitale où chaque ligne de code raconte une histoire d'excellence. Notre atelier numérique, guidé par la passion de l'innovation, transforme vos visions en expériences uniques et mémorables. C'est l'art de créer l'extraordinaire dans un monde en constante évolution.
           </p>
         </div>
 
