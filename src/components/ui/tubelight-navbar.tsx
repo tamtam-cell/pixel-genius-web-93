@@ -37,6 +37,10 @@ export function NavBar({ className }: NavBarProps) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div
       className={cn(
@@ -52,6 +56,7 @@ export function NavBar({ className }: NavBarProps) {
           <Link
             key={item.path}
             to={item.path}
+            onClick={handleClick}
             className={cn(
               "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
               "text-foreground/80 hover:text-primary",
