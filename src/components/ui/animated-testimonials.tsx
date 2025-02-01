@@ -13,7 +13,7 @@ type Testimonial = {
 };
 
 export const AnimatedTestimonials = ({
-  testimonials,
+  testimonials = [],
   className,
   autoplay = true,
 }: {
@@ -24,6 +24,11 @@ export const AnimatedTestimonials = ({
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  // Safety check - if no testimonials, return null
+  if (!testimonials || testimonials.length === 0) {
+    return null;
+  }
+
   // Convert testimonials to people format for AnimatedTooltip
   const people = testimonials.map((t, index) => ({
     id: index + 1,
@@ -33,13 +38,13 @@ export const AnimatedTestimonials = ({
   }));
 
   useEffect(() => {
-    if (autoplay) {
+    if (autoplay && testimonials.length > 1) {
       const interval = setInterval(() => {
         handleNext();
       }, 10000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, testimonials.length]);
 
   const handleNext = () => {
     setDirection(1);
@@ -58,6 +63,12 @@ export const AnimatedTestimonials = ({
       setActive((prev) => prev - 1);
     }
   };
+
+  // Get current testimonial safely
+  const currentTestimonial = testimonials[active];
+  if (!currentTestimonial) {
+    return null;
+  }
 
   return (
     <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-8", className)}>
@@ -94,9 +105,9 @@ export const AnimatedTestimonials = ({
                 className="absolute w-full h-full"
               >
                 <img
-                  src={testimonials[active].src}
+                  src={currentTestimonial.src}
                   className="object-cover object-center h-full w-full brightness-75"
-                  alt={testimonials[active].name}
+                  alt={currentTestimonial.name}
                 />
               </motion.div>
             </AnimatePresence>
@@ -115,13 +126,13 @@ export const AnimatedTestimonials = ({
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <h2 className="text-2xl font-bold text-foreground">
-              {testimonials[active].name}
+              {currentTestimonial.name}
             </h2>
             <p className="text-sm text-muted-foreground">
-              {testimonials[active].designation}
+              {currentTestimonial.designation}
             </p>
             <motion.p className="text-lg text-muted-foreground mt-4">
-              {testimonials[active].quote.split(" ").map((word, index) => (
+              {currentTestimonial.quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
