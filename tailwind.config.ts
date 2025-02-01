@@ -104,6 +104,10 @@ export default {
             'background-position': 'left center'
           }
         },
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
         rainbow: {
           "0%": { "background-position": "0%" },
           "100%": { "background-position": "200%" }
@@ -125,6 +129,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'marquee': 'marquee var(--duration) linear infinite',
         'gradient-x': 'gradient-x 8s ease-in-out infinite',
+        'grid': 'grid 15s linear infinite',
         'rainbow': 'rainbow var(--speed, 2s) infinite linear',
         'tilt': 'tilt 10s infinite linear',
       }
