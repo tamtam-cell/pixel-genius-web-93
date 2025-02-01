@@ -13,7 +13,7 @@ interface AnimatedGradientBackgroundProps {
    topOffset?: number;
 }
 
-const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
+export const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
    startingGap = 125,
    Breathing = false,
    gradientColors = [
@@ -97,5 +97,3 @@ const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
       </motion.div>
    );
 };
-
-export default AnimatedGradientBackground;
