@@ -5,13 +5,13 @@ import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
 import { GlareCard } from "@/components/ui/glare-card";
 import { ShieldCheck } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -316,9 +316,9 @@ const Services = () => {
                   />
                 )}
 
-                <Button type="submit" className="w-full">
+                <RainbowButton type="submit" className="w-full">
                   Envoyer ma demande
-                </Button>
+                </RainbowButton>
               </div>
             )}
           </div>
@@ -329,14 +329,9 @@ const Services = () => {
         <p className="text-xl font-medium text-primary/90">
           Pas convaincu? Appellez-nous!
         </p>
-        <Button 
-          asChild 
-          variant="ghost"
-          size="lg"
-          className="mx-auto text-lg font-medium hover:text-primary hover:border-primary transition-colors"
-        >
+        <RainbowButton asChild className="mx-auto">
           <Link to="/contact">Nous Contacter</Link>
-        </Button>
+        </RainbowButton>
       </div>
     </div>
   );
