@@ -4,6 +4,7 @@ import { Menu, X, Home, Users, Briefcase, Mail, Globe } from "lucide-react";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
+import { GooeyText } from "@/components/ui/gooey-text";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +21,28 @@ const Header = () => {
     setLanguage(language === 'fr' ? 'en' : 'fr');
   };
 
+  const announcementTexts = [
+    "OFFRES LIMITEES",
+    "DU A NOTRE",
+    "TOUT NOUVEAU",
+    "LANCEMENT SUR",
+    "LE MARCHE",
+    "FRANCAIS",
+    "PROFITEZ EN"
+  ];
+
   return (
     <header className="fixed w-screen left-0 top-0 bg-background/80 backdrop-blur-sm z-[999] border-b border-[#9b87f5]/20">
-      <div className="max-w-[1920px] w-full mx-auto px-8 py-2">
+      <div className="max-w-[1920px] w-full mx-auto px-8">
+        <div className="h-8 overflow-hidden">
+          <GooeyText
+            texts={announcementTexts}
+            morphTime={1}
+            cooldownTime={2}
+            className="w-full"
+            textClassName="text-sm md:text-base font-bold text-primary"
+          />
+        </div>
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
             <div className="relative group">
