@@ -24,7 +24,7 @@ const Index = () => {
         
         <PricingSection />
         
-        <div className="pb-12">
+        <div className="pb-2">
           <TestimonialsSection />
         </div>
 
