@@ -3,6 +3,9 @@ import { ThreeDPhotoCarousel } from "@/components/ui/3d-carousel";
 export function BestCreationsSection() {
   return (
     <section className="pt-4 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8e9196,#d3e4fd)]" 
+           style={{ opacity: 0.1 }} />
+      
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 space-y-6">
           <h2 className="font-sites-web text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9b87f5] via-[#7E69AB] to-[#D6BCFA] tracking-tight leading-tight">
