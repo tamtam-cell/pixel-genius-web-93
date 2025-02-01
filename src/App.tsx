@@ -11,6 +11,7 @@ import Services from "@/pages/Services";
 import Privacy from "@/pages/Privacy";
 import Cookies from "@/pages/Cookies";
 import Terms from "@/pages/Terms";
+import { TechnologiesSection } from "@/components/blocks/TechnologiesSection";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <TechnologiesSection />
         </div>
         <Toaster />
       </Router>
