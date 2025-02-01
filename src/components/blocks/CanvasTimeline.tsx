@@ -73,22 +73,22 @@ export const CanvasTimeline = () => {
     {
       title: "Découverte",
       description: "Nous prenons le temps de comprendre vos besoins et objectifs",
-      image: "/discovery.jpg",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop",
     },
     {
       title: "Conception",
       description: "Nous élaborons une solution sur mesure adaptée à vos attentes",
-      image: "/design.jpg",
+      image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2940&auto=format&fit=crop",
     },
     {
       title: "Développement",
       description: "Nous développons votre projet avec les dernières technologies",
-      image: "/development.jpg",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2969&auto=format&fit=crop",
     },
     {
       title: "Livraison",
       description: "Nous vous accompagnons dans la mise en ligne de votre projet",
-      image: "/delivery.jpg",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop",
     },
   ];
 
