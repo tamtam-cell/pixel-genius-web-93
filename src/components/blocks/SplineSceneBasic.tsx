@@ -12,7 +12,7 @@ export function SplineSceneBasic() {
       />
       
       <div className="flex h-full">
-        <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
+        <div className="flex-1 p-8 relative z-10 flex flex-col justify-center text-lg md:text-xl">
           <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
             Notre Histoire
           </h1>
