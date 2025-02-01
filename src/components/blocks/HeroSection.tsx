@@ -38,7 +38,7 @@ export function HeroSection() {
         >
           <span className="text-2xl md:text-3xl font-sites-web">Imaginez l'Impossible</span>
           <br />
-          <span className="text-5xl md:text-8xl font-sites-web font-semibold">Créons-le Ensemble</span>
+          <span className="text-5xl md:text-8xl font-sites-web font-semibold">Nous le Créerons quand Même</span>
         </motion.h1>
 
         <motion.div
