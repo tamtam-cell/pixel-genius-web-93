@@ -118,7 +118,7 @@ export function ThreeDPhotoCarousel() {
   return (
     <motion.div layout className="relative">
       <AnimatePresence mode="sync">
-        <div className="relative h-[500px] w-full overflow-hidden">
+        <div className="relative h-[500px] w-full">
           <Carousel
             handleClick={handleClick}
             controls={controls}
