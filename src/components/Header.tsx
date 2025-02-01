@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full bg-background/80 backdrop-blur-sm z-[999] border-b border-[#9b87f5]/20">
+    <header className="fixed w-screen -ml-[calc((100vw-100%)/2)] bg-background/80 backdrop-blur-sm z-[999] border-b border-[#9b87f5]/20">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
