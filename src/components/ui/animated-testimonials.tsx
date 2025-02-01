@@ -24,6 +24,14 @@ export const AnimatedTestimonials = ({
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  // Convert testimonials to people format for AnimatedTooltip
+  const people = testimonials.map((t, index) => ({
+    id: index + 1,
+    name: t.name,
+    designation: t.designation,
+    image: t.src
+  }));
+
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(() => {
