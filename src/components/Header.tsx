@@ -1,25 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Home, Users, Briefcase, Mail, Globe } from "lucide-react";
+import { Menu, X, Home, Users, Briefcase, Mail } from "lucide-react";
 import { NavBar } from "@/components/ui/tubelight-navbar";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: t("nav.home"), path: "/", icon: Home },
-    { name: t("nav.services"), path: "/services", icon: Briefcase },
-    { name: t("nav.about"), path: "/about", icon: Users },
-    { name: t("nav.contact"), path: "/contact", icon: Mail },
+    { name: "Accueil", path: "/", icon: Home },
+    { name: "Services", path: "/services", icon: Briefcase },
+    { name: "Notre histoire", path: "/about", icon: Users },
+    { name: "Contact", path: "/contact", icon: Mail },
   ];
 
   return (
@@ -57,24 +48,9 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation with Language Selector */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
             <NavBar items={navItems} />
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Globe className="h-5 w-5" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setLanguage('fr')}>
-                  🇫🇷 Français {language === 'fr' && '✓'}
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('en')}>
-                  🇬🇧 English {language === 'en' && '✓'}
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,16 +76,6 @@ const Header = () => {
                 <span>{item.name}</span>
               </Link>
             ))}
-            {/* Mobile Language Selector */}
-            <div className="px-4 pt-2 border-t border-[#9b87f5]/20">
-              <button
-                onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-                className="flex items-center gap-2 text-white"
-              >
-                <Globe size={16} />
-                <span>{language === 'fr' ? '🇬🇧 English' : '🇫🇷 Français'}</span>
-              </button>
-            </div>
           </nav>
         )}
       </div>
