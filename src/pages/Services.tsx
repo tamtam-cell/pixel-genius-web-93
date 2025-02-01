@@ -92,89 +92,92 @@ const Services = () => {
                   </FormLabel>
                   <FormControl>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                      <GlareCard 
-                        className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
-                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/30 before:to-purple-500/30 before:blur-2xl
-                        hover:before:blur-3xl hover:before:bg-gradient-to-r hover:before:from-primary/50 hover:before:to-purple-500/50 
-                        transition-all duration-300"
-                      >
-                        <div onClick={() => handleOfferSelect("complete")} className="w-full">
-                          <h3 className="text-2xl font-bold text-white mb-4">Offre Complète</h3>
-                          <div className="space-y-3 text-neutral-200">
-                            {["Design personnalisé", "Responsive design", "3 pages", "Formulaire de contact", "Optimisation SEO de base", "Support 30 jours"].map((feature, idx) => (
-                              <div key={idx} className="flex items-center gap-2">
-                                <ShieldCheck className="w-5 h-5 text-primary" />
-                                <span>{feature}</span>
-                              </div>
-                            ))}
+                      <div className="relative group">
+                        <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                        <GlareCard 
+                          className="flex flex-col items-start justify-between p-6 cursor-pointer relative"
+                          onClick={() => handleOfferSelect("complete")}
+                        >
+                          <div className="w-full">
+                            <h3 className="text-2xl font-bold text-white mb-4">Offre Complète</h3>
+                            <div className="space-y-3 text-neutral-200">
+                              {["Design personnalisé", "Responsive design", "3 pages", "Formulaire de contact", "Optimisation SEO de base", "Support 30 jours"].map((feature, idx) => (
+                                <div key={idx} className="flex items-center gap-2">
+                                  <ShieldCheck className="w-5 h-5 text-primary" />
+                                  <span>{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                            <div className="mt-6">
+                              <p className="text-2xl font-bold text-primary">849€</p>
+                              <p className="text-sm text-neutral-400 line-through">999€</p>
+                            </div>
+                            <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
+                              <p className="font-semibold text-primary">BONUS : Guide d'optimisation SEO offert (valeur 99€)</p>
+                            </div>
                           </div>
-                          <div className="mt-6">
-                            <p className="text-2xl font-bold text-primary">849€</p>
-                            <p className="text-sm text-neutral-400 line-through">999€</p>
-                          </div>
-                          <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
-                            <p className="font-semibold text-primary">BONUS : Guide d'optimisation SEO offert (valeur 99€)</p>
-                          </div>
-                        </div>
-                      </GlareCard>
+                        </GlareCard>
+                      </div>
 
-                      <GlareCard 
-                        className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
-                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/30 before:to-purple-500/30 before:blur-2xl
-                        hover:before:blur-3xl hover:before:bg-gradient-to-r hover:before:from-primary/50 hover:before:to-purple-500/50 
-                        transition-all duration-300"
-                      >
-                        <div className="absolute -top-2 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10 text-center shadow-lg">
-                          Plus Populaire
-                        </div>
-                        <div onClick={() => handleOfferSelect("premium")} className="w-full">
-                          <h3 className="text-2xl font-bold text-white mb-4">Premium</h3>
-                          <div className="space-y-3 text-neutral-200">
-                            {["Tout de l'offre Complète", "Jusqu'à 7 pages", "Blog intégré", "Animations personnalisées", "Optimisation SEO avancée", "Support 60 jours"].map((feature, idx) => (
-                              <div key={idx} className="flex items-center gap-2">
-                                <ShieldCheck className="w-5 h-5 text-primary" />
-                                <span>{feature}</span>
-                              </div>
-                            ))}
+                      <div className="relative group">
+                        <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                        <GlareCard 
+                          className="flex flex-col items-start justify-between p-6 cursor-pointer relative"
+                          onClick={() => handleOfferSelect("premium")}
+                        >
+                          <div className="absolute -top-2 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10 text-center shadow-lg">
+                            Plus Populaire
                           </div>
-                          <div className="mt-6">
-                            <p className="text-2xl font-bold text-primary">1399€</p>
-                            <p className="text-sm text-neutral-400 line-through">1699€</p>
+                          <div className="w-full">
+                            <h3 className="text-2xl font-bold text-white mb-4">Premium</h3>
+                            <div className="space-y-3 text-neutral-200">
+                              {["Tout de l'offre Complète", "Jusqu'à 7 pages", "Blog intégré", "Animations personnalisées", "Optimisation SEO avancée", "Support 60 jours"].map((feature, idx) => (
+                                <div key={idx} className="flex items-center gap-2">
+                                  <ShieldCheck className="w-5 h-5 text-primary" />
+                                  <span>{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                            <div className="mt-6">
+                              <p className="text-2xl font-bold text-primary">1399€</p>
+                              <p className="text-sm text-neutral-400 line-through">1699€</p>
+                            </div>
+                            <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
+                              <p className="font-semibold text-primary">BONUS : Formation maintenance WordPress (valeur 299€)</p>
+                            </div>
+                            <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
+                              <p className="text-primary">Passez à l'offre Magique pour seulement 500€ de plus et obtenez des pages illimitées !</p>
+                            </div>
                           </div>
-                          <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
-                            <p className="font-semibold text-primary">BONUS : Formation maintenance WordPress (valeur 299€)</p>
-                          </div>
-                          <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
-                            <p className="text-primary">Passez à l'offre Magique pour seulement 500€ de plus et obtenez des pages illimitées !</p>
-                          </div>
-                        </div>
-                      </GlareCard>
+                        </GlareCard>
+                      </div>
 
-                      <GlareCard 
-                        className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
-                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/30 before:to-purple-500/30 before:blur-2xl
-                        hover:before:blur-3xl hover:before:bg-gradient-to-r hover:before:from-primary/50 hover:before:to-purple-500/50 
-                        transition-all duration-300"
-                      >
-                        <div onClick={() => handleOfferSelect("magique")} className="w-full">
-                          <h3 className="text-2xl font-bold text-white mb-4">Magique</h3>
-                          <div className="space-y-3 text-neutral-200">
-                            {["Tout de l'offre Premium", "Pages illimitées", "E-commerce intégré", "Système de réservation", "Optimisation SEO expert", "Support 90 jours"].map((feature, idx) => (
-                              <div key={idx} className="flex items-center gap-2">
-                                <ShieldCheck className="w-5 h-5 text-primary" />
-                                <span>{feature}</span>
-                              </div>
-                            ))}
+                      <div className="relative group">
+                        <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                        <GlareCard 
+                          className="flex flex-col items-start justify-between p-6 cursor-pointer relative"
+                          onClick={() => handleOfferSelect("magique")}
+                        >
+                          <div className="w-full">
+                            <h3 className="text-2xl font-bold text-white mb-4">Magique</h3>
+                            <div className="space-y-3 text-neutral-200">
+                              {["Tout de l'offre Premium", "Pages illimitées", "E-commerce intégré", "Système de réservation", "Optimisation SEO expert", "Support 90 jours"].map((feature, idx) => (
+                                <div key={idx} className="flex items-center gap-2">
+                                  <ShieldCheck className="w-5 h-5 text-primary" />
+                                  <span>{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                            <div className="mt-6">
+                              <p className="text-2xl font-bold text-primary">1899€</p>
+                              <p className="text-sm text-neutral-400 line-through">2499€</p>
+                            </div>
+                            <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
+                              <p className="font-semibold text-primary">BONUS EXCLUSIF : Audit performance + Plan marketing (valeur 599€)</p>
+                            </div>
                           </div>
-                          <div className="mt-6">
-                            <p className="text-2xl font-bold text-primary">1899€</p>
-                            <p className="text-sm text-neutral-400 line-through">2499€</p>
-                          </div>
-                          <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
-                            <p className="font-semibold text-primary">BONUS EXCLUSIF : Audit performance + Plan marketing (valeur 599€)</p>
-                          </div>
-                        </div>
-                      </GlareCard>
+                        </GlareCard>
+                      </div>
                     </div>
                   </FormControl>
                   <FormMessage />
