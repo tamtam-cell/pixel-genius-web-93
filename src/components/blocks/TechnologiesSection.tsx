@@ -1,8 +1,17 @@
 import { GradientHeading } from "@/components/ui/gradient-heading";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
-
-// Import all the icons
-import { AppleIcon, SupabaseIcon, VercelIcon, LowesIcon, AllyLogo, PierreIcon, BMWIcon, ClaudeAIIcon, NextjsIcon, TailwindCSSIcon, UpstashIcon, TypeScriptIcon, StripeIcon, OpenAIIconBlack } from "@/components/ui/icons";
+import { 
+  AppleIcon, 
+  SupabaseIcon, 
+  VercelIcon, 
+  ClaudeAIIcon, 
+  NextjsIcon, 
+  TailwindCSSIcon, 
+  UpstashIcon, 
+  TypeScriptIcon, 
+  StripeIcon, 
+  OpenAIIconBlack 
+} from "@/components/ui/icons";
 
 const allLogos = [
   { name: "React", id: 1, img: AppleIcon },
