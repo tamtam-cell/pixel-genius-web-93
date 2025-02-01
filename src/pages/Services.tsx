@@ -71,7 +71,7 @@ const Services = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 pt-32 pb-16 max-w-4xl">
+    <div className="w-full px-4 pt-32 pb-16">
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-white to-primary/80 bg-clip-text text-transparent font-sites-web">
         Créez Votre Site Web
       </h1>
@@ -91,7 +91,7 @@ const Services = () => {
                     Choisissez votre offre
                   </FormLabel>
                   <FormControl>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-8 max-w-[2000px] mx-auto">
                       <div className="relative group">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                         <GlareCard 
