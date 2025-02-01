@@ -37,7 +37,7 @@ export const CarouselCard = ({
             transform: "translateZ(20px)",
           }}
         >
-          <span className="inline-block text-white text-xl font-bold px-4 py-2 rounded-lg shadow-lg backdrop-blur-sm">
+          <span className="inline-block text-white text-xl font-bold px-6 py-3 rounded-xl shadow-lg backdrop-blur-md bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] border border-white/20">
             {card.type}
           </span>
         </motion.div>
