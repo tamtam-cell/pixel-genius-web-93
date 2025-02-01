@@ -40,11 +40,11 @@ export const CarouselCard = ({
             transform: "translateZ(20px)",
           }}
         >
-          <div className="inline-block text-white rounded-xl bg-black border-2 border-white shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:shadow-[0_0_40px_rgba(255,255,255,0.7)] transition-all duration-300">
-            <div className="px-6 py-2 text-xl font-bold">
+          <div className="inline-block text-white rounded-xl bg-black/90 border-2 border-white shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:shadow-[0_0_40px_rgba(255,255,255,0.7)] transition-all duration-300">
+            <div className="px-8 py-3 text-xl font-bold tracking-wide font-sites-web">
               {card.type}
             </div>
-            <div className="px-4 pb-2 text-sm font-medium opacity-80">
+            <div className="px-6 pb-3 text-base font-medium tracking-wide leading-relaxed opacity-90">
               {companyName}
             </div>
           </div>
