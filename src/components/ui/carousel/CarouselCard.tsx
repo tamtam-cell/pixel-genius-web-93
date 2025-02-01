@@ -37,9 +37,14 @@ export const CarouselCard = ({
             transform: "translateZ(20px)",
           }}
         >
-          <span className="inline-block text-white text-xl font-bold px-6 py-3 rounded-xl bg-black border-2 border-white shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:shadow-[0_0_40px_rgba(255,255,255,0.7)] transition-all duration-300">
-            {card.type}
-          </span>
+          <div className="inline-block text-white rounded-xl bg-black border-2 border-white shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:shadow-[0_0_40px_rgba(255,255,255,0.7)] transition-all duration-300">
+            <div className="px-6 py-2 text-xl font-bold">
+              {card.type}
+            </div>
+            <div className="px-4 pb-2 text-sm font-medium opacity-80">
+              {card.title}
+            </div>
+          </div>
         </motion.div>
         <motion.img
           src={card.imgUrl}
