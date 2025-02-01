@@ -4,22 +4,46 @@ import { motion } from "framer-motion";
 export function BestCreationsSection() {
   const creations = [
     {
-      title: "E-commerce Luxe",
-      image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?q=80&w=2940&auto=format&fit=crop",
-      description: "Boutique en ligne haut de gamme",
-      link: "#"
+      title: "Restaurant Gastronomique",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop",
+      description: "Site vitrine élégant pour restaurant",
+      link: "#",
+      type: "vitrine"
     },
     {
-      title: "Portfolio Créatif",
-      image: "https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=2940&auto=format&fit=crop",
-      description: "Site vitrine pour artiste",
-      link: "#"
+      title: "Studio d'Architecture",
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2940&auto=format&fit=crop",
+      description: "Portfolio architectural moderne",
+      link: "#",
+      type: "vitrine"
     },
     {
-      title: "Application SaaS",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2815&auto=format&fit=crop",
-      description: "Dashboard analytics",
-      link: "#"
+      title: "Boutique de Mode",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop",
+      description: "E-commerce de vêtements luxe",
+      link: "#",
+      type: "ecommerce"
+    },
+    {
+      title: "Artisanat Local",
+      image: "https://images.unsplash.com/photo-1489367874814-f5d040621dd8?q=80&w=2940&auto=format&fit=crop",
+      description: "Marketplace artisanale",
+      link: "#",
+      type: "ecommerce"
+    },
+    {
+      title: "Formation en Ligne",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop",
+      description: "Plateforme de cours en ligne",
+      link: "#",
+      type: "digital"
+    },
+    {
+      title: "Templates Premium",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
+      description: "Marketplace de ressources digitales",
+      link: "#",
+      type: "digital"
     }
   ];
 
