@@ -40,11 +40,11 @@ const Services = () => {
 
   useEffect(() => {
     if (state?.scrollToCards) {
-      const cardsElement = document.querySelector('[name="offers-section"]');
-      if (cardsElement) {
+      const titleElement = document.querySelector('h1');
+      if (titleElement) {
         setTimeout(() => {
-          cardsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          console.log("Scrolling to offers section");
+          titleElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          console.log("Scrolling to title section");
         }, 100);
       }
     }
