@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
+import { GlareCard } from "@/components/ui/glare-card";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -80,48 +81,35 @@ const Services = () => {
                 <FormItem className="space-y-3">
                   <FormLabel>Choisissez votre offre</FormLabel>
                   <FormControl>
-                    <RadioGroup
-                      onValueChange={(value) => {
-                        field.onChange(value);
-                        handleOfferChange(value);
-                      }}
-                      defaultValue={field.value}
-                      className="flex flex-col space-y-4"
-                    >
-                      <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
-                        <FormControl>
-                          <RadioGroupItem value="complete" />
-                        </FormControl>
-                        <div className="space-y-1">
-                          <FormLabel className="font-semibold">Offre Complète</FormLabel>
-                          <p className="text-sm text-muted-foreground">
-                            Idéal pour les petites entreprises - Site simple et efficace
-                          </p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                      <GlareCard className="flex flex-col items-center justify-center cursor-pointer" onClick={() => {
+                        field.onChange("complete");
+                        handleOfferChange("complete");
+                      }}>
+                        <div className="text-center p-6">
+                          <h3 className="text-xl font-bold text-white mb-2">Offre Complète</h3>
+                          <p className="text-neutral-200">Idéal pour les petites entreprises</p>
                         </div>
-                      </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
-                        <FormControl>
-                          <RadioGroupItem value="premium" />
-                        </FormControl>
-                        <div className="space-y-1">
-                          <FormLabel className="font-semibold">Premium</FormLabel>
-                          <p className="text-sm text-muted-foreground">
-                            Pour les entreprises en croissance - Fonctionnalités avancées
-                          </p>
+                      </GlareCard>
+                      <GlareCard className="flex flex-col items-center justify-center cursor-pointer" onClick={() => {
+                        field.onChange("premium");
+                        handleOfferChange("premium");
+                      }}>
+                        <div className="text-center p-6">
+                          <h3 className="text-xl font-bold text-white mb-2">Premium</h3>
+                          <p className="text-neutral-200">Pour les entreprises en croissance</p>
                         </div>
-                      </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0 rounded-lg border p-4 hover:bg-accent">
-                        <FormControl>
-                          <RadioGroupItem value="magique" />
-                        </FormControl>
-                        <div className="space-y-1">
-                          <FormLabel className="font-semibold">Magique</FormLabel>
-                          <p className="text-sm text-muted-foreground">
-                            Solution complète pour les grandes entreprises
-                          </p>
+                      </GlareCard>
+                      <GlareCard className="flex flex-col items-center justify-center cursor-pointer" onClick={() => {
+                        field.onChange("magique");
+                        handleOfferChange("magique");
+                      }}>
+                        <div className="text-center p-6">
+                          <h3 className="text-xl font-bold text-white mb-2">Magique</h3>
+                          <p className="text-neutral-200">Solution complète pour les grandes entreprises</p>
                         </div>
-                      </FormItem>
-                    </RadioGroup>
+                      </GlareCard>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
