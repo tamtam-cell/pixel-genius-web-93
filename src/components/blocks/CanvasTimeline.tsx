@@ -73,12 +73,12 @@ export const CanvasTimeline = () => {
     {
       title: "Découverte",
       description: "Nous prenons le temps de comprendre vos besoins et objectifs",
-      image: "/discovery.jpg",
+      image: "/lovable-uploads/23b2c862-4d9c-4aa4-9758-102095150904.png",
     },
     {
       title: "Conception",
       description: "Nous élaborons une solution sur mesure adaptée à vos attentes",
-      image: "/design.jpg",
+      image: "/lovable-uploads/43f7d6ac-0267-43c1-9e82-0b3b8057ea36.png",
     },
     {
       title: "Développement",
