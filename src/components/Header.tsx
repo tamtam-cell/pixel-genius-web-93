@@ -1,17 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Home, Users, Briefcase, Mail } from "lucide-react";
+import { Menu, X, Home, Users, Briefcase, Mail, Globe } from "lucide-react";
 import { NavBar } from "@/components/ui/tubelight-navbar";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: "Accueil", path: "/", icon: Home },
-    { name: "Services", path: "/services", icon: Briefcase },
-    { name: "Notre histoire", path: "/about", icon: Users },
-    { name: "Contact", path: "/contact", icon: Mail },
+    { name: t("nav.home"), path: "/", icon: Home },
+    { name: t("nav.services"), path: "/services", icon: Briefcase },
+    { name: t("nav.about"), path: "/about", icon: Users },
+    { name: t("nav.contact"), path: "/contact", icon: Mail },
   ];
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'fr' ? 'en' : 'fr');
+  };
 
   return (
     <header className="fixed w-full bg-background/80 backdrop-blur-sm z-[999] border-b border-[#9b87f5]/20">
@@ -49,8 +56,17 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex md:items-center md:space-x-4">
             <NavBar items={navItems} />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleLanguage}
+              className="ml-4"
+            >
+              <Globe className="h-5 w-5" />
+              <span className="ml-2">{language.toUpperCase()}</span>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,6 +92,13 @@ const Header = () => {
                 <span>{item.name}</span>
               </Link>
             ))}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 nav-link px-4 text-white w-full"
+            >
+              <Globe size={16} />
+              <span>{language === 'fr' ? 'English' : 'Français'}</span>
+            </button>
           </nav>
         )}
       </div>
