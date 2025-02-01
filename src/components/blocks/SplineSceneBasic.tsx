@@ -6,9 +6,6 @@ import { Spotlight } from "@/components/ui/spotlight";
 export function SplineSceneBasic() {
   return (
     <Card className="w-full h-[500px] bg-slate-950 relative overflow-hidden border-0">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(109.6deg,rgba(223,234,247,1)_11.2%,rgba(244,248,252,1)_91.1%)]" 
-           style={{ opacity: 0.05 }} />
-      
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
