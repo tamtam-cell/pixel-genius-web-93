@@ -124,7 +124,7 @@ export const PricingSection = () => {
 
   const handleOfferClick = () => {
     console.log("Redirecting to services page...");
-    navigate('/services');
+    navigate('/services', { state: { scrollToCards: true } });
   };
 
   const pricingData = [

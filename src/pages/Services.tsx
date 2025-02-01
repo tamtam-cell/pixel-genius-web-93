@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -11,6 +11,7 @@ import { ShieldCheck } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { SparklesText } from "@/components/ui/sparkles-text";
+import { useLocation } from "react-router-dom";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -31,6 +32,8 @@ const formSchema = z.object({
 });
 
 const Services = () => {
+  const location = useLocation();
+  const state = location.state as { scrollToCards?: boolean };
   const [showSiteTypeFields, setShowSiteTypeFields] = useState(false);
   const [showBrandFields, setShowBrandFields] = useState(false);
   const [siteType, setSiteType] = useState<"vitrine" | "ecommerce" | "service">();
@@ -68,6 +71,15 @@ const Services = () => {
     setShowSiteTypeFields(true);
     toast.success(`Offre ${offerType} sélectionnée`);
   };
+
+  useEffect(() => {
+    if (state?.scrollToCards) {
+      const cardsElement = document.querySelector('.cyber-border');
+      if (cardsElement) {
+        cardsElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  }, [state?.scrollToCards]);
 
   return (
     <div className="w-full px-4 pt-32 pb-16">

@@ -10,7 +10,7 @@ export function HeroSection() {
 
   const handleClick = () => {
     console.log("Button clicked, navigating to /services");
-    navigate("/services");
+    navigate('/services', { state: { scrollToCards: true } });
   };
 
   React.useEffect(() => {
