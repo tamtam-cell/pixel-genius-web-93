@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
@@ -23,8 +22,8 @@ const formSchema = z.object({
   brandName: z.string().min(2, {
     message: "Le nom de la marque doit contenir au moins 2 caractères",
   }),
-  brandColor: z.string({
-    required_error: "Veuillez sélectionner une couleur",
+  brandColor: z.string().min(3, {
+    message: "Veuillez entrer une couleur valide (ex: #FF0000, red, rgb(255,0,0))",
   }),
   serviceDescription: z.string().optional(),
   productDescription: z.string().optional(),
@@ -257,20 +256,17 @@ const Services = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Couleur principale de votre marque</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Choisissez une couleur" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="color-1">Rouge</SelectItem>
-                          <SelectItem value="color-2">Violet</SelectItem>
-                          <SelectItem value="color-3">Bleu</SelectItem>
-                          <SelectItem value="color-4">Turquoise</SelectItem>
-                          <SelectItem value="color-5">Vert</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <FormControl>
+                        <Input 
+                          type="text" 
+                          placeholder="Entrez une couleur (ex: #FF0000, red, rgb(255,0,0))" 
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(e);
+                            console.log("Couleur saisie:", e.target.value);
+                          }}
+                        />
+                      </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
