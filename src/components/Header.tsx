@@ -37,10 +37,10 @@ const Header = () => {
         <div className="h-12 overflow-hidden flex items-center">
           <GooeyText
             texts={announcementTexts}
-            morphTime={0.4}
-            cooldownTime={0.4}
+            morphTime={0.5}
+            cooldownTime={0.5}
             className="w-full"
-            textClassName="text-sm md:text-base font-bold text-primary"
+            textClassName="text-base md:text-xl font-bold text-primary"
           />
         </div>
         <div className="flex justify-between items-center h-16">
