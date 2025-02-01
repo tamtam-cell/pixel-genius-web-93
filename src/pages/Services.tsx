@@ -6,11 +6,11 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
-import { Link } from "react-router-dom";
 import { GlareCard } from "@/components/ui/glare-card";
 import { ShieldCheck } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -74,9 +74,12 @@ const Services = () => {
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-white to-primary/80 bg-clip-text text-transparent font-sites-web">
         Créez Votre Site Web
       </h1>
-      <p className="text-center text-lg md:text-xl text-primary/90 mb-12 font-medium">
-        Suivez les étapes ci-dessous pour nous aider à comprendre votre projet
-      </p>
+      <SparklesText 
+        text="Suivez les étapes ci-dessous pour nous aider à comprendre votre projet"
+        className="text-center text-lg md:text-xl text-primary/90 mb-12 font-medium"
+        colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
+        sparklesCount={15}
+      />
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
