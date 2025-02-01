@@ -10,8 +10,8 @@ import { HeroSection } from "@/components/blocks/HeroSection";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <div className="relative bg-slate-950 w-screen h-[85vh] overflow-hidden">
-        <div className="relative h-full flex items-center justify-center w-screen">
+      <div className="relative bg-slate-950 w-screen h-[85vh] overflow-hidden -ml-[calc((100vw-100%)/2)]">
+        <div className="relative h-full flex items-center justify-center">
           <HeroSection />
         </div>
       </div>
@@ -21,7 +21,7 @@ const Index = () => {
           remainingSpots={5}
           onOfferClick={() => console.log("Offer clicked")}
         />
-
+        
         <PricingSection />
         
         <TestimonialsSection />
