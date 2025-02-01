@@ -72,8 +72,10 @@ const Services = () => {
 
   return (
     <div className="container mx-auto px-4 pt-32 pb-16 max-w-4xl">
-      <h1 className="text-4xl font-bold text-center mb-8">Créez Votre Site Web</h1>
-      <p className="text-center text-muted-foreground mb-12">
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-white to-primary/80 bg-clip-text text-transparent font-sites-web">
+        Créez Votre Site Web
+      </h1>
+      <p className="text-center text-lg md:text-xl text-primary/90 mb-12 font-medium">
         Suivez les étapes ci-dessous pour nous aider à comprendre votre projet
       </p>
 
@@ -324,8 +326,14 @@ const Services = () => {
       </Form>
 
       <div className="mt-16 text-center space-y-4">
-        <p className="text-lg font-medium">Pas convaincu? Appellez-nous!</p>
-        <Button asChild variant="outline" className="mx-auto">
+        <p className="text-xl font-medium text-primary/90">
+          Pas convaincu? Appellez-nous!
+        </p>
+        <Button 
+          asChild 
+          variant="outline" 
+          className="mx-auto text-lg font-medium hover:text-primary hover:border-primary transition-colors"
+        >
           <Link to="/contact">Nous Contacter</Link>
         </Button>
       </div>
