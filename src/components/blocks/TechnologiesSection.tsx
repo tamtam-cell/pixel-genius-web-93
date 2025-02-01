@@ -1,59 +1,41 @@
-import { Globe, Computer, Smartphone, Users } from "lucide-react";
+import { GradientHeading } from "@/components/ui/gradient-heading";
+import { LogoCarousel } from "@/components/ui/logo-carousel";
 
-export function TechnologiesSection() {
-  const features = [
-    {
-      icon: Globe,
-      title: "Solutions Web",
-      description: "Applications web modernes et performantes.",
-    },
-    {
-      icon: Computer,
-      title: "Design Responsive",
-      description: "Interfaces adaptatives pour tous les écrans.",
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile First",
-      description: "Expérience mobile optimisée en priorité.",
-    },
-    {
-      icon: Users,
-      title: "UX Centrée Utilisateur",
-      description: "Design pensé pour vos utilisateurs.",
-    },
-  ];
+// Import all the icons
+import { AppleIcon, SupabaseIcon, VercelIcon, LowesIcon, AllyLogo, PierreIcon, BMWIcon, ClaudeAIIcon, NextjsIcon, TailwindCSSIcon, UpstashIcon, TypeScriptIcon, StripeIcon, OpenAIIconBlack } from "@/components/ui/icons";
 
+const allLogos = [
+  { name: "React", id: 1, img: AppleIcon },
+  { name: "Next.js", id: 2, img: NextjsIcon },
+  { name: "TypeScript", id: 3, img: TypeScriptIcon },
+  { name: "Tailwind CSS", id: 4, img: TailwindCSSIcon },
+  { name: "Supabase", id: 5, img: SupabaseIcon },
+  { name: "Vercel", id: 6, img: VercelIcon },
+  { name: "OpenAI", id: 7, img: OpenAIIconBlack },
+  { name: "Stripe", id: 8, img: StripeIcon },
+  { name: "Upstash", id: 9, img: UpstashIcon },
+  { name: "Claude AI", id: 10, img: ClaudeAIIcon },
+];
+
+export const TechnologiesSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="w-full bg-slate-50/50 py-20">
       <div className="container mx-auto px-4">
-        <div className="relative">
-          <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-primary to-purple-200 tracking-tight leading-none">
-            <span className="block text-lg text-primary/80 font-normal mb-2">Découvrez</span>
-            Technologies du Futur
-            <span className="block text-base text-muted-foreground/80 font-normal mt-4 max-w-2xl mx-auto">
-              Innovation et Excellence Technique pour votre Succès Digital
-            </span>
-          </h2>
-          <div className="absolute -inset-x-20 -top-20 -bottom-20 opacity-50 bg-gradient-to-r from-primary/20 via-purple-500/5 to-primary/20 blur-3xl -z-10" />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-500 hover:bg-primary/5"
-            >
-              <div className="relative mb-8">
-                <div className="absolute inset-0 bg-primary/10 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
-                <feature.icon className="relative w-16 h-16 text-primary transform group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-foreground">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+        <div className="space-y-8 py-12">
+          <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center space-y-8">
+            <div className="text-center">
+              <GradientHeading variant="secondary" size="lg">
+                Technologies de pointe
+              </GradientHeading>
+              <GradientHeading size="xxl" className="mt-4">
+                Notre Stack Technique
+              </GradientHeading>
             </div>
-          ))}
+
+            <LogoCarousel columnCount={4} logos={allLogos} />
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
