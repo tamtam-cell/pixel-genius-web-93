@@ -73,27 +73,27 @@ export const CanvasTimeline = () => {
     {
       title: "Découverte",
       description: "Nous prenons le temps de comprendre vos besoins et objectifs",
-      image: "/photo-1486312338219-ce68d2c6f44d",
+      image: "/discovery.jpg",
     },
     {
       title: "Conception",
       description: "Nous élaborons une solution sur mesure adaptée à vos attentes",
-      image: "/photo-1581091226825-a6a2a5aee158",
+      image: "/design.jpg",
     },
     {
       title: "Développement",
       description: "Nous développons votre projet avec les dernières technologies",
-      image: "/photo-1487058792275-0ad4aaf24ca7",
+      image: "/development.jpg",
     },
     {
       title: "Livraison",
       description: "Nous vous accompagnons dans la mise en ligne de votre projet",
-      image: "/photo-1498050108023-c5249f4df085",
+      image: "/delivery.jpg",
     },
   ];
 
   return (
-    <section className="pt-4 relative overflow-hidden">
+    <section className="pt-4 relative overflow-hidden min-h-screen">
       <Spotlight
         className="-top-40 left-0"
         fill="white"
@@ -126,30 +126,50 @@ export const CanvasTimeline = () => {
             </motion.p>
           </div>
 
-          <div className="mx-auto mt-16 grid max-w-container gap-8 px-4 sm:grid-cols-2 md:grid-cols-4">
+          <div className="relative mx-auto mt-16 max-w-container px-4">
+            {/* Ligne de connexion */}
+            <div className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-primary/20" />
+            
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
                 className={cn(
-                  "relative flex flex-col items-center gap-4 rounded-lg border p-8 text-center"
+                  "relative mb-20 flex items-center gap-8",
+                  i % 2 === 0 ? "flex-row" : "flex-row-reverse"
                 )}
               >
-                <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="object-cover w-full h-full"
-                  />
+                {/* Point sur la ligne */}
+                <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary" />
+                
+                {/* Contenu */}
+                <div className={cn(
+                  "w-1/2",
+                  i % 2 === 0 ? "text-right pr-12" : "text-left pl-12"
+                )}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="rounded-lg border bg-background/50 backdrop-blur-sm p-6"
+                  >
+                    <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-semibold text-primary-foreground mx-auto">
+                      {i + 1}
+                    </div>
+                    <h3 className="text-xl font-semibold mt-4">{step.title}</h3>
+                    <p className="text-muted-foreground mt-2">{step.description}</p>
+                  </motion.div>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-semibold text-primary-foreground">
-                  {i + 1}
-                </div>
-                <h3 className="text-xl font-semibold">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+                
+                {/* Espace pour la ligne centrale */}
+                <div className="w-1/2" />
               </motion.div>
             ))}
           </div>
