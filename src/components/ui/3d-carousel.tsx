@@ -184,37 +184,37 @@ export function ThreeDPhotoCarousel() {
       imgUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop",
       type: "E-commerce",
       title: "Le Restaurant Gastronomique en Ligne",
-      story: "Notre équipe a eu le plaisir de créer cette plateforme e-commerce pour un restaurant gastronomique prestigieux. Le défi était de transmettre l'élégance et le raffinement de l'établissement à travers une expérience d'achat en ligne. Nos designers ont travaillé en étroite collaboration avec les chefs pour capturer l'essence de chaque plat dans une présentation visuelle impeccable. L'interface intuitive permet aux clients de commander facilement leurs plats préférés pour une livraison à domicile."
+      story: "En tant que lead développeur sur ce projet, j'ai eu le privilège de travailler avec une équipe passionnée pour créer cette plateforme e-commerce unique. Je me souviens encore de notre première réunion avec le chef étoilé, ses yeux brillaient quand il nous parlait de sa vision. Notre designer Sarah a passé des heures à photographier chaque plat sous le meilleur angle, pendant que notre équipe UX peaufinait chaque détail de l'expérience de commande. Ce qui m'a le plus marqué, c'est la joie des premiers clients qui nous ont dit avoir retrouvé l'élégance du restaurant jusque dans leur salon."
     },
     {
       imgUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2940&auto=format&fit=crop",
       type: "Vitrine",
       title: "L'Architecte Visionnaire",
-      story: "Ce site vitrine représente la vision créative d'un cabinet d'architecture moderne. Notre équipe de développement a créé une expérience immersive où chaque scroll révèle de nouveaux aspects des projets architecturaux. Les animations fluides et la navigation intuitive permettent aux visiteurs de découvrir le portfolio de manière organique. Un véritable défi technique qui a permis de mettre en valeur des années de créations architecturales exceptionnelles."
+      story: "Ce projet a été une véritable aventure créative pour notre équipe. En tant que designer principal, j'ai travaillé main dans la main avec Thomas, notre développeur front-end, pour donner vie à chaque animation. Je me rappelle nos longues sessions de brainstorming, entourés de croquis et de maquettes. Le plus grand défi ? Capturer l'essence de chaque bâtiment tout en gardant une navigation fluide. Quand l'architecte a vu le résultat final, son émotion nous a tous touchés. C'est pour ces moments-là qu'on aime notre métier !"
     },
     {
       imgUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop",
       type: "Digital",
       title: "La Formation en Ligne Interactive",
-      story: "Cette plateforme de formation digitale a été un projet passionnant pour notre équipe. Nous avons développé un système d'apprentissage interactif qui s'adapte au rythme de chaque utilisateur. Les cours vidéo, les quiz interactifs et le suivi de progression ont été intégrés de manière fluide. Notre équipe UX a particulièrement travaillé sur l'engagement des utilisateurs pour maintenir leur motivation tout au long du parcours d'apprentissage."
+      story: "En tant que spécialiste UX, ce projet de plateforme éducative m'a particulièrement tenu à cœur. Notre équipe a passé des semaines à interviewer des apprenants pour comprendre leurs frustrations avec l'e-learning traditionnel. Je me souviens de Julie, notre développeuse, restant tard le soir pour perfectionner le système de progression personnalisée. Le plus gratifiant ? Recevoir des messages d'étudiants nous disant qu'ils avaient enfin trouvé une façon d'apprendre qui leur correspondait. C'est ça, pour nous, le vrai succès !"
     },
     {
       imgUrl: "https://images.unsplash.com/photo-1489367874814-f5d040621dd8?q=80&w=2940&auto=format&fit=crop",
       type: "E-commerce",
       title: "La Boutique de Mode Éthique",
-      story: "Ce projet e-commerce pour une marque de mode éthique a été un véritable défi créatif. Notre équipe a développé une expérience d'achat qui met en avant l'engagement écologique de la marque. Chaque produit raconte son histoire, de sa conception à sa fabrication responsable. L'interface épurée et les animations subtiles guident naturellement les utilisateurs vers une expérience d'achat consciente et réfléchie."
+      story: "Ce projet a vraiment changé ma vision du e-commerce. En tant que chef de projet, j'ai été impressionné par l'engagement de la marque pour la transparence. Notre équipe a créé un véritable parcours de découverte : Maxime, notre développeur, a intégré des vidéos montrant les artisans au travail, pendant que Sophie, notre UX writer, racontait l'histoire de chaque pièce. Les retours des clients nous ont confirmé que nous avions réussi à créer plus qu'une boutique en ligne : une véritable expérience éthique et humaine."
     },
     {
       imgUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop",
       type: "Vitrine",
       title: "Le Studio de Design Innovant",
-      story: "Pour ce studio de design, nous avons créé un site vitrine qui reflète leur approche créative unique. L'interface minimaliste met en valeur leurs projets tout en intégrant des interactions subtiles qui surprennent et engagent les visiteurs. Notre équipe de développement a particulièrement travaillé sur la performance et l'optimisation pour garantir une expérience fluide sur tous les appareils."
+      story: "En tant que directeur artistique, ce projet représentait un défi excitant : comment traduire la créativité débordante d'un studio de design en une expérience web cohérente ? Notre équipe a osé sortir des sentiers battus. Je revois encore Lucas, notre développeur créatif, expérimenter pendant des heures pour créer ces interactions uniques. Marie, notre designer UI, a su trouver le parfait équilibre entre originalité et utilisabilité. Le résultat ? Un site qui surprend et inspire, tout comme le studio qu'il représente."
     },
     {
       imgUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
       type: "Digital",
       title: "L'Application de Bien-être Mental",
-      story: "Cette application de bien-être mental a été un projet très enrichissant. Notre équipe a collaboré avec des psychologues pour créer une expérience numérique apaisante et thérapeutique. Les animations douces, les transitions fluides et l'interface intuitive ont été conçues pour réduire l'anxiété des utilisateurs. Un bel exemple de technologie mise au service du bien-être humain."
+      story: "Ce projet restera gravé dans ma mémoire. En tant que lead développeur, j'ai collaboré étroitement avec une équipe de psychologues pour créer quelque chose de vraiment significatif. Claire, notre experte en accessibilité, a veillé à ce que l'application soit accueillante pour tous. Le plus touchant ? Les messages des utilisateurs nous racontant comment l'application les aide dans leur quotidien. C'est dans ces moments-là qu'on réalise l'impact réel de notre travail sur la vie des gens."
     }
   ]
 
