@@ -1,13 +1,17 @@
 import { cn } from "@/lib/utils";
 import { useRef } from "react";
 
+interface GlareCardProps {
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+}
+
 export const GlareCard = ({
   children,
   className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+  onClick,
+}: GlareCardProps) => {
   const isPointerInside = useRef(false);
   const refElement = useRef<HTMLDivElement>(null);
   const state = useRef({
@@ -67,8 +71,9 @@ export const GlareCard = ({
   return (
     <div
       style={containerStyle}
-      className="relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[320px] [aspect-ratio:17/21]"
+      className="relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-full [aspect-ratio:16/21]"
       ref={refElement}
+      onClick={onClick}
       onPointerMove={(event) => {
         const rotateFactor = 0.4;
         const rect = event.currentTarget.getBoundingClientRect();

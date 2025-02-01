@@ -2,7 +2,6 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -11,6 +10,7 @@ import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
 import { GlareCard } from "@/components/ui/glare-card";
+import { ShieldCheck } from "lucide-react";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -57,15 +57,14 @@ const Services = () => {
     setShowSiteTypeFields(true);
   };
 
-  const handleSiteTypeChange = (value: string) => {
-    form.setValue("siteType", value as "vitrine" | "ecommerce" | "service");
-    setShowBrandFields(true);
+  const handleOfferSelect = (offerType: "complete" | "premium" | "magique") => {
+    form.setValue("offer", offerType);
+    setShowSiteTypeFields(true);
+    toast.success(`Offre ${offerType} sélectionnée`);
   };
 
-  const siteType = form.watch("siteType");
-
   return (
-    <div className="container mx-auto px-4 pt-32 pb-16 max-w-2xl">
+    <div className="container mx-auto px-4 pt-32 pb-16 max-w-4xl">
       <h1 className="text-4xl font-bold text-center mb-8">Créez Votre Site Web</h1>
       <p className="text-center text-muted-foreground mb-12">
         Suivez les étapes ci-dessous pour nous aider à comprendre votre projet
@@ -81,32 +80,79 @@ const Services = () => {
                 <FormItem className="space-y-3">
                   <FormLabel>Choisissez votre offre</FormLabel>
                   <FormControl>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                      <GlareCard className="flex flex-col items-center justify-center cursor-pointer" onClick={() => {
-                        field.onChange("complete");
-                        handleOfferChange("complete");
-                      }}>
-                        <div className="text-center p-6">
-                          <h3 className="text-xl font-bold text-white mb-2">Offre Complète</h3>
-                          <p className="text-neutral-200">Idéal pour les petites entreprises</p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      <GlareCard className="flex flex-col items-start justify-between p-6 cursor-pointer group">
+                        <div onClick={() => handleOfferSelect("complete")} className="w-full">
+                          <h3 className="text-2xl font-bold text-white mb-4">Offre Complète</h3>
+                          <div className="space-y-3 text-neutral-200">
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>Design personnalisé</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>3 pages</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>Support 30 jours</span>
+                            </div>
+                          </div>
+                          <div className="mt-6">
+                            <p className="text-2xl font-bold text-primary">849€</p>
+                            <p className="text-sm text-neutral-400 line-through">999€</p>
+                          </div>
                         </div>
                       </GlareCard>
-                      <GlareCard className="flex flex-col items-center justify-center cursor-pointer" onClick={() => {
-                        field.onChange("premium");
-                        handleOfferChange("premium");
-                      }}>
-                        <div className="text-center p-6">
-                          <h3 className="text-xl font-bold text-white mb-2">Premium</h3>
-                          <p className="text-neutral-200">Pour les entreprises en croissance</p>
+
+                      <GlareCard className="flex flex-col items-start justify-between p-6 cursor-pointer group">
+                        <div onClick={() => handleOfferSelect("premium")} className="w-full">
+                          <div className="absolute -top-3 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold text-center">
+                            Plus Populaire
+                          </div>
+                          <h3 className="text-2xl font-bold text-white mb-4">Premium</h3>
+                          <div className="space-y-3 text-neutral-200">
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>Jusqu'à 7 pages</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>Blog intégré</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>Support 60 jours</span>
+                            </div>
+                          </div>
+                          <div className="mt-6">
+                            <p className="text-2xl font-bold text-primary">1399€</p>
+                            <p className="text-sm text-neutral-400 line-through">1699€</p>
+                          </div>
                         </div>
                       </GlareCard>
-                      <GlareCard className="flex flex-col items-center justify-center cursor-pointer" onClick={() => {
-                        field.onChange("magique");
-                        handleOfferChange("magique");
-                      }}>
-                        <div className="text-center p-6">
-                          <h3 className="text-xl font-bold text-white mb-2">Magique</h3>
-                          <p className="text-neutral-200">Solution complète pour les grandes entreprises</p>
+
+                      <GlareCard className="flex flex-col items-start justify-between p-6 cursor-pointer group">
+                        <div onClick={() => handleOfferSelect("magique")} className="w-full">
+                          <h3 className="text-2xl font-bold text-white mb-4">Magique</h3>
+                          <div className="space-y-3 text-neutral-200">
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>Pages illimitées</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>E-commerce intégré</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <ShieldCheck className="w-5 h-5 text-primary" />
+                              <span>Support 90 jours</span>
+                            </div>
+                          </div>
+                          <div className="mt-6">
+                            <p className="text-2xl font-bold text-primary">1899€</p>
+                            <p className="text-sm text-neutral-400 line-through">2499€</p>
+                          </div>
                         </div>
                       </GlareCard>
                     </div>
