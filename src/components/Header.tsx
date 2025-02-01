@@ -21,8 +21,8 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-screen left-0 bg-background/80 backdrop-blur-sm z-[999] border-b border-[#9b87f5]/20">
-      <div className="max-w-[1920px] w-full mx-auto px-8">
+    <header className="fixed w-screen left-0 top-0 bg-background/80 backdrop-blur-sm z-[999] border-b border-[#9b87f5]/20">
+      <div className="max-w-[1920px] w-full mx-auto px-8 py-2">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
             <div className="relative group">
