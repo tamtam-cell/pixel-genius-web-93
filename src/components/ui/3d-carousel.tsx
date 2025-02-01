@@ -148,7 +148,7 @@ const Carousel = memo(
                     transform: "translateZ(20px)",
                   }}
                 >
-                  <span className="inline-block bg-gradient-to-r from-primary via-purple-500 to-primary-foreground text-white text-xl font-bold px-4 py-2 rounded-lg shadow-lg backdrop-blur-sm">
+                  <span className="inline-block text-white text-xl font-bold px-4 py-2 rounded-lg shadow-lg backdrop-blur-sm">
                     {card.type}
                   </span>
                 </motion.div>
