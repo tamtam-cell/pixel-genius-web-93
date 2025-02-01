@@ -6,42 +6,42 @@ export function BestCreationsSection() {
     {
       title: "Restaurant Gastronomique",
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop",
-      description: "Notre équipe a relevé un défi passionnant : traduire l'excellence culinaire en expérience digitale. En collaboration étroite avec le chef étoilé, nous avons développé une interface React/Next.js où chaque animation reflète la précision d'un geste culinaire. L'intégration d'un configurateur 3D pour la disposition des tables a particulièrement séduit le client, augmentant les réservations de 150%. Notre plus grande fierté ? Voir le restaurant afficher complet chaque soir depuis le lancement.",
+      description: "Une rencontre inoubliable avec un chef étoilé passionné a marqué le début de ce projet unique. Notre équipe a passé une journée entière en cuisine pour s'imprégner de l'atmosphère et comprendre les moindres détails du service. Cette immersion nous a permis de créer une interface où chaque animation reflète la chorégraphie précise des serveurs en salle. Le moment le plus gratifiant ? Voir le chef, initialement sceptique sur le digital, s'émerveiller devant notre configurateur 3D des tables, développé après trois semaines d'itérations intenses. Aujourd'hui, avec 150% d'augmentation des réservations en ligne, c'est toute l'équipe du restaurant qui nous remercie d'avoir su préserver l'âme de leur établissement dans l'univers numérique.",
       link: "#",
       type: "vitrine"
     },
     {
       title: "Studio d'Architecture",
       image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2940&auto=format&fit=crop",
-      description: "Face au défi de présenter des espaces complexes en 3D, notre équipe a innové en développant une solution Three.js sur-mesure. Un moment clé fut la création d'un système de visite virtuelle temps réel, nécessitant trois mois de R&D intensive. Le résultat ? Une expérience immersive saluée par la presse spécialisée et une augmentation spectaculaire du trafic organique de 200%. Le studio nous a depuis confié la réalisation de leur application mobile.",
+      description: "Ce projet est né d'un défi lancé lors d'un café avec le fondateur du studio : 'Faites-moi ressentir l'espace comme si j'y étais'. Notre équipe technique s'est alors lancée dans une aventure Three.js qui nous a tenus en haleine pendant trois mois. Je me souviens encore de cette nuit où notre lead developer a eu l'illumination pour résoudre le problème de performance du rendu 3D temps réel - une solution si élégante qu'elle est aujourd'hui citée dans des conférences tech. La presse spécialisée a salué cette innovation, mais notre plus grande fierté reste ce message d'un client du studio : 'J'ai visité virtuellement ma future maison à 3h du matin, et j'en ai pleuré de joie'. Le trafic organique a bondi de 200%, et le studio nous a naturellement confié le développement de leur application mobile.",
       link: "#",
       type: "vitrine"
     },
     {
       title: "Boutique de Mode",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop",
-      description: "L'optimisation a été notre obsession sur ce projet e-commerce. Notre équipe a passé d'innombrables nuits à peaufiner chaque milliseconde de chargement, aboutissant à un score Lighthouse de 98/100. L'intégration de notre système IA de recommandation personnalisée fut un véritable défi technique, mais quel succès ! Les ventes ont bondi de 45% dès le premier mois. Notre plus belle récompense ? Le sourire de la fondatrice découvrant les premiers résultats.",
+      description: "L'histoire de ce projet est celle d'une obsession partagée pour la perfection. Pendant des semaines, notre équipe a transformé son bureau en laboratoire de performance web. Je me rappelle de ces sessions nocturnes où nous débattions passionnément de chaque milliseconde du temps de chargement, chronométrant même nos propres gestes pour comprendre l'expérience utilisateur idéale. L'intégration de l'IA pour les recommandations personnalisées a été notre plus grand défi - nous avons même recruté une experte en psychologie de la mode pour affiner l'algorithme. Le jour du lancement, voir le score Lighthouse atteindre 98/100 a été notre première victoire, mais la vraie récompense fut le message vocal ému de la fondatrice découvrant que ses ventes avaient augmenté de 45% en un mois.",
       link: "#",
       type: "ecommerce"
     },
     {
       title: "Artisanat Local",
       image: "https://images.unsplash.com/photo-1489367874814-f5d040621dd8?q=80&w=2940&auto=format&fit=crop",
-      description: "Ce projet né pendant le confinement visait à soutenir les artisans locaux. Notre équipe a développé une marketplace Next.js intégrant un système de géolocalisation complexe. Le plus grand défi ? Implémenter un chat temps réel stable entre artisans et clients, résolu après deux sprints intensifs. Aujourd'hui, la plateforme compte plus de 500 artisans actifs et leurs ventes ont triplé. Une belle histoire de résilience collective !",
+      description: "Né pendant le confinement, ce projet porte en lui une histoire profondément humaine. Tout a commencé par un appel désespéré d'une artisane locale : 'Comment vais-je vendre mes créations maintenant ?'. Cette question a mobilisé notre équipe jour et nuit. Le développement du système de géolocalisation a été un véritable casse-tête, résolu lors d'une session de pair programming mémorable où café et détermination ont fait bon ménage. L'implémentation du chat en temps réel a nécessité deux sprints intenses, mais quel bonheur de voir les premiers messages s'échanger entre artisans et clients ! Aujourd'hui, avec plus de 500 artisans actifs et un triplement des ventes, chaque notification de nouvelle commande nous rappelle pourquoi nous aimons tant notre métier.",
       link: "#",
       type: "ecommerce"
     },
     {
       title: "Formation en Ligne",
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop",
-      description: "La transformation d'une école traditionnelle en leader du digital learning fut un projet ambitieux. Notre innovation majeure ? Un système de progression IA analysant le rythme d'apprentissage de chaque étudiant. L'implémentation du streaming adaptatif fut complexe, nécessitant une collaboration étroite avec des experts en pédagogie. Résultat : le taux de complétion des cours a grimpé à 80%, un record dans le secteur. L'école est aujourd'hui citée en exemple dans le monde de l'EdTech.",
+      description: "La transformation digitale de cette école centenaire restera l'un de nos projets les plus enrichissants. L'équipe a passé une semaine entière à suivre des cours pour comprendre les subtilités de la pédagogie traditionnelle. Le développement de notre système d'IA adaptatif a été jalonné de moments mémorables, comme cette réunion de 4 heures avec des professeurs où nous avons réinventé la notion même d'apprentissage en ligne. Je me souviens particulièrement de ce professeur sceptique qui, après avoir testé notre prototype, a déclaré : 'C'est la première fois que la technologie me donne envie d'enseigner différemment'. Avec un taux de complétion des cours de 80%, nous avons prouvé que l'éducation en ligne pouvait être aussi engageante qu'en présentiel.",
       link: "#",
       type: "digital"
     },
     {
       title: "Templates Premium",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
-      description: "Ce projet représentait un défi technique majeur : créer une marketplace de templates avec prévisualisation instantanée. Notre équipe a développé un système unique de protection DRM, fruit de six mois de recherche. L'intégration Web3 pour la gestion des licences fut une première dans le secteur. Aujourd'hui, avec plus de 10,000 créateurs actifs et un taux de satisfaction de 98%, la plateforme est devenue une référence. Notre fierté ? Voir des designs créés sur notre plateforme utilisés par des marques internationales.",
+      description: "Ce projet représentait un défi technique sans précédent dans notre studio. L'histoire a débuté lors d'un hackathon interne où l'idée d'une protection DRM révolutionnaire a germé. Six mois de recherche et développement ont suivi, ponctués de moments d'eurêka et de défis techniques qui semblaient insurmontables. Je me souviens encore de l'excitation dans nos bureaux lorsque nous avons réussi la première intégration Web3 pour la gestion des licences - une première mondiale dans notre secteur. Un de nos développeurs a même rêvé de smart contracts pendant trois nuits consécutives ! Aujourd'hui, avec plus de 10 000 créateurs actifs et un taux de satisfaction de 98%, nous sommes fiers d'avoir créé une plateforme qui protège véritablement le travail des designers. Notre plus grande joie ? Voir nos templates utilisés par des marques internationales et recevoir des messages de créateurs enfin sereins quant à la protection de leur travail.",
       link: "#",
       type: "digital"
     }
