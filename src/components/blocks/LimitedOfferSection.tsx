@@ -11,8 +11,14 @@ interface LimitedOfferSectionProps {
 
 export function LimitedOfferSection({ remainingSpots, onOfferClick }: LimitedOfferSectionProps) {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
   if (remainingSpots <= 0) return null;
+
+  const handleClick = () => {
+    onOfferClick();
+    navigate('/services', { state: { scrollToCards: true } });
+  };
 
   return (
     <div className="relative h-[200px] mb-8">
@@ -38,7 +44,7 @@ export function LimitedOfferSection({ remainingSpots, onOfferClick }: LimitedOff
                 </p>
               </div>
               <RainbowButton
-                onClick={onOfferClick}
+                onClick={handleClick}
                 className="inline-flex items-center gap-2"
               >
                 {t("offer.cta")}
