@@ -1,21 +1,16 @@
-"use client";
 import React, { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 
 export const ContainerScroll = ({
   titleComponent,
   children,
-  className,
 }: {
   titleComponent: string | React.ReactNode;
   children: React.ReactNode;
-  className?: string;
 }) => {
-  const containerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end end"],
   });
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -40,7 +35,7 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-4 -mt-32 w-full"
+      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-4 -mt-32"
       ref={containerRef}
     >
       <div
@@ -50,12 +45,7 @@ export const ContainerScroll = ({
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <Card
-          rotate={rotate}
-          translate={translate}
-          scale={scale}
-          className={className}
-        >
+        <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
         </Card>
       </div>
@@ -63,30 +53,28 @@ export const ContainerScroll = ({
   );
 };
 
-export const Header = ({ translate, titleComponent }: any) => {
+const Header = ({ translate, titleComponent }: { translate: MotionValue<number>, titleComponent: React.ReactNode }) => {
   return (
     <motion.div
       style={{
         translateY: translate,
       }}
-      className="div max-w-7xl mx-auto text-center"
+      className="div max-w-[98%] mx-auto text-center"
     >
       {titleComponent}
     </motion.div>
   );
 };
 
-export const Card = ({
+const Card = ({
   rotate,
   scale,
   translate,
-  className,
   children,
 }: {
-  rotate: any;
-  scale: any;
-  translate: any;
-  className?: string;
+  rotate: MotionValue<number>;
+  scale: MotionValue<number>;
+  translate: MotionValue<number>;
   children: React.ReactNode;
 }) => {
   return (
@@ -94,14 +82,12 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
-        translateY: translate,
+        boxShadow:
+          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className={cn(
-        "w-full mx-auto relative",
-        className
-      )}
+      className="max-w-[98%] -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
-      <div className="w-full bg-[#1d1c20] relative rounded-2xl overflow-hidden border border-white/[0.08]">
+      <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4">
         {children}
       </div>
     </motion.div>
