@@ -28,7 +28,7 @@ const Header = () => {
     "LANCEMENT SUR",
     "LE MARCHE",
     "FRANCAIS",
-    "PROFITEZ EN"
+    "PROFITEZ EN!"
   ];
 
   return (
