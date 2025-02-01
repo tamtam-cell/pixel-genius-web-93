@@ -22,8 +22,10 @@ const Contact = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.3 }}
+              className="relative group"
             >
-              <Card>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+              <Card className="relative">
                 <CardContent className="p-8">
                   <div className="flex items-center justify-center gap-4 text-2xl font-semibold">
                     <Instagram className="w-8 h-8 text-primary" />
@@ -49,8 +51,10 @@ const Contact = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.3 }}
+              className="relative group"
             >
-              <Card>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+              <Card className="relative">
                 <CardContent className="p-8">
                   <div className="flex items-center justify-center gap-4 text-2xl font-semibold">
                     <Phone className="w-8 h-8 text-primary" />
@@ -74,8 +78,10 @@ const Contact = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.3 }}
+              className="relative group"
             >
-              <Card>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+              <Card className="relative">
                 <CardContent className="p-8">
                   <div className="flex items-center justify-center gap-4 text-2xl font-semibold">
                     <Mail className="w-8 h-8 text-primary" />
