@@ -6,42 +6,42 @@ export function BestCreationsSection() {
     {
       title: "Restaurant Gastronomique",
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop",
-      description: "Site vitrine élégant pour restaurant",
+      description: "Interface raffinée mettant en valeur l'art culinaire avec une expérience utilisateur immersive et des animations subtiles",
       link: "#",
       type: "vitrine"
     },
     {
       title: "Studio d'Architecture",
       image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2940&auto=format&fit=crop",
-      description: "Portfolio architectural moderne",
+      description: "Portfolio minimaliste sublimant les projets architecturaux avec une navigation fluide et des transitions élégantes",
       link: "#",
       type: "vitrine"
     },
     {
       title: "Boutique de Mode",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop",
-      description: "E-commerce de vêtements luxe",
+      description: "E-commerce haute performance intégrant un tunnel d'achat optimisé et une expérience shopping personnalisée",
       link: "#",
       type: "ecommerce"
     },
     {
       title: "Artisanat Local",
       image: "https://images.unsplash.com/photo-1489367874814-f5d040621dd8?q=80&w=2940&auto=format&fit=crop",
-      description: "Marketplace artisanale",
+      description: "Marketplace innovante valorisant le savoir-faire artisanal avec un système de paiement sécurisé multi-devises",
       link: "#",
       type: "ecommerce"
     },
     {
       title: "Formation en Ligne",
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop",
-      description: "Plateforme de cours en ligne",
+      description: "Plateforme LMS sophistiquée offrant une expérience d'apprentissage interactive avec suivi personnalisé",
       link: "#",
       type: "digital"
     },
     {
       title: "Templates Premium",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
-      description: "Marketplace de ressources digitales",
+      description: "Marketplace digitale exclusive proposant des ressources design haut de gamme avec prévisualisation instantanée",
       link: "#",
       type: "digital"
     }
