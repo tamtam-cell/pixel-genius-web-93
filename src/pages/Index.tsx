@@ -5,14 +5,12 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
 import { HeroSection } from "@/components/blocks/HeroSection";
 import { BestCreationsSection } from "@/components/blocks/BestCreationsSection";
-import { RetroGrid } from "@/components/ui/retro-grid";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <div className="relative bg-slate-950 w-screen h-[85vh] overflow-hidden -ml-[calc((100vw-100%)/2)]">
-        <RetroGrid className="z-0" />
-        <div className="relative h-full flex items-center justify-center z-10">
+        <div className="relative h-full flex items-center justify-center">
           <HeroSection />
         </div>
       </div>
