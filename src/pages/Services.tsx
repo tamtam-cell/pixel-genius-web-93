@@ -89,7 +89,7 @@ const Services = () => {
               name="offer"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel className="text-2xl md:text-3xl font-bold text-center block mb-8 bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+                  <FormLabel className="text-2xl md:text-3xl font-bold text-center block mb-8 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                     Choisissez votre offre
                   </FormLabel>
                   <FormControl>
