@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <div className="relative bg-slate-950 w-screen h-[85vh] overflow-hidden">
-        <div className="relative h-full flex items-center justify-center">
+        <div className="relative h-full flex items-center justify-center w-screen">
           <HeroSection />
         </div>
       </div>
