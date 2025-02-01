@@ -87,7 +87,7 @@ const Carousel = memo(
 
     return (
       <div
-        className="flex h-full items-center justify-center"
+        className="flex h-full items-center justify-center bg-mauve-dark-2"
         style={{
           perspective: "1000px",
           transformStyle: "preserve-3d",
@@ -105,12 +105,12 @@ const Carousel = memo(
           }}
           onDrag={(_, info) =>
             isCarouselActive &&
-            rotation.set(rotation.get() + info.offset.x * 0.05)
+            rotation.set(rotation.get() + info.offset.x * 0.01) // Réduit de 0.05 à 0.01
           }
           onDragEnd={(_, info) =>
             isCarouselActive &&
             controls.start({
-              rotateY: rotation.get() + info.velocity.x * 0.05,
+              rotateY: rotation.get() + info.velocity.x * 0.01, // Réduit également ici de 0.05 à 0.01
               transition: {
                 type: "spring",
                 stiffness: 100,
