@@ -62,6 +62,13 @@ const duration = 0.15
 const transition = { duration, ease: [0.32, 0.72, 0, 1], filter: "blur(4px)" }
 const transitionOverlay = { duration: 0.5, ease: [0.32, 0.72, 0, 1] }
 
+type SiteType = "E-commerce" | "Vitrine" | "Digital"
+
+interface CardData {
+  imgUrl: string;
+  type: SiteType;
+}
+
 const Carousel = memo(
   ({
     handleClick,
@@ -71,7 +78,7 @@ const Carousel = memo(
   }: {
     handleClick: (imgUrl: string, index: number) => void
     controls: any
-    cards: string[]
+    cards: CardData[]
     isCarouselActive: boolean
   }) => {
     const isScreenSizeSm = useMediaQuery("(max-width: 640px)")
@@ -121,9 +128,9 @@ const Carousel = memo(
           }
           animate={controls}
         >
-          {cards.map((imgUrl, i) => (
+          {cards.map((card, i) => (
             <motion.div
-              key={`key-${imgUrl}-${i}`}
+              key={`key-${card.imgUrl}-${i}`}
               className="absolute flex h-full origin-center items-center justify-center rounded-xl p-2"
               style={{
                 width: `${faceWidth}px`,
@@ -131,18 +138,31 @@ const Carousel = memo(
                   i * (360 / faceCount)
                 }deg) translateZ(${radius}px)`,
               }}
-              onClick={() => handleClick(imgUrl, i)}
+              onClick={() => handleClick(card.imgUrl, i)}
             >
-              <motion.img
-                src={imgUrl}
-                alt={`keyword_${i} ${imgUrl}`}
-                layoutId={`img-${imgUrl}`}
-                className="pointer-events-none w-full rounded-xl object-cover aspect-square"
-                initial={{ filter: "blur(4px)" }}
-                layout="position"
-                animate={{ filter: "blur(0px)" }}
-                transition={transition}
-              />
+              <div className="relative">
+                <motion.div
+                  className="absolute -top-12 left-0 right-0 text-center"
+                  style={{
+                    transformStyle: "preserve-3d",
+                    transform: "translateZ(20px)",
+                  }}
+                >
+                  <span className="inline-block bg-gradient-to-r from-primary via-purple-500 to-primary-foreground bg-clip-text text-xl font-bold text-transparent px-4 py-2 rounded-lg shadow-lg backdrop-blur-sm">
+                    {card.type}
+                  </span>
+                </motion.div>
+                <motion.img
+                  src={card.imgUrl}
+                  alt={`${card.type} - ${card.imgUrl}`}
+                  layoutId={`img-${card.imgUrl}`}
+                  className="pointer-events-none w-full rounded-xl object-cover aspect-square"
+                  initial={{ filter: "blur(4px)" }}
+                  layout="position"
+                  animate={{ filter: "blur(0px)" }}
+                  transition={transition}
+                />
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -155,13 +175,31 @@ export function ThreeDPhotoCarousel() {
   const [activeImg, setActiveImg] = useState<string | null>(null)
   const [isCarouselActive, setIsCarouselActive] = useState(true)
   const controls = useAnimation()
-  const cards = [
-    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2940&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1489367874814-f5d040621dd8?q=80&w=2940&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop"
+  const cards: CardData[] = [
+    {
+      imgUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop",
+      type: "E-commerce"
+    },
+    {
+      imgUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2940&auto=format&fit=crop",
+      type: "Vitrine"
+    },
+    {
+      imgUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop",
+      type: "Digital"
+    },
+    {
+      imgUrl: "https://images.unsplash.com/photo-1489367874814-f5d040621dd8?q=80&w=2940&auto=format&fit=crop",
+      type: "E-commerce"
+    },
+    {
+      imgUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop",
+      type: "Vitrine"
+    },
+    {
+      imgUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
+      type: "Digital"
+    }
   ]
 
   const handleClick = (imgUrl: string) => {
