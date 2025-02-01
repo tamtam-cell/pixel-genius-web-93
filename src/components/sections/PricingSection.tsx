@@ -191,13 +191,13 @@ export const PricingSection = () => {
         <>
           <h1 className="text-4xl font-semibold text-foreground mb-8">
             {t("pricing.title")} <br />
-            <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
+            <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
               {t("pricing.subtitle")}
             </span>
           </h1>
           
           <div className="text-center space-y-8 mb-16">
-            <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
+            <p className="text-2xl font-bold">
               {t("pricing.contact")}
             </p>
             <Link to="/contact">
