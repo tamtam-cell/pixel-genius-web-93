@@ -6,6 +6,7 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
 import { HeroSection } from "@/components/blocks/HeroSection";
+import { BestCreationsSection } from "@/components/blocks/BestCreationsSection";
 
 const Index = () => {
   return (
@@ -29,6 +30,8 @@ const Index = () => {
         </div>
 
         <CanvasTimeline />
+
+        <BestCreationsSection />
 
         <TechnologiesSection />
 
