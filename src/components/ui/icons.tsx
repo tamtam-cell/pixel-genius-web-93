@@ -375,20 +375,3 @@ export function OpenAIIconBlack(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-// Export all icons in a single line at the end
-export { 
-  NextjsIcon, 
-  TailwindCSSIcon, 
-  UpstashIcon, 
-  TypeScriptIcon, 
-  StripeIcon, 
-  OpenAIIconBlack,
-  SupabaseIcon, 
-  VercelIcon, 
-  ClaudeAIIcon, 
-  AppleIcon, 
-  LowesIcon, 
-  AllyLogo, 
-  BMWIcon 
-};
