@@ -1,7 +1,6 @@
 import { SplineSceneBasic } from "@/components/blocks/SplineSceneBasic";
 import { CanvasTimeline } from "@/components/blocks/CanvasTimeline";
 import { LimitedOfferSection } from "@/components/blocks/LimitedOfferSection";
-import { TechnologiesSection } from "@/components/blocks/TechnologiesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
@@ -32,8 +31,6 @@ const Index = () => {
         <CanvasTimeline />
 
         <BestCreationsSection />
-
-        <TechnologiesSection />
 
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
           <SplineSceneBasic />

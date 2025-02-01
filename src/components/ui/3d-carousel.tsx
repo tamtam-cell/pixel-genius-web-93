@@ -54,7 +54,7 @@ const Carousel = memo(({ handleClick, controls, isCarouselActive }: {
 
   return (
     <div
-      className="flex h-full items-center justify-center"
+      className="flex h-full items-center justify-center mt-12"
       style={{
         perspective: "1000px",
         transformStyle: "preserve-3d",
