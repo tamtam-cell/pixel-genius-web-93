@@ -105,12 +105,12 @@ const Carousel = memo(
           }}
           onDrag={(_, info) =>
             isCarouselActive &&
-            rotation.set(rotation.get() + info.offset.x * 0.01) // Réduit de 0.05 à 0.01
+            rotation.set(rotation.get() + info.offset.x * 0.015)
           }
           onDragEnd={(_, info) =>
             isCarouselActive &&
             controls.start({
-              rotateY: rotation.get() + info.velocity.x * 0.01, // Réduit également ici de 0.05 à 0.01
+              rotateY: rotation.get() + info.velocity.x * 0.015,
               transition: {
                 type: "spring",
                 stiffness: 100,
