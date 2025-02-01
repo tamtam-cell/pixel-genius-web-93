@@ -24,7 +24,9 @@ const Index = () => {
         
         <PricingSection />
         
-        <TestimonialsSection />
+        <div className="pb-12">
+          <TestimonialsSection />
+        </div>
 
         <CanvasTimeline />
 
