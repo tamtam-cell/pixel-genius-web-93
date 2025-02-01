@@ -94,8 +94,8 @@ const Services = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                       <GlareCard 
                         className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
-                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/20 before:to-purple-500/20 before:blur-xl
-                        hover:before:blur-2xl hover:before:bg-gradient-to-r hover:before:from-primary/30 hover:before:to-purple-500/30 
+                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/30 before:to-purple-500/30 before:blur-2xl
+                        hover:before:blur-3xl hover:before:bg-gradient-to-r hover:before:from-primary/50 hover:before:to-purple-500/50 
                         transition-all duration-300"
                       >
                         <div onClick={() => handleOfferSelect("complete")} className="w-full">
@@ -120,8 +120,8 @@ const Services = () => {
 
                       <GlareCard 
                         className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
-                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/20 before:to-purple-500/20 before:blur-xl
-                        hover:before:blur-2xl hover:before:bg-gradient-to-r hover:before:from-primary/30 hover:before:to-purple-500/30 
+                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/30 before:to-purple-500/30 before:blur-2xl
+                        hover:before:blur-3xl hover:before:bg-gradient-to-r hover:before:from-primary/50 hover:before:to-purple-500/50 
                         transition-all duration-300"
                       >
                         <div className="absolute -top-2 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10 text-center shadow-lg">
@@ -152,8 +152,8 @@ const Services = () => {
 
                       <GlareCard 
                         className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
-                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/20 before:to-purple-500/20 before:blur-xl
-                        hover:before:blur-2xl hover:before:bg-gradient-to-r hover:before:from-primary/30 hover:before:to-purple-500/30 
+                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/30 before:to-purple-500/30 before:blur-2xl
+                        hover:before:blur-3xl hover:before:bg-gradient-to-r hover:before:from-primary/50 hover:before:to-purple-500/50 
                         transition-all duration-300"
                       >
                         <div onClick={() => handleOfferSelect("magique")} className="w-full">
