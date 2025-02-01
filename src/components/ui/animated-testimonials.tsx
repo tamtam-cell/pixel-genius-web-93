@@ -33,16 +33,15 @@ export const AnimatedTestimonials = ({
   }));
 
   useEffect(() => {
-    if (autoplay && testimonials.length > 0) {
+    if (autoplay) {
       const interval = setInterval(() => {
         handleNext();
       }, 10000);
       return () => clearInterval(interval);
     }
-  }, [autoplay, testimonials.length]);
+  }, [autoplay]);
 
   const handleNext = () => {
-    if (!testimonials.length) return;
     setDirection(1);
     if (active === testimonials.length - 1) {
       setActive(0);
@@ -52,7 +51,6 @@ export const AnimatedTestimonials = ({
   };
 
   const handlePrevious = () => {
-    if (!testimonials.length) return;
     setDirection(-1);
     if (active === 0) {
       setActive(testimonials.length - 1);
@@ -60,15 +58,6 @@ export const AnimatedTestimonials = ({
       setActive((prev) => prev - 1);
     }
   };
-
-  if (!testimonials.length) {
-    return null;
-  }
-
-  const currentTestimonial = testimonials[active];
-  if (!currentTestimonial) {
-    return null;
-  }
 
   return (
     <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-8", className)}>
@@ -105,9 +94,9 @@ export const AnimatedTestimonials = ({
                 className="absolute w-full h-full"
               >
                 <img
-                  src={currentTestimonial.src}
+                  src={testimonials[active].src}
                   className="object-cover object-center h-full w-full brightness-75"
-                  alt={currentTestimonial.name}
+                  alt={testimonials[active].name}
                 />
               </motion.div>
             </AnimatePresence>
@@ -126,13 +115,13 @@ export const AnimatedTestimonials = ({
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <h2 className="text-2xl font-bold text-foreground">
-              {currentTestimonial.name}
+              {testimonials[active].name}
             </h2>
             <p className="text-sm text-muted-foreground">
-              {currentTestimonial.designation}
+              {testimonials[active].designation}
             </p>
             <motion.p className="text-lg text-muted-foreground mt-4">
-              {currentTestimonial.quote.split(" ").map((word, index) => (
+              {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
