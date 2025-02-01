@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ShieldCheck } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { RainbowButton } from "@/components/ui/rainbow-button";
@@ -27,13 +27,32 @@ const PricingCard = ({
   bonus,
   isPopular,
   stock,
-  timeLeft,
+  timeLeft: initialTimeLeft,
   upgrade,
   gradientColors,
   onSelect,
 }: PricingCardProps) => {
   const navigate = useNavigate();
+  const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
   
+  useEffect(() => {
+    console.log(`Timer started for ${title} with ${timeLeft} seconds remaining`);
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        if (prevTime <= 0) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+
+    return () => {
+      console.log(`Timer cleanup for ${title}`);
+      clearInterval(timer);
+    };
+  }, [title]);
+
   const handleClick = () => {
     onSelect(title);
     navigate('/services', { state: { scrollToCards: true } });
@@ -47,6 +66,8 @@ const PricingCard = ({
       .toString()
       .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
+
+  // ... keep existing code (rest of the PricingCard component JSX)
 
   return (
     <div
@@ -229,3 +250,4 @@ export const PricingSection = () => {
     </ContainerScroll>
   );
 };
+
