@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 import { useNavigate } from "react-router-dom";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function HeroSection() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleClick = () => {
     console.log("Button clicked, navigating to /services");
@@ -36,9 +38,9 @@ export function HeroSection() {
         <motion.h1
           className="mt-8 bg-gradient-to-br from-white to-white/80 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent"
         >
-          <span className="text-xl md:text-2xl font-sites-web">Imaginez l'Impossible</span>
+          <span className="text-xl md:text-2xl font-sites-web">{t("hero.imagine")}</span>
           <br />
-          <span className="text-4xl md:text-7xl font-sites-web font-semibold">Créons-le Ensemble</span>
+          <span className="text-4xl md:text-7xl font-sites-web font-semibold">{t("hero.create")}</span>
         </motion.h1>
 
         <motion.div
@@ -51,7 +53,7 @@ export function HeroSection() {
             onClick={handleClick}
             className="text-lg tracking-wider"
           >
-            COMMENCER
+            {t("hero.cta")}
           </RainbowButton>
         </motion.div>
       </motion.div>

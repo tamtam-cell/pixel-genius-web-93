@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const ContainerScroll = ({
   titleComponent,
@@ -13,6 +14,7 @@ export const ContainerScroll = ({
     target: containerRef,
   });
   const [isMobile, setIsMobile] = React.useState(false);
+  const { t } = useLanguage();
 
   React.useEffect(() => {
     const checkMobile = () => {
