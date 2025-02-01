@@ -24,7 +24,9 @@ const Index = () => {
         
         <PricingSection />
         
-        <TestimonialsSection />
+        <div className="pb-10"> {/* Reduced padding bottom from default to 2.5rem (10) */}
+          <TestimonialsSection />
+        </div>
 
         <CanvasTimeline />
 
