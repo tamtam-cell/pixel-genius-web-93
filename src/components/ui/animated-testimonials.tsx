@@ -51,7 +51,7 @@ export const AnimatedTestimonials = ({
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
         <div>
           <div className="relative h-80 w-full z-[1]">
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.src}
@@ -66,15 +66,12 @@ export const AnimatedTestimonials = ({
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
                     rotate: isActive(index) ? 0 : randomRotateY(),
-                    zIndex: isActive(index)
-                      ? 1
-                      : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
+                    zIndex: isActive(index) ? 1 : 0,
                   }}
                   exit={{
                     opacity: 0,
                     scale: 0.9,
-                    z: 100,
+                    z: -100,
                     rotate: randomRotateY(),
                   }}
                   transition={{
