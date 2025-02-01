@@ -1,5 +1,4 @@
 import { SplineSceneBasic } from "@/components/blocks/SplineSceneBasic";
-import { CanvasTimeline } from "@/components/blocks/CanvasTimeline";
 import { LimitedOfferSection } from "@/components/blocks/LimitedOfferSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
@@ -28,11 +27,9 @@ const Index = () => {
           <TestimonialsSection />
         </div>
 
-        <CanvasTimeline />
-
         <BestCreationsSection />
 
-        <div className="w-full py-20">
+        <div className="w-screen -ml-[calc((100vw-100%)/2)]">
           <SplineSceneBasic />
         </div>
 
