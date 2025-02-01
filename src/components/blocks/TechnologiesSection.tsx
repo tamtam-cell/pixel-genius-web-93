@@ -1,29 +1,26 @@
 import { Globe, Computer, Smartphone, Users } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export function TechnologiesSection() {
-  const { t } = useLanguage();
-  
   const features = [
     {
       icon: Globe,
-      title: t("tech.web.title"),
-      description: t("tech.web.desc"),
+      title: "Solutions Web",
+      description: "Applications web modernes et performantes.",
     },
     {
       icon: Computer,
-      title: t("tech.responsive.title"),
-      description: t("tech.responsive.desc"),
+      title: "Design Responsive",
+      description: "Interfaces adaptatives pour tous les écrans.",
     },
     {
       icon: Smartphone,
-      title: t("tech.mobile.title"),
-      description: t("tech.mobile.desc"),
+      title: "Mobile First",
+      description: "Expérience mobile optimisée en priorité.",
     },
     {
       icon: Users,
-      title: t("tech.ux.title"),
-      description: t("tech.ux.desc"),
+      title: "UX Centrée Utilisateur",
+      description: "Design pensé pour vos utilisateurs.",
     },
   ];
 
@@ -32,10 +29,10 @@ export function TechnologiesSection() {
       <div className="container mx-auto px-4">
         <div className="relative">
           <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-primary to-purple-200 tracking-tight leading-none">
-            <span className="block text-lg text-primary/80 font-normal mb-2">{t("tech.discover")}</span>
-            {t("tech.title")}
+            <span className="block text-lg text-primary/80 font-normal mb-2">Découvrez</span>
+            Technologies du Futur
             <span className="block text-base text-muted-foreground/80 font-normal mt-4 max-w-2xl mx-auto">
-              {t("tech.subtitle")}
+              Innovation et Excellence Technique pour votre Succès Digital
             </span>
           </h2>
           <div className="absolute -inset-x-20 -top-20 -bottom-20 opacity-50 bg-gradient-to-r from-primary/20 via-purple-500/5 to-primary/20 blur-3xl -z-10" />
