@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
+import { ShieldCheck } from "lucide-react"; // Added missing import
+import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-background"; // Added missing import
 import { HeroSection } from "@/components/blocks/HeroSection";
 import { AnimatedTestimonialsDemo } from "@/components/blocks/animated-testimonials-demo";
 import { SplineSceneBasic } from "@/components/blocks/SplineSceneBasic";
