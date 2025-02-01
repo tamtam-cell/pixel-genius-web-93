@@ -13,7 +13,10 @@ export function BestCreationsSection() {
           </p>
         </div>
 
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center relative
+          before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/30 before:to-purple-500/30 before:blur-2xl
+          hover:before:blur-3xl hover:before:bg-gradient-to-r hover:before:from-primary/50 hover:before:to-purple-500/50 
+          transition-all duration-300">
           <ThreeDPhotoCarousel />
         </div>
       </div>
