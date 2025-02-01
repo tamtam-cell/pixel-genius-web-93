@@ -18,9 +18,6 @@ export const CarouselCard = ({
   radius, 
   onClick 
 }: CarouselCardProps) => {
-  // Extract company name from the title (everything before " - ")
-  const companyName = card.title.split(" - ")[0];
-  
   return (
     <motion.div
       className="absolute flex h-full origin-center items-center justify-center rounded-xl p-2"
@@ -45,7 +42,7 @@ export const CarouselCard = ({
               {card.type}
             </div>
             <div className="px-4 pb-2 text-sm font-medium opacity-80">
-              {companyName}
+              {card.title}
             </div>
           </div>
         </motion.div>
