@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen py-16 flex items-center justify-center">
+    <div className="min-h-screen py-24 flex items-center justify-center">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
