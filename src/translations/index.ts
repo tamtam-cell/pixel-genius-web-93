@@ -41,8 +41,6 @@ export const translations = {
     "offer.limited": "Offre Limitée ! Plus que {count} place{s} disponibles",
     "offer.description": "Profitez de -20% sur notre offre Premium + consultation stratégique gratuite",
     "offer.cta": "J'en profite",
-    "container.scroll": "Faites défiler pour découvrir",
-    "container.explore": "Explorer",
   },
   en: {
     "nav.home": "Home",
@@ -86,7 +84,5 @@ export const translations = {
     "offer.limited": "Limited Offer! Only {count} spot{s} left",
     "offer.description": "Get 20% off our Premium offer + free strategic consultation",
     "offer.cta": "Get Started",
-    "container.scroll": "Scroll to discover",
-    "container.explore": "Explore",
   }
 };
