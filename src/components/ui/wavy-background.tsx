@@ -49,12 +49,12 @@ export const WavyBackground = ({
   const init = () => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
-    w = ctx.canvas.width = window.innerWidth + 100;
+    w = ctx.canvas.width = window.innerWidth + 100; // Ajout d'une marge pour éviter les bords blancs
     h = ctx.canvas.height = window.innerHeight;
     ctx.filter = `blur(${blur}px)`;
     nt = 0;
     window.onresize = function () {
-      w = ctx.canvas.width = window.innerWidth + 100;
+      w = ctx.canvas.width = window.innerWidth + 100; // Ajout d'une marge pour éviter les bords blancs
       h = ctx.canvas.height = window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
     };
@@ -116,7 +116,7 @@ export const WavyBackground = ({
       )}
     >
       <canvas
-        className={cn("absolute inset-0 z-0 w-full -translate-y-16")}
+        className="absolute inset-0 z-0 w-full"
         ref={canvasRef}
         id="canvas"
         style={{
