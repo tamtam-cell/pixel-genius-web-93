@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
 import { GlareCard } from "@/components/ui/glare-card";
 import { ShieldCheck } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -33,6 +34,7 @@ const formSchema = z.object({
 const Services = () => {
   const [showSiteTypeFields, setShowSiteTypeFields] = useState(false);
   const [showBrandFields, setShowBrandFields] = useState(false);
+  const [siteType, setSiteType] = useState<"vitrine" | "ecommerce" | "service">();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -55,6 +57,11 @@ const Services = () => {
   const handleOfferChange = (value: string) => {
     form.setValue("offer", value as "complete" | "premium" | "magique");
     setShowSiteTypeFields(true);
+  };
+
+  const handleSiteTypeChange = (value: string) => {
+    setSiteType(value as "vitrine" | "ecommerce" | "service");
+    setShowBrandFields(true);
   };
 
   const handleOfferSelect = (offerType: "complete" | "premium" | "magique") => {
