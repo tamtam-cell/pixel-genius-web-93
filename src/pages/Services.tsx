@@ -87,10 +87,17 @@ const Services = () => {
               name="offer"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel>Choisissez votre offre</FormLabel>
+                  <FormLabel className="text-2xl md:text-3xl font-bold text-center block mb-8 bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+                    Choisissez votre offre
+                  </FormLabel>
                   <FormControl>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                      <GlareCard className="flex flex-col items-start justify-between p-6 cursor-pointer group">
+                      <GlareCard 
+                        className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
+                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/20 before:to-purple-500/20 before:blur-xl
+                        hover:before:blur-2xl hover:before:bg-gradient-to-r hover:before:from-primary/30 hover:before:to-purple-500/30 
+                        transition-all duration-300"
+                      >
                         <div onClick={() => handleOfferSelect("complete")} className="w-full">
                           <h3 className="text-2xl font-bold text-white mb-4">Offre Complète</h3>
                           <div className="space-y-3 text-neutral-200">
@@ -111,7 +118,12 @@ const Services = () => {
                         </div>
                       </GlareCard>
 
-                      <GlareCard className="flex flex-col items-start justify-between p-6 cursor-pointer group relative">
+                      <GlareCard 
+                        className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
+                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/20 before:to-purple-500/20 before:blur-xl
+                        hover:before:blur-2xl hover:before:bg-gradient-to-r hover:before:from-primary/30 hover:before:to-purple-500/30 
+                        transition-all duration-300"
+                      >
                         <div className="absolute -top-2 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10 text-center shadow-lg">
                           Plus Populaire
                         </div>
@@ -138,7 +150,12 @@ const Services = () => {
                         </div>
                       </GlareCard>
 
-                      <GlareCard className="flex flex-col items-start justify-between p-6 cursor-pointer group">
+                      <GlareCard 
+                        className="flex flex-col items-start justify-between p-6 cursor-pointer group relative 
+                        before:absolute before:inset-0 before:-z-10 before:rounded-xl before:bg-gradient-to-r before:from-primary/20 before:to-purple-500/20 before:blur-xl
+                        hover:before:blur-2xl hover:before:bg-gradient-to-r hover:before:from-primary/30 hover:before:to-purple-500/30 
+                        transition-all duration-300"
+                      >
                         <div onClick={() => handleOfferSelect("magique")} className="w-full">
                           <h3 className="text-2xl font-bold text-white mb-4">Magique</h3>
                           <div className="space-y-3 text-neutral-200">
