@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <header className="fixed w-screen left-0 top-0 bg-background/80 backdrop-blur-sm z-[999] border-b border-[#9b87f5]/20">
       <div className="max-w-[1920px] w-full mx-auto px-8">
-        <div className="h-8 overflow-hidden">
+        <div className="h-12 overflow-hidden flex items-center">
           <GooeyText
             texts={announcementTexts}
             morphTime={1}
