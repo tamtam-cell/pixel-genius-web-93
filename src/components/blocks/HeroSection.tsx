@@ -36,9 +36,9 @@ export function HeroSection() {
         <motion.h1
           className="mt-8 bg-gradient-to-br from-white to-white/80 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent"
         >
-          <span className="text-xl md:text-2xl font-sites-web">Imaginez l'Impossible</span>
+          <span className="text-2xl md:text-3xl font-sites-web">Imaginez l'Impossible</span>
           <br />
-          <span className="text-4xl md:text-7xl font-sites-web font-semibold">Créons-le Ensemble</span>
+          <span className="text-5xl md:text-8xl font-sites-web font-semibold">Créons-le Ensemble</span>
         </motion.h1>
 
         <motion.div
