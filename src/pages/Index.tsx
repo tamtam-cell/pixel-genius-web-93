@@ -1,4 +1,3 @@
-import { ArrowRight, Globe, Computer, Smartphone, Users, Clock, ShieldCheck } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
@@ -6,12 +5,11 @@ import { HeroSection } from "@/components/blocks/HeroSection";
 import { AnimatedTestimonialsDemo } from "@/components/blocks/animated-testimonials-demo";
 import { SplineSceneBasic } from "@/components/blocks/SplineSceneBasic";
 import { CanvasTimeline } from "@/components/blocks/CanvasTimeline";
-import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
-import { WavyBackground } from "@/components/ui/wavy-background";
+import { LimitedOfferSection } from "@/components/blocks/LimitedOfferSection";
+import { TechnologiesSection } from "@/components/blocks/TechnologiesSection";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Timeline } from "@/components/ui/timeline";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -20,7 +18,6 @@ const Index = () => {
   const [timeLeftMagic, setTimeLeftMagic] = useState(345600); // 96h
   const [remainingSpots, setRemainingSpots] = useState(5);
   const [selectedOffer, setSelectedOffer] = useState<string | null>(null);
-  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -60,39 +57,6 @@ const Index = () => {
     console.log("Redirecting to services page...");
     navigate('/services');
   };
-
-  const testimonials = [
-    {
-      quote: "Je suis impressionnée par l'impact de PixelCraftLab sur notre entreprise. Non seulement nous avons réduit nos coûts de développement de 40%, mais leur approche personnalisée et leur écoute attentive ont vraiment fait la différence.",
-      name: "Marie Dubois",
-      designation: "Directrice Technique chez TechVision",
-      src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      quote: "Je cherchais une équipe qui comprenne vraiment nos enjeux techniques. Leur expertise en microservices et CI/CD a dépassé mes attentes - nos cycles de déploiement sont 75% plus rapides maintenant.",
-      name: "Thomas Martin",
-      designation: "CTO chez InnovTech Solutions",
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      quote: "La transformation de notre plateforme e-commerce était un défi majeur pour nous. L'équipe a su nous accompagner avec patience et expertise. Résultat : +85% de conversion et -50% de taux de rebond.",
-      name: "Sophie Bernard",
-      designation: "Directrice E-commerce",
-      src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      quote: "En tant que développeur, je suis particulièrement sensible à la qualité technique. Leur solution API Gateway ne m'a pas déçu : la latence est passée de 200ms à 50ms, et notre capacité de traitement a triplé.",
-      name: "Lucas Petit",
-      designation: "Lead Developer chez FinTech Solutions",
-      src: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      quote: "La méthodologie structurée et l'expertise technique de PixelCraftLab ont été déterminantes dans le succès de notre projet digital.",
-      name: "Emma Richard",
-      designation: "Product Manager chez UXDesign",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-    }
-  ];
 
   const timelineData = [
     {
@@ -206,43 +170,10 @@ const Index = () => {
       </div>
 
       <div className="mt-[-8rem]">
-        {/* Limited Offer Section */}
-        {remainingSpots > 0 && (
-          <div className="relative h-[200px] mb-8">
-            <WavyBackground
-              colors={["#9333EA", "#A855F7", "#C084FC", "#E879F9"]}
-              waveWidth={50}
-              backgroundFill="#0A0A0A"
-              blur={5}
-              speed="slow"
-              waveOpacity={0.3}
-              className="absolute inset-0 top-[250px] z-0"
-            />
-            <div className="relative z-10 h-full flex items-center justify-center">
-              <div className="max-w-3xl w-full mx-auto">
-                <div className="cyber-border card-hover p-6 rounded-xl text-center bg-background/40 backdrop-blur-sm">
-                  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div className="text-left">
-                      <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-                        Offre Limitée ! Plus que {remainingSpots} place{remainingSpots > 1 ? 's' : ''} disponibles
-                      </h3>
-                      <p className="text-purple-200/80 text-sm">
-                        Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
-                      </p>
-                    </div>
-                    <RainbowButton
-                      onClick={handleOfferClick}
-                      className="inline-flex items-center gap-2"
-                    >
-                      J'en profite
-                      <ArrowRight className="w-4 h-4" />
-                    </RainbowButton>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        <LimitedOfferSection 
+          remainingSpots={remainingSpots}
+          onOfferClick={handleOfferClick}
+        />
 
         {/* Pricing Cards with Scroll Animation */}
         <ContainerScroll
@@ -425,61 +356,7 @@ const Index = () => {
         {/* Process Timeline Canvas */}
         <CanvasTimeline />
 
-        <section className="py-24 relative overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="relative">
-              <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-primary to-purple-200 tracking-tight leading-none">
-                <span className="block text-lg text-primary/80 font-normal mb-2">Découvrez</span>
-                Technologies du Futur
-                <span className="block text-base text-muted-foreground/80 font-normal mt-4 max-w-2xl mx-auto">
-                  Innovation et Excellence Technique pour votre Succès Digital
-                </span>
-              </h2>
-              <div className="absolute -inset-x-20 -top-20 -bottom-20 opacity-50 bg-gradient-to-r from-primary/20 via-purple-500/5 to-primary/20 blur-3xl -z-10" />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-              {[
-                {
-                  icon: Globe,
-                  title: "Solutions Web",
-                  description:
-                    "Applications web modernes et performantes.",
-                },
-                {
-                  icon: Computer,
-                  title: "Design Responsive",
-                  description:
-                    "Interfaces adaptatives pour tous les écrans.",
-                },
-                {
-                  icon: Smartphone,
-                  title: "Mobile First",
-                  description:
-                    "Expérience mobile optimisée en priorité.",
-                },
-                {
-                  icon: Users,
-                  title: "UX Centrée Utilisateur",
-                  description:
-                    "Design pensé pour vos utilisateurs.",
-                },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="group relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-500 hover:bg-primary/5"
-                >
-                  <div className="relative mb-8">
-                    <div className="absolute inset-0 bg-primary/10 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500"></div>
-                    <feature.icon className="relative w-16 h-16 text-primary transform group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <TechnologiesSection />
 
         {/* Notre Histoire Section */}
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
