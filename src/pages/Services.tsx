@@ -92,49 +92,46 @@ const Services = () => {
                         <div onClick={() => handleOfferSelect("complete")} className="w-full">
                           <h3 className="text-2xl font-bold text-white mb-4">Offre Complète</h3>
                           <div className="space-y-3 text-neutral-200">
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>Design personnalisé</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>3 pages</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>Support 30 jours</span>
-                            </div>
+                            {["Design personnalisé", "Responsive design", "3 pages", "Formulaire de contact", "Optimisation SEO de base", "Support 30 jours"].map((feature, idx) => (
+                              <div key={idx} className="flex items-center gap-2">
+                                <ShieldCheck className="w-5 h-5 text-primary" />
+                                <span>{feature}</span>
+                              </div>
+                            ))}
                           </div>
                           <div className="mt-6">
                             <p className="text-2xl font-bold text-primary">849€</p>
                             <p className="text-sm text-neutral-400 line-through">999€</p>
                           </div>
+                          <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
+                            <p className="font-semibold text-primary">BONUS : Guide d'optimisation SEO offert (valeur 99€)</p>
+                          </div>
                         </div>
                       </GlareCard>
 
-                      <GlareCard className="flex flex-col items-start justify-between p-6 cursor-pointer group">
+                      <GlareCard className="flex flex-col items-start justify-between p-6 cursor-pointer group relative">
+                        <div className="absolute -top-2 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold z-10 text-center shadow-lg">
+                          Plus Populaire
+                        </div>
                         <div onClick={() => handleOfferSelect("premium")} className="w-full">
-                          <div className="absolute -top-3 left-0 right-0 mx-auto w-40 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold text-center">
-                            Plus Populaire
-                          </div>
                           <h3 className="text-2xl font-bold text-white mb-4">Premium</h3>
                           <div className="space-y-3 text-neutral-200">
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>Jusqu'à 7 pages</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>Blog intégré</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>Support 60 jours</span>
-                            </div>
+                            {["Tout de l'offre Complète", "Jusqu'à 7 pages", "Blog intégré", "Animations personnalisées", "Optimisation SEO avancée", "Support 60 jours"].map((feature, idx) => (
+                              <div key={idx} className="flex items-center gap-2">
+                                <ShieldCheck className="w-5 h-5 text-primary" />
+                                <span>{feature}</span>
+                              </div>
+                            ))}
                           </div>
                           <div className="mt-6">
                             <p className="text-2xl font-bold text-primary">1399€</p>
                             <p className="text-sm text-neutral-400 line-through">1699€</p>
+                          </div>
+                          <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
+                            <p className="font-semibold text-primary">BONUS : Formation maintenance WordPress (valeur 299€)</p>
+                          </div>
+                          <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
+                            <p className="text-primary">Passez à l'offre Magique pour seulement 500€ de plus et obtenez des pages illimitées !</p>
                           </div>
                         </div>
                       </GlareCard>
@@ -143,22 +140,19 @@ const Services = () => {
                         <div onClick={() => handleOfferSelect("magique")} className="w-full">
                           <h3 className="text-2xl font-bold text-white mb-4">Magique</h3>
                           <div className="space-y-3 text-neutral-200">
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>Pages illimitées</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>E-commerce intégré</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <ShieldCheck className="w-5 h-5 text-primary" />
-                              <span>Support 90 jours</span>
-                            </div>
+                            {["Tout de l'offre Premium", "Pages illimitées", "E-commerce intégré", "Système de réservation", "Optimisation SEO expert", "Support 90 jours"].map((feature, idx) => (
+                              <div key={idx} className="flex items-center gap-2">
+                                <ShieldCheck className="w-5 h-5 text-primary" />
+                                <span>{feature}</span>
+                              </div>
+                            ))}
                           </div>
                           <div className="mt-6">
                             <p className="text-2xl font-bold text-primary">1899€</p>
                             <p className="text-sm text-neutral-400 line-through">2499€</p>
+                          </div>
+                          <div className="mt-4 bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
+                            <p className="font-semibold text-primary">BONUS EXCLUSIF : Audit performance + Plan marketing (valeur 599€)</p>
                           </div>
                         </div>
                       </GlareCard>
