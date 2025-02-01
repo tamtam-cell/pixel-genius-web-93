@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { HeroSection } from "@/components/blocks/HeroSection";
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { AnimatedTestimonialsDemo } from "@/components/blocks/animated-testimonials-demo";
 import { SplineSceneBasic } from "@/components/blocks/SplineSceneBasic";
 import { CanvasTimeline } from "@/components/blocks/CanvasTimeline";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
@@ -418,7 +418,7 @@ const Index = () => {
                 Rejoignez les entreprises qui construisent déjà leur avenir à nos côtés
               </p>
             </div>
-            <AnimatedTestimonials testimonials={testimonials} autoplay={true} />
+            <AnimatedTestimonialsDemo />
           </div>
         </section>
 
