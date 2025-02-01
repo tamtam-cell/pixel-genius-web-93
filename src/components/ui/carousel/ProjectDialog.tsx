@@ -1,7 +1,7 @@
 import { CardData } from "@/types/carousel";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 interface ProjectDialogProps {
   selectedCard: CardData | null;
@@ -24,13 +24,11 @@ export const ProjectDialog = ({ selectedCard, onOpenChange }: ProjectDialogProps
             {selectedCard.story}
           </p>
           <div className="mt-6 flex justify-end">
-            <Button 
+            <InteractiveHoverButton 
               onClick={() => window.open(selectedCard.websiteUrl, '_blank')}
-              className="gap-2"
-            >
-              Visiter le site
-              <ExternalLink className="h-4 w-4" />
-            </Button>
+              text="Visiter le site"
+              icon={<ExternalLink className="h-4 w-4" />}
+            />
           </div>
         </div>
       </DialogContent>
