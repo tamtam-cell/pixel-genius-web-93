@@ -2,61 +2,63 @@ import { motion } from "framer-motion";
 import { Clipboard, Palette, Code, Bug, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export interface TimelineEntry {
   icon: typeof Clipboard | typeof Palette | typeof Code | typeof Bug | typeof CheckCircle;
-  title: string;
-  description: string;
-  content: string;
+  titleKey: string;
+  descriptionKey: string;
+  contentKey: string;
   highlight?: string;
   image?: string;
 }
 
-const timelineData: TimelineEntry[] = [
-  {
-    icon: Clipboard,
-    title: "Collecte des Besoins",
-    description: "Analyse approfondie de vos besoins",
-    content: "Nous commençons par comprendre votre vision et vos objectifs à travers notre formulaire détaillé sur la page Services.",
-    highlight: "Formulaire intelligent",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop"
-  },
-  {
-    icon: Palette,
-    title: "Design Personnalisé",
-    description: "Création d'une identité unique",
-    content: "Nos designers créent une maquette sur mesure qui reflète votre marque et vos valeurs.",
-    highlight: "Design moderne",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop"
-  },
-  {
-    icon: Code,
-    title: "Développement Agile",
-    description: "Codage et intégration",
-    content: "Notre équipe de développeurs transforme la maquette en site web fonctionnel avec les dernières technologies.",
-    highlight: "Technologies modernes",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop"
-  },
-  {
-    icon: Bug,
-    title: "Tests & Optimisation",
-    description: "Contrôle qualité rigoureux",
-    content: "Phase intensive de tests pour garantir performance, sécurité et compatibilité.",
-    highlight: "Qualité garantie",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop"
-  },
-  {
-    icon: CheckCircle,
-    title: "Mise en Production",
-    description: "Lancement et accompagnement",
-    content: "Déploiement de votre site et formation à son utilisation pour une transition en douceur.",
-    highlight: "Support continu",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=300&fit=crop"
-  }
-];
-
 export function CanvasTimeline() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { t } = useLanguage();
+
+  const timelineData: TimelineEntry[] = [
+    {
+      icon: Clipboard,
+      titleKey: "timeline.step1.title",
+      descriptionKey: "timeline.step1.description",
+      contentKey: "timeline.step1.content",
+      highlight: "Formulaire intelligent",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop"
+    },
+    {
+      icon: Palette,
+      titleKey: "timeline.step2.title",
+      descriptionKey: "timeline.step2.description",
+      contentKey: "timeline.step2.content",
+      highlight: "Design moderne",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop"
+    },
+    {
+      icon: Code,
+      titleKey: "timeline.step3.title",
+      descriptionKey: "timeline.step3.description",
+      contentKey: "timeline.step3.content",
+      highlight: "Technologies modernes",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop"
+    },
+    {
+      icon: Bug,
+      titleKey: "timeline.step4.title",
+      descriptionKey: "timeline.step4.description",
+      contentKey: "timeline.step4.content",
+      highlight: "Qualité garantie",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop"
+    },
+    {
+      icon: CheckCircle,
+      titleKey: "timeline.step5.title",
+      descriptionKey: "timeline.step5.description",
+      contentKey: "timeline.step5.content",
+      highlight: "Support continu",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=300&fit=crop"
+    }
+  ];
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -72,7 +74,6 @@ export function CanvasTimeline() {
 
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Ambient light effect */}
       <div 
         className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
         style={{
@@ -82,7 +83,6 @@ export function CanvasTimeline() {
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 relative">
-          {/* Spotlight effect for title */}
           <div 
             className="absolute inset-0 -z-10"
             style={{
@@ -90,10 +90,10 @@ export function CanvasTimeline() {
             }}
           />
           <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-            Notre Parcours de Création
+            {t("timeline.title")}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Une approche étape par étape pour donner vie à votre vision
+            {t("timeline.subtitle")}
           </p>
         </div>
 
@@ -118,10 +118,8 @@ export function CanvasTimeline() {
                 e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
               }}
             >
-              {/* Card glow effect */}
               <div className="absolute -inset-px bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-500" />
               
-              {/* Interactive spotlight */}
               <div 
                 className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
@@ -134,7 +132,7 @@ export function CanvasTimeline() {
                   <div className="md:w-1/2 overflow-hidden rounded-lg">
                     <motion.img 
                       src={item.image} 
-                      alt={item.title}
+                      alt={t(item.titleKey)}
                       className="w-full h-64 object-cover"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
@@ -154,9 +152,9 @@ export function CanvasTimeline() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.3 }}
                       >
-                        {item.title}
+                        {t(item.titleKey)}
                       </motion.h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <p className="text-muted-foreground">{t(item.descriptionKey)}</p>
                     </div>
                   </div>
 
@@ -166,7 +164,7 @@ export function CanvasTimeline() {
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: index * 0.4 }}
                   >
-                    {item.content}
+                    {t(item.contentKey)}
                   </motion.p>
 
                   {item.highlight && (

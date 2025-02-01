@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { WavyBackground } from "@/components/ui/wavy-background";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface LimitedOfferSectionProps {
   remainingSpots: number;
@@ -9,6 +10,8 @@ interface LimitedOfferSectionProps {
 }
 
 export function LimitedOfferSection({ remainingSpots, onOfferClick }: LimitedOfferSectionProps) {
+  const { t } = useLanguage();
+  
   if (remainingSpots <= 0) return null;
 
   return (
@@ -28,17 +31,17 @@ export function LimitedOfferSection({ remainingSpots, onOfferClick }: LimitedOff
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="text-left">
                 <h3 className="text-xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-200">
-                  Offre Limitée ! Plus que {remainingSpots} place{remainingSpots > 1 ? 's' : ''} disponibles
+                  {t("offer.limited").replace("{count}", remainingSpots.toString()).replace("{s}", remainingSpots > 1 ? "s" : "")}
                 </h3>
                 <p className="text-purple-200/80 text-sm">
-                  Profitez de -20% sur notre offre Premium + consultation stratégique gratuite
+                  {t("offer.description")}
                 </p>
               </div>
               <RainbowButton
                 onClick={onOfferClick}
                 className="inline-flex items-center gap-2"
               >
-                J'en profite
+                {t("offer.cta")}
                 <ArrowRight className="w-4 h-4" />
               </RainbowButton>
             </div>
