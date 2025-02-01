@@ -37,8 +37,8 @@ const Header = () => {
         <div className="h-12 overflow-hidden flex items-center">
           <GooeyText
             texts={announcementTexts}
-            morphTime={1}
-            cooldownTime={2}
+            morphTime={0.5}
+            cooldownTime={1}
             className="w-full"
             textClassName="text-sm md:text-base font-bold text-primary"
           />
