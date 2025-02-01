@@ -340,15 +340,6 @@ const Services = () => {
           </div>
         </form>
       </Form>
-
-      <div className="mt-16 text-center space-y-4">
-        <p className="text-xl font-medium text-primary/90">
-          Pas convaincu? Appellez-nous!
-        </p>
-        <RainbowButton asChild className="mx-auto">
-          <Link to="/contact">Nous Contacter</Link>
-        </RainbowButton>
-      </div>
     </div>
   );
 };
