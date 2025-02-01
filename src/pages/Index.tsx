@@ -10,7 +10,7 @@ import { HeroSection } from "@/components/blocks/HeroSection";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <div className="relative bg-slate-950 w-full h-[85vh]">
+      <div className="relative bg-slate-950 w-screen h-[85vh] overflow-hidden">
         <div className="relative h-full flex items-center justify-center">
           <HeroSection />
         </div>
