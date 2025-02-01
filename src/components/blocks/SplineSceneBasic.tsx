@@ -16,8 +16,8 @@ export function SplineSceneBasic() {
           <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
             Notre Histoire
           </h1>
-          <p className="mt-4 text-neutral-300 max-w-lg">
-            Depuis 2020, nous innovons et créons des expériences numériques uniques. Notre parcours est marqué par l'excellence technique et l'innovation constante.
+          <p className="mt-4 text-neutral-300 max-w-lg leading-relaxed">
+            Depuis 2020, nous façonnons l'avenir numérique avec passion et précision. Notre voyage est une symphonie d'innovation où chaque projet devient une œuvre unique, alliant expertise technique et créativité visionnaire.
           </p>
         </div>
 
