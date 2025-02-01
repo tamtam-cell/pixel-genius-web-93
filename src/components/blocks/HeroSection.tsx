@@ -49,7 +49,7 @@ export function HeroSection() {
         >
           <RainbowButton 
             onClick={handleClick}
-            className="text-lg tracking-wider"
+            className="text-lg tracking-wider font-bold text-white"
           >
             COMMENCER
           </RainbowButton>
