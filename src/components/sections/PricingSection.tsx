@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-background";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface PricingCardProps {
   title: string;
@@ -121,6 +122,7 @@ const PricingCard = ({
 export const PricingSection = () => {
   const navigate = useNavigate();
   const [selectedOffer, setSelectedOffer] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   const handleOfferClick = () => {
     console.log("Redirecting to services page...");
@@ -188,19 +190,19 @@ export const PricingSection = () => {
       titleComponent={
         <>
           <h1 className="text-4xl font-semibold text-foreground mb-8">
-            Nos Offres <br />
+            {t("pricing.title")} <br />
             <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
-              Sur Mesure
+              {t("pricing.subtitle")}
             </span>
           </h1>
           
           <div className="text-center space-y-8 mb-16">
             <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
-              Pas convaincu? Appellez-nous!
+              {t("pricing.contact")}
             </p>
             <Link to="/contact">
               <RainbowButton>
-                Nous Contacter
+                {t("pricing.contactBtn")}
               </RainbowButton>
             </Link>
           </div>
