@@ -331,7 +331,8 @@ const Services = () => {
         </p>
         <Button 
           asChild 
-          variant="outline" 
+          variant="ghost"
+          size="lg"
           className="mx-auto text-lg font-medium hover:text-primary hover:border-primary transition-colors"
         >
           <Link to="/contact">Nous Contacter</Link>
