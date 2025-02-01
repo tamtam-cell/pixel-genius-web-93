@@ -341,7 +341,7 @@ const Index = () => {
         </ContainerScroll>
 
         {/* Testimonials Section */}
-        <section className="bg-background text-foreground py-2 sm:py-6 md:py-8">
+        <section className="bg-background text-foreground py-8 sm:py-16 md:py-24">
           <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
             <div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
               <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
