@@ -13,10 +13,10 @@ export function SplineSceneBasic() {
       
       <div className="flex h-full">
         <div className="flex-1 p-8 relative z-10 flex flex-col justify-center text-lg md:text-xl">
-          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+          <h1 className="text-4xl md:text-6xl font-sites-web font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#9b87f5] via-[#7E69AB] to-[#D6BCFA]">
             Notre Histoire
           </h1>
-          <p className="mt-4 text-neutral-300 max-w-lg leading-relaxed">
+          <p className="mt-6 text-neutral-300/90 max-w-lg leading-relaxed font-light tracking-wide">
             Depuis 2020, nous orchestrons une symphonie digitale où chaque ligne de code raconte une histoire d'excellence. Notre atelier numérique, guidé par la passion de l'innovation, transforme vos visions en expériences uniques et mémorables. C'est l'art de créer l'extraordinaire dans un monde en constante évolution.
           </p>
         </div>
