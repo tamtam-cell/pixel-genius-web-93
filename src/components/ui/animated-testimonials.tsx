@@ -42,7 +42,7 @@ export const AnimatedTestimonials = ({
     if (autoplay) {
       const interval = setInterval(() => {
         handleNext();
-      }, 10000); // Changed from 5000 to 10000 to slow down the transition
+      }, 10000);
       return () => clearInterval(interval);
     }
   }, [autoplay]);
@@ -71,8 +71,8 @@ export const AnimatedTestimonials = ({
   };
 
   return (
-    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-20", className)}>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-8", className)}>
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <div className="relative h-80 w-full z-[1] overflow-hidden rounded-3xl bg-background">
             <AnimatePresence initial={false} mode="wait" custom={direction}>
@@ -111,7 +111,7 @@ export const AnimatedTestimonials = ({
           </div>
         </div>
 
-        <div className="flex justify-between flex-col py-4">
+        <div className="flex justify-between flex-col py-2">
           <motion.div
             key={active}
             initial={{ y: 20, opacity: 0 }}
@@ -128,7 +128,7 @@ export const AnimatedTestimonials = ({
             <p className="text-sm text-muted-foreground">
               {testimonials[active].designation}
             </p>
-            <motion.p className="text-lg text-muted-foreground mt-8">
+            <motion.p className="text-lg text-muted-foreground mt-4">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -154,7 +154,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="flex gap-4 pt-6">
             <button
               onClick={handlePrev}
               className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
