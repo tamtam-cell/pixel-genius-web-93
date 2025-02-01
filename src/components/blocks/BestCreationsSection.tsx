@@ -2,7 +2,7 @@ import { ThreeDPhotoCarousel } from "@/components/ui/3d-carousel";
 
 export function BestCreationsSection() {
   return (
-    <section className="pt-4 relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="font-sites-web text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#9b87f5] via-[#7E69AB] to-[#D6BCFA] tracking-tight leading-tight">
