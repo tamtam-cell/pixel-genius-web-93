@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
 import {
   motion,
@@ -80,7 +79,7 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
-          <Image
+          <img
             onMouseMove={handleMouseMove}
             height={100}
             width={100}
