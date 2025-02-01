@@ -42,7 +42,7 @@ export const AnimatedTestimonials = ({
     if (autoplay) {
       const interval = setInterval(() => {
         handleNext();
-      }, 5000);
+      }, 10000); // Changed from 5000 to 10000 to slow down the transition
       return () => clearInterval(interval);
     }
   }, [autoplay]);
