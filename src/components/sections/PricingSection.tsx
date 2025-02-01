@@ -32,6 +32,13 @@ const PricingCard = ({
   gradientColors,
   onSelect,
 }: PricingCardProps) => {
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    onSelect(title);
+    navigate('/services', { state: { scrollToCards: true } });
+  };
+
   const formatTime = (seconds: number) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
@@ -100,7 +107,7 @@ const PricingCard = ({
         )}
 
         <button
-          onClick={() => onSelect(title)}
+          onClick={handleClick}
           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)]"
         >
           Réserver maintenant
