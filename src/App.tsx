@@ -1,6 +1,7 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Header from "./components/Header";
+import Home from "./pages/Index";
 import About from "./pages/About";
 import Cookies from "./pages/Cookies";
 import Services from "./pages/Services";
