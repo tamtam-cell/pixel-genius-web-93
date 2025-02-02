@@ -67,7 +67,7 @@ const PricingCard = ({
       .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
-  // ... keep existing code (rest of the PricingCard component JSX)
+  const monthlyPayment = Math.ceil(price / 2);
 
   return (
     <div
@@ -98,6 +98,10 @@ const PricingCard = ({
           <span className="text-sm text-muted-foreground line-through">
             {originalPrice}€
           </span>
+        </div>
+        
+        <div className="text-sm text-center font-medium bg-primary/10 py-2 rounded-md backdrop-blur-sm mb-2">
+          Paiement en 2 fois disponible : {monthlyPayment}€/mois
         </div>
         
         <p className="text-sm text-center font-medium bg-primary/10 py-2 rounded-md backdrop-blur-sm mb-6">
