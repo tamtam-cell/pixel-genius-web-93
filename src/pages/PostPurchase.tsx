@@ -43,16 +43,18 @@ const PostPurchase = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <Card className="relative">
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <AlertCircle className="w-6 h-6 text-primary" />
-                    <h2 className="text-xl font-semibold">Besoin d'aide ?</h2>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    En cas de problème ou de question, n'hésitez pas à nous contacter :
-                  </p>
-                  <div className="flex items-center gap-2 text-primary hover:underline">
-                    <Mail className="w-5 h-5" />
-                    <a href="mailto:contact@pixelcraftlab.fr">contact@pixelcraftlab.fr</a>
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="flex items-center gap-4 mb-2">
+                      <AlertCircle className="w-8 h-8 text-primary" />
+                      <h2 className="text-2xl font-semibold">Besoin d'aide ?</h2>
+                    </div>
+                    <p className="text-muted-foreground text-lg mb-4">
+                      En cas de problème ou de question, n'hésitez pas à nous contacter :
+                    </p>
+                    <div className="inline-flex items-center gap-2 text-primary hover:underline bg-primary/10 px-4 py-2 rounded-full transition-all hover:bg-primary/20">
+                      <Mail className="w-5 h-5" />
+                      <a href="mailto:contact@pixelcraftlab.fr" className="text-lg">contact@pixelcraftlab.fr</a>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
