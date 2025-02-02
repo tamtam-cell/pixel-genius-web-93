@@ -92,7 +92,7 @@ export function GooeyText({
   }, [texts, morphTime, cooldownTime]);
 
   return (
-    <div className={cn("relative w-full bg-background/80", className)}>
+    <div className={cn("relative w-full bg-background/80 py-1", className)}>
       <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
         <defs>
           <filter id="threshold">
