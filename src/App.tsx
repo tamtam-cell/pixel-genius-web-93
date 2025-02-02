@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AppSidebar } from "@/components/AppSidebar";
@@ -25,7 +25,6 @@ function App() {
             <div className="flex">
               <AppSidebar />
               <main className="flex-1">
-                <SidebarTrigger className="fixed top-20 left-4 z-50" />
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<About />} />

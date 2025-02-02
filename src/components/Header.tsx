@@ -5,10 +5,12 @@ import { NavBar } from "@/components/ui/tubelight-navbar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { GooeyText } from "@/components/ui/gooey-text";
+import { useSidebar } from "@/components/ui/sidebar";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { toggleSidebar } = useSidebar();
 
   const navItems = [
     { name: t("nav.home"), path: "/", icon: Home },
@@ -44,11 +46,14 @@ const Header = () => {
           />
         </div>
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center">
+          <button 
+            onClick={toggleSidebar}
+            className="flex items-center focus:outline-none"
+          >
             <div className="relative group">
               <div className="flex items-center">
                 {/* Logo créé en CSS */}
-                <div className="relative w-16 h-16 mr-4 flex items-center justify-center">
+                <div className="relative w-16 h-16 mr-4 flex items-center justify-center cursor-pointer">
                   <div className="absolute w-12 h-12 bg-gradient-to-br from-primary via-purple-500 to-primary/80 rounded-lg transform rotate-45 animate-pulse"></div>
                   <div className="absolute w-8 h-8 bg-background rounded-md transform rotate-45"></div>
                   <div className="absolute w-6 h-6 bg-gradient-to-r from-primary to-purple-500 rounded-sm transform -rotate-45"></div>
@@ -73,7 +78,7 @@ const Header = () => {
                 <div className="w-full h-full bg-gradient-to-r from-transparent via-[#9b87f5] to-transparent transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </div>
             </div>
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-4">
