@@ -171,10 +171,10 @@ export const Vortex = (props: VortexProps) => {
     ctx.save();
     ctx.lineCap = "round";
     ctx.lineWidth = radius;
-    // Increased opacity from 0.5 to 0.8 and added more brightness
-    ctx.strokeStyle = `hsla(${hue},100%,80%,${fadeInOut(life, ttl) * 0.8})`;
-    ctx.shadowBlur = 15;
-    ctx.shadowColor = `hsla(${hue},100%,70%,0.5)`;
+    // Increased brightness to 90% and opacity to 0.9
+    ctx.strokeStyle = `hsla(${hue},100%,90%,${fadeInOut(life, ttl) * 0.9})`;
+    ctx.shadowBlur = 20; // Increased shadow blur
+    ctx.shadowColor = `hsla(${hue},100%,80%,0.7)`; // Increased shadow opacity and brightness
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(x2, y2);
