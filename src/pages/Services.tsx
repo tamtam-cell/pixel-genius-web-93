@@ -221,38 +221,46 @@ const Services = () => {
                             handleSiteTypeChange(value);
                           }}
                           defaultValue={field.value}
-                          className="flex flex-col space-y-1"
+                          className="flex flex-col space-y-4"
                         >
-                          <FormItem className="flex items-center space-x-3 space-y-0">
-                            <FormControl>
-                              <RadioGroupItem value="vitrine" />
-                            </FormControl>
-                            <FormLabel className="font-normal">
-                              Site Vitrine
-                            </FormLabel>
-                            <p className="text-sm text-muted-foreground ml-8">
+                          <FormItem className="flex flex-col space-y-2">
+                            <div className="flex items-center space-x-3">
+                              <FormControl>
+                                <RadioGroupItem value="vitrine" />
+                              </FormControl>
+                              <FormLabel className="font-normal">
+                                Site Vitrine
+                              </FormLabel>
+                            </div>
+                            <p className="text-sm text-muted-foreground pl-8">
                               Parfait pour présenter votre entreprise, vos services ou votre portfolio
                             </p>
                           </FormItem>
-                          <FormItem className="flex items-center space-x-3 space-y-0">
-                            <FormControl>
-                              <RadioGroupItem value="ecommerce" />
-                            </FormControl>
-                            <FormLabel className="font-normal">
-                              Site E-commerce
-                            </FormLabel>
-                            <p className="text-sm text-muted-foreground ml-8">
+                          
+                          <FormItem className="flex flex-col space-y-2">
+                            <div className="flex items-center space-x-3">
+                              <FormControl>
+                                <RadioGroupItem value="ecommerce" />
+                              </FormControl>
+                              <FormLabel className="font-normal">
+                                Site E-commerce
+                              </FormLabel>
+                            </div>
+                            <p className="text-sm text-muted-foreground pl-8">
                               Pour vendre des produits physiques en ligne avec gestion de stock et paiements
                             </p>
                           </FormItem>
-                          <FormItem className="flex items-center space-x-3 space-y-0">
-                            <FormControl>
-                              <RadioGroupItem value="service" />
-                            </FormControl>
-                            <FormLabel className="font-normal">
-                              Site de vente de produits digitaux
-                            </FormLabel>
-                            <p className="text-sm text-muted-foreground ml-8">
+                          
+                          <FormItem className="flex flex-col space-y-2">
+                            <div className="flex items-center space-x-3">
+                              <FormControl>
+                                <RadioGroupItem value="service" />
+                              </FormControl>
+                              <FormLabel className="font-normal">
+                                Site de vente de produits digitaux
+                              </FormLabel>
+                            </div>
+                            <p className="text-sm text-muted-foreground pl-8">
                               Idéal pour vendre des ebooks, formations en ligne, logiciels ou autres produits numériques
                             </p>
                           </FormItem>
