@@ -12,6 +12,7 @@ import Privacy from "@/pages/Privacy";
 import Cookies from "@/pages/Cookies";
 import Terms from "@/pages/Terms";
 import Contact from "@/pages/Contact";
+import PostPurchase from "@/pages/PostPurchase";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/cookies" element={<Cookies />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/post-purchase" element={<PostPurchase />} />
             </Routes>
           </main>
           <Footer />
