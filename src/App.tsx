@@ -1,10 +1,8 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { AppSidebar } from "@/components/AppSidebar";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
@@ -19,27 +17,22 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
-        <SidebarProvider>
-          <div className="min-h-screen bg-background font-sans antialiased w-full">
-            <Header />
-            <div className="flex">
-              <AppSidebar />
-              <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/cookies" element={<Cookies />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="/contact" element={<Contact />} />
-                </Routes>
-              </main>
-            </div>
-            <Footer />
-          </div>
-          <Toaster />
-        </SidebarProvider>
+        <div className="min-h-screen bg-background font-sans antialiased">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/cookies" element={<Cookies />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+        <Toaster />
       </Router>
     </LanguageProvider>
   );
