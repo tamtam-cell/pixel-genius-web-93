@@ -7,8 +7,8 @@ import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
-  SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarGroupContent,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -50,6 +50,9 @@ const links = [
 export function AppSidebar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { isOpen } = useSidebar();
+
+  if (!isOpen) return null;
 
   return (
     <Sidebar>
