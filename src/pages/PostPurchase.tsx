@@ -71,16 +71,12 @@ const PostPurchase = () => {
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
                     <FileEdit className="w-6 h-6 text-primary" />
-                    <h2 className="text-xl font-semibold">Modifications et Paiement en deux fois</h2>
+                    <h2 className="text-xl font-semibold">Modifications</h2>
                   </div>
                   <div className="space-y-4">
                     <p className="text-muted-foreground">
                       Vous souhaitez modifier votre site après sa création ? C'est possible ! 
                       Les modifications seront facturées en supplément selon la complexité des changements demandés.
-                    </p>
-                    <p className="text-muted-foreground">
-                      Nous proposons également une option de paiement en deux fois pour faciliter votre investissement. 
-                      Contactez-nous pour en discuter !
                     </p>
                   </div>
                 </CardContent>
