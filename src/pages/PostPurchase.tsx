@@ -48,7 +48,7 @@ const PostPurchase = () => {
                       <AlertCircle className="w-8 h-8 text-primary" />
                       <h2 className="text-2xl font-semibold">Besoin d'aide ?</h2>
                     </div>
-                    <p className="text-muted-foreground text-lg mb-4">
+                    <p className="text-foreground text-xl font-medium mb-4">
                       En cas de problème ou de question, n'hésitez pas à nous contacter :
                     </p>
                     <div className="inline-flex items-center gap-2 text-primary hover:underline bg-primary/10 px-4 py-2 rounded-full transition-all hover:bg-primary/20">
@@ -74,7 +74,7 @@ const PostPurchase = () => {
                     <h2 className="text-xl font-semibold">Modifications</h2>
                   </div>
                   <div className="space-y-4">
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground text-xl font-medium">
                       Vous souhaitez modifier votre site après sa création ? C'est possible ! 
                       Les modifications seront facturées en supplément selon la complexité des changements demandés.
                     </p>
