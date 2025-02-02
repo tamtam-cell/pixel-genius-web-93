@@ -271,6 +271,9 @@ const Services = () => {
                           {...field} 
                         />
                       </FormControl>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Cette adresse email sera utilisée par nos professionnels pour vous envoyer votre site web une fois terminé.
+                      </p>
                       <FormMessage />
                     </FormItem>
                   )}
