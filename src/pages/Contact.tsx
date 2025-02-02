@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, Instagram } from "lucide-react";
+import { Mail, Instagram } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Contact = () => {
@@ -42,33 +42,6 @@ const Contact = () => {
                   </div>
                   <p className="mt-4 text-muted-foreground">
                     Vous pouvez aussi nous contacter sur Instagram
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.3 }}
-              className="relative group"
-            >
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-              <Card className="relative">
-                <CardContent className="p-8">
-                  <div className="flex items-center justify-center gap-4 text-2xl font-semibold">
-                    <Phone className="w-8 h-8 text-primary" />
-                    <motion.a
-                      href="tel:+33745451136"
-                      className="hover:text-primary transition-colors"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      +33 7 45 45 11 36
-                    </motion.a>
-                  </div>
-                  <p className="mt-4 text-muted-foreground">
-                    Disponible 7j/7 de 9h à 20h
                   </p>
                 </CardContent>
               </Card>
