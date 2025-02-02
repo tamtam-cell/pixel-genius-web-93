@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-background";
+import { toast } from "sonner";
 
 interface PricingCardProps {
   title: string;
@@ -32,7 +33,6 @@ const PricingCard = ({
   gradientColors,
   onSelect,
 }: PricingCardProps) => {
-  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
   
   useEffect(() => {
@@ -54,8 +54,21 @@ const PricingCard = ({
   }, [title]);
 
   const handleClick = () => {
-    onSelect(title);
-    navigate('/services', { state: { scrollToCards: true } });
+    console.log('Handling click for offer:', title);
+    const stripeLinks = {
+      "Offre Complète": 'https://buy.stripe.com/eVa5nV4ZF6T95uE6oo',
+      "Offre Premium": 'https://buy.stripe.com/eVag2z3VBcdt3mw289',
+      "Offre Magique": 'https://buy.stripe.com/fZedUr3VBgtJbT2dQS'
+    };
+    
+    const link = stripeLinks[title];
+    if (link) {
+      console.log('Redirecting to Stripe:', link);
+      window.location.href = link;
+    } else {
+      console.error('No Stripe link found for offer:', title);
+      toast.error("Une erreur s'est produite lors de la redirection vers le paiement");
+    }
   };
 
   const formatTime = (seconds: number) => {
@@ -66,8 +79,6 @@ const PricingCard = ({
       .toString()
       .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
-
-  // ... keep existing code (rest of the PricingCard component JSX)
 
   return (
     <div
@@ -147,13 +158,7 @@ const PricingCard = ({
 };
 
 export const PricingSection = () => {
-  const navigate = useNavigate();
   const [selectedOffer, setSelectedOffer] = useState<string | null>(null);
-
-  const handleOfferClick = () => {
-    console.log("Redirecting to services page...");
-    navigate('/services', { state: { scrollToCards: true } });
-  };
 
   const pricingData = [
     {
@@ -242,7 +247,6 @@ export const PricingSection = () => {
             {...offer}
             onSelect={(title) => {
               setSelectedOffer(title);
-              handleOfferClick();
             }}
           />
         ))}
@@ -250,4 +254,3 @@ export const PricingSection = () => {
     </ContainerScroll>
   );
 };
-
