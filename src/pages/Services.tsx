@@ -230,6 +230,9 @@ const Services = () => {
                             <FormLabel className="font-normal">
                               Site Vitrine
                             </FormLabel>
+                            <p className="text-sm text-muted-foreground ml-8">
+                              Parfait pour présenter votre entreprise, vos services ou votre portfolio
+                            </p>
                           </FormItem>
                           <FormItem className="flex items-center space-x-3 space-y-0">
                             <FormControl>
@@ -238,14 +241,20 @@ const Services = () => {
                             <FormLabel className="font-normal">
                               Site E-commerce
                             </FormLabel>
+                            <p className="text-sm text-muted-foreground ml-8">
+                              Pour vendre des produits physiques en ligne avec gestion de stock et paiements
+                            </p>
                           </FormItem>
                           <FormItem className="flex items-center space-x-3 space-y-0">
                             <FormControl>
                               <RadioGroupItem value="service" />
                             </FormControl>
                             <FormLabel className="font-normal">
-                              Site de Services
+                              Site de vente de produits digitaux
                             </FormLabel>
+                            <p className="text-sm text-muted-foreground ml-8">
+                              Idéal pour vendre des ebooks, formations en ligne, logiciels ou autres produits numériques
+                            </p>
                           </FormItem>
                         </RadioGroup>
                       </FormControl>
