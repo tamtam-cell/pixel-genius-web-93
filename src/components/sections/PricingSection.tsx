@@ -116,25 +116,25 @@ const PricingCard = ({
 
       <div className="mt-auto space-y-4 relative z-10">
         {bonus && (
-          <div className="bg-primary/10 p-4 rounded-lg backdrop-blur-sm">
-            <p className="font-semibold text-primary">{bonus}</p>
+          <div className="bg-primary/10 p-4 rounded-lg backdrop-blur-sm mb-4">
+            <p className="font-semibold text-primary text-center">{bonus}</p>
           </div>
         )}
 
         {upgrade && (
-          <div className={`text-sm italic ${isPopular ? 'bg-primary/10 p-4 rounded-lg backdrop-blur-sm text-primary font-medium' : 'text-primary/80'}`}>
+          <div className={`text-sm italic mb-4 ${isPopular ? 'bg-primary/10 p-4 rounded-lg backdrop-blur-sm text-primary font-medium' : 'text-primary/80'}`}>
             {upgrade}
           </div>
         )}
 
         <button
           onClick={handleClick}
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)]"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-md transition-all duration-200 font-medium shadow-[0_0_20px_rgba(155,135,245,0.3)] hover:shadow-[0_0_25px_rgba(155,135,245,0.4)] mb-4"
         >
           Réserver maintenant
         </button>
 
-        <div className="space-y-2">
+        <div className="space-y-2 pb-2">
           {stock <= 3 && (
             <p className="text-sm text-center font-medium bg-primary/10 py-2 rounded-md backdrop-blur-sm">
               Plus que {stock} place{stock > 1 ? 's' : ''} Bonus !
