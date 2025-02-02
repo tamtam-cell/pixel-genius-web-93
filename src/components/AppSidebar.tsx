@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { LayoutDashboard, Home, Mail, Info, FileText, Settings } from "lucide-react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 import {
   Sidebar,
   SidebarContent,
@@ -12,6 +9,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar
 } from "@/components/ui/sidebar";
 
 const links = [
@@ -48,7 +46,6 @@ const links = [
 ];
 
 export function AppSidebar() {
-  const [open, setOpen] = useState(false);
   const location = useLocation();
   const { isOpen } = useSidebar();
 

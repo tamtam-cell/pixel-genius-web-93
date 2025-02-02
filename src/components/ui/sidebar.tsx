@@ -33,77 +33,89 @@ export function useSidebar() {
   return context;
 }
 
-import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, Home, Mail, Info, FileText, Settings } from "lucide-react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+export function Sidebar({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="h-full bg-background border-r">
+      {children}
+    </div>
+  );
+}
 
-const links = [
-  {
-    label: "Accueil",
-    href: "/",
-    icon: <Home className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-  },
-  {
-    label: "Services",
-    href: "/services",
-    icon: <LayoutDashboard className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-  },
-  {
-    label: "À propos",
-    href: "/about",
-    icon: <Info className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-    icon: <Mail className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-  },
-  {
-    label: "Mentions légales",
-    href: "/terms",
-    icon: <FileText className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-  },
-  {
-    label: "Paramètres",
-    href: "/settings",
-    icon: <Settings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+export function SidebarContent({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col h-full py-4">
+      {children}
+    </div>
+  );
+}
+
+export function SidebarGroup({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="px-3 py-2">
+      {children}
+    </div>
+  );
+}
+
+export function SidebarGroupLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="mb-2 px-4 text-lg font-semibold tracking-tight">
+      {children}
+    </h3>
+  );
+}
+
+export function SidebarGroupContent({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="space-y-1">
+      {children}
+    </div>
+  );
+}
+
+export function SidebarMenu({ children }: { children: React.ReactNode }) {
+  return (
+    <nav className="space-y-1">
+      {children}
+    </nav>
+  );
+}
+
+export function SidebarMenuItem({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="px-3 py-1">
+      {children}
+    </div>
+  );
+}
+
+export function SidebarMenuButton({ 
+  children,
+  asChild,
+  isActive
+}: { 
+  children: React.ReactNode;
+  asChild?: boolean;
+  isActive?: boolean;
+}) {
+  const className = cn(
+    "flex items-center w-full gap-2 rounded-lg px-3 py-2 text-sm transition-colors",
+    isActive 
+      ? "bg-accent text-accent-foreground" 
+      : "hover:bg-accent hover:text-accent-foreground",
+  );
+
+  if (asChild) {
+    return (
+      <div className={className}>
+        {children}
+      </div>
+    );
   }
-];
-
-export function AppSidebar() {
-  const [open, setOpen] = useState(false);
-  const location = useLocation();
-  const { isOpen } = useSidebar();
-
-  if (!isOpen) return null;
 
   return (
-    <Sidebar>
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {links.map((item) => (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton 
-                    asChild
-                    isActive={location.pathname === item.href}
-                  >
-                    <Link to={item.href} className="flex items-center gap-2">
-                      {item.icon}
-                      <span>{item.label}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-    </Sidebar>
+    <button className={className}>
+      {children}
+    </button>
   );
 }
