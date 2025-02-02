@@ -20,6 +20,9 @@ const formSchema = z.object({
   siteType: z.enum(["vitrine", "ecommerce", "service"], {
     required_error: "Veuillez sélectionner un type de site",
   }),
+  email: z.string().email({
+    message: "Veuillez entrer une adresse email valide",
+  }),
   brandName: z.string().min(2, {
     message: "Le nom de la marque doit contenir au moins 2 caractères",
   }),
@@ -55,6 +58,7 @@ const Services = () => {
     defaultValues: {
       offer: undefined,
       siteType: undefined,
+      email: "",
       brandName: "",
       brandColor: "",
       serviceDescription: "",
@@ -65,7 +69,7 @@ const Services = () => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log("Formulaire soumis avec les valeurs:", values);
-    toast.success("Votre demande a été envoyée avec succès !");
+    toast.success("Votre demande a été envoyée avec succès ! Un email vous sera envoyé prochainement.");
   };
 
   const handleOfferChange = (value: string) => {
@@ -254,6 +258,24 @@ const Services = () => {
 
             {showBrandFields && (
               <div className="space-y-6 animate-in fade-in-50 duration-500">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Votre adresse email</FormLabel>
+                      <FormControl>
+                        <Input 
+                          type="email" 
+                          placeholder="exemple@domaine.com" 
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
                 <FormField
                   control={form.control}
                   name="brandName"
