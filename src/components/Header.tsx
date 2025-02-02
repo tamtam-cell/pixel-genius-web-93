@@ -22,13 +22,7 @@ const Header = () => {
   };
 
   const announcementTexts = [
-    "OFFRES A DUREE LIMITEES",
-    "DU A NOTRE",
-    "TOUT NOUVEAU",
-    "LANCEMENT SUR",
-    "LE MARCHE",
-    "FRANCAIS",
-    "PROFITEZ EN!"
+    "OFFRES A DURÉE LIMITÉES DÛ À NOTRE TOUT NOUVEAU LANCEMMENT SUR LE MARCHÉ FRANCAIS"
   ];
 
   return (
