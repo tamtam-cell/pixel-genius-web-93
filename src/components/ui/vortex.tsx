@@ -170,11 +170,13 @@ export const Vortex = (props: VortexProps) => {
   ) => {
     ctx.save();
     ctx.lineCap = "round";
-    ctx.lineWidth = radius;
-    // Increased brightness to 95% and opacity to 1 for maximum visibility
-    ctx.strokeStyle = `hsla(${hue},100%,95%,${fadeInOut(life, ttl) * 1})`;
-    ctx.shadowBlur = 30; // Increased shadow blur for more glow
-    ctx.shadowColor = `hsla(${hue},100%,90%,0.9)`; // Increased shadow brightness and opacity
+    ctx.lineWidth = radius * 2; // Doubled the line width for more visibility
+    // Maximized brightness to 100% and opacity to 1
+    ctx.strokeStyle = `hsla(${hue},100%,100%,${fadeInOut(life, ttl) * 1})`;
+    ctx.shadowBlur = 50; // Significantly increased shadow blur for maximum glow
+    ctx.shadowColor = `hsla(${hue},100%,100%,1)`; // Maximum shadow brightness and opacity
+    // Adding multiple shadow layers for stronger glow effect
+    ctx.shadowColor = `hsla(${hue},100%,100%,1), hsla(${hue},100%,100%,1), hsla(${hue},100%,100%,1)`;
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(x2, y2);
@@ -198,14 +200,21 @@ export const Vortex = (props: VortexProps) => {
   };
 
   const renderGlow = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    // Triple layer glow effect
     ctx.save();
-    ctx.filter = "blur(8px) brightness(200%)";
+    ctx.filter = "blur(12px) brightness(300%)";
     ctx.globalCompositeOperation = "lighter";
     ctx.drawImage(canvas, 0, 0);
     ctx.restore();
 
     ctx.save();
-    ctx.filter = "blur(4px) brightness(200%)";
+    ctx.filter = "blur(8px) brightness(300%)";
+    ctx.globalCompositeOperation = "lighter";
+    ctx.drawImage(canvas, 0, 0);
+    ctx.restore();
+
+    ctx.save();
+    ctx.filter = "blur(4px) brightness(300%)";
     ctx.globalCompositeOperation = "lighter";
     ctx.drawImage(canvas, 0, 0);
     ctx.restore();
