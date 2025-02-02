@@ -67,9 +67,25 @@ const Services = () => {
     },
   });
 
+  const handleStripeRedirect = (offer: string) => {
+    console.log('Redirecting to Stripe for offer:', offer);
+    const stripeLinks = {
+      complete: 'https://buy.stripe.com/eVa5nV4ZF6T95uE6oo',
+      premium: 'https://buy.stripe.com/eVag2z3VBcdt3mw289',
+      magique: 'https://buy.stripe.com/fZedUr3VBgtJbT2dQS'
+    };
+    
+    const link = stripeLinks[offer];
+    if (link) {
+      window.location.href = link;
+    } else {
+      toast.error("Une erreur s'est produite lors de la redirection vers le paiement");
+    }
+  };
+
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log("Formulaire soumis avec les valeurs:", values);
-    toast.success("Votre demande a été envoyée avec succès ! Un email vous sera envoyé prochainement.");
+    handleStripeRedirect(values.offer);
   };
 
   const handleOfferChange = (value: string) => {
@@ -393,7 +409,7 @@ const Services = () => {
                 )}
 
                 <RainbowButton type="submit" className="w-full">
-                  Envoyer ma demande
+                  Procéder au paiement
                 </RainbowButton>
               </div>
             )}
