@@ -12,6 +12,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { useLocation } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   offer: z.enum(["complete", "premium", "magique"], {
@@ -83,9 +84,56 @@ const Services = () => {
     }
   };
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     console.log("Formulaire soumis avec les valeurs:", values);
-    handleStripeRedirect(values.offer);
+    
+    try {
+      // Save order to Supabase
+      const { error: dbError } = await supabase
+        .from('orders')
+        .insert({
+          offer: values.offer,
+          site_type: values.siteType,
+          email: values.email,
+          brand_name: values.brandName,
+          brand_color: values.brandColor,
+          service_description: values.serviceDescription,
+          product_description: values.productDescription,
+          digital_product_description: values.digitalProductDescription,
+        });
+
+      if (dbError) {
+        console.error("Erreur lors de l'enregistrement de la commande:", dbError);
+        toast.error("Une erreur est survenue lors de l'enregistrement de votre commande");
+        return;
+      }
+
+      // Send email notification
+      const { error: emailError } = await supabase.functions.invoke('send-order-email', {
+        body: {
+          offer: values.offer,
+          siteType: values.siteType,
+          email: values.email,
+          brandName: values.brandName,
+          brandColor: values.brandColor,
+          serviceDescription: values.serviceDescription,
+          productDescription: values.productDescription,
+          digitalProductDescription: values.digitalProductDescription,
+        },
+      });
+
+      if (emailError) {
+        console.error("Erreur lors de l'envoi de l'email:", emailError);
+        toast.error("Une erreur est survenue lors de l'envoi de la confirmation");
+        return;
+      }
+
+      toast.success("Votre commande a été enregistrée avec succès !");
+      handleStripeRedirect(values.offer);
+    } catch (error) {
+      console.error("Erreur lors du traitement de la commande:", error);
+      toast.error("Une erreur est survenue lors du traitement de votre commande");
+    }
   };
 
   const handleOfferChange = (value: string) => {
