@@ -6,10 +6,47 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
-export type Database = {
+export interface Database {
   public: {
     Tables: {
-      [_ in never]: never
+      orders: {
+        Row: {
+          id: number
+          created_at: string
+          offer: 'complete' | 'premium' | 'magique'
+          site_type: 'vitrine' | 'ecommerce' | 'service'
+          email: string
+          brand_name: string
+          brand_color: string
+          service_description?: string | null
+          product_description?: string | null
+          digital_product_description?: string | null
+        }
+        Insert: {
+          id?: number
+          created_at?: string
+          offer: 'complete' | 'premium' | 'magique'
+          site_type: 'vitrine' | 'ecommerce' | 'service'
+          email: string
+          brand_name: string
+          brand_color: string
+          service_description?: string | null
+          product_description?: string | null
+          digital_product_description?: string | null
+        }
+        Update: {
+          id?: number
+          created_at?: string
+          offer?: 'complete' | 'premium' | 'magique'
+          site_type?: 'vitrine' | 'ecommerce' | 'service'
+          email?: string
+          brand_name?: string
+          brand_color?: string
+          service_description?: string | null
+          product_description?: string | null
+          digital_product_description?: string | null
+        }
+      }
     }
     Views: {
       [_ in never]: never
