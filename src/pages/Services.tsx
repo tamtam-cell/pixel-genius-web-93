@@ -90,7 +90,7 @@ const Services = () => {
     try {
       // Save order to Supabase
       const { error: dbError } = await supabase
-        .from('orders')
+        .from('Informations de commande')
         .insert({
           offer: values.offer,
           site_type: values.siteType,

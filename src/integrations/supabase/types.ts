@@ -11,16 +11,40 @@ export type Database = {
     Tables: {
       "Informations de commande": {
         Row: {
-          created_at: string
+          brand_color: string
+          brand_name: string
+          created_at: string | null
+          digital_product_description: string | null
+          email: string
           id: number
+          offer: string
+          product_description: string | null
+          service_description: string | null
+          site_type: string
         }
         Insert: {
-          created_at?: string
+          brand_color: string
+          brand_name: string
+          created_at?: string | null
+          digital_product_description?: string | null
+          email: string
           id?: number
+          offer: string
+          product_description?: string | null
+          service_description?: string | null
+          site_type: string
         }
         Update: {
-          created_at?: string
+          brand_color?: string
+          brand_name?: string
+          created_at?: string | null
+          digital_product_description?: string | null
+          email?: string
           id?: number
+          offer?: string
+          product_description?: string | null
+          service_description?: string | null
+          site_type?: string
         }
         Relationships: []
       }
