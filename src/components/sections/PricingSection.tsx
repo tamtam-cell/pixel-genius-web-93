@@ -56,6 +56,10 @@ const PricingCard = ({
   const handleClick = () => {
     onSelect(title);
     navigate('/services', { state: { scrollToCards: true } });
+    // Use setTimeout to ensure navigation completes before scrolling
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   const formatTime = (seconds: number) => {
@@ -157,6 +161,10 @@ export const PricingSection = () => {
   const handleOfferClick = () => {
     console.log("Redirecting to services page...");
     navigate('/services', { state: { scrollToCards: true } });
+    // Use setTimeout to ensure navigation completes before scrolling
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   const handleContactClick = () => {
