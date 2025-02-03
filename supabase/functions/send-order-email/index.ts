@@ -29,25 +29,23 @@ const handler = async (req: Request): Promise<Response> => {
     const orderData: OrderEmailRequest = await req.json();
     console.log("Received order data:", orderData);
 
-    const { offer, siteType, email, brandName, brandColor, serviceDescription, productDescription, digitalProductDescription } = orderData;
-
-    const descriptionText = siteType === 'vitrine' ? serviceDescription :
-                          siteType === 'ecommerce' ? productDescription :
-                          digitalProductDescription;
+    const descriptionText = orderData.siteType === 'vitrine' ? orderData.serviceDescription :
+                          orderData.siteType === 'ecommerce' ? orderData.productDescription :
+                          orderData.digitalProductDescription;
 
     const emailResponse = await resend.emails.send({
       from: "PixelCraftLab <onboarding@resend.dev>",
       to: ["eltmytb@gmail.com"],
-      subject: `Nouvelle commande - ${offer} pour ${brandName}`,
+      subject: `Nouvelle commande - ${orderData.offer} pour ${orderData.brandName}`,
       html: `
         <h1>Nouvelle commande reçue !</h1>
         <h2>Détails de la commande :</h2>
         <ul>
-          <li><strong>Offre choisie :</strong> ${offer}</li>
-          <li><strong>Type de site :</strong> ${siteType}</li>
-          <li><strong>Email client :</strong> ${email}</li>
-          <li><strong>Nom de la marque :</strong> ${brandName}</li>
-          <li><strong>Couleur de la marque :</strong> ${brandColor}</li>
+          <li><strong>Offre choisie :</strong> ${orderData.offer}</li>
+          <li><strong>Type de site :</strong> ${orderData.siteType}</li>
+          <li><strong>Email client :</strong> ${orderData.email}</li>
+          <li><strong>Nom de la marque :</strong> ${orderData.brandName}</li>
+          <li><strong>Couleur de la marque :</strong> ${orderData.brandColor}</li>
           ${descriptionText ? `<li><strong>Description :</strong> ${descriptionText}</li>` : ''}
         </ul>
         <p>Connectez-vous à votre dashboard Supabase pour voir tous les détails de la commande.</p>
