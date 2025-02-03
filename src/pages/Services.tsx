@@ -108,7 +108,7 @@ const Services = () => {
         return;
       }
 
-      // Send email notification
+      // Send detailed order email
       const { error: emailError } = await supabase.functions.invoke('send-order-email', {
         body: {
           offer: values.offer,

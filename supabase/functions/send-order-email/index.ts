@@ -37,7 +37,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "PixelCraftLab <onboarding@resend.dev>",
-      to: ["t89650324@gmail.com"],
+      to: ["eltmytb@gmail.com"],
       subject: `Nouvelle commande - ${offer} pour ${brandName}`,
       html: `
         <h1>Nouvelle commande reçue !</h1>
