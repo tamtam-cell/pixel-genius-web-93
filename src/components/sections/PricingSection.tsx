@@ -159,6 +159,14 @@ export const PricingSection = () => {
     navigate('/services', { state: { scrollToCards: true } });
   };
 
+  const handleContactClick = () => {
+    navigate('/contact');
+    // Use setTimeout to ensure navigation completes before scrolling
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
   const pricingData = [
     {
       title: "Offre Complète",
@@ -228,13 +236,13 @@ export const PricingSection = () => {
           
           <div className="text-center space-y-8 mb-16">
             <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
-              Pas convaincu? Appellez-nous!
+              Contactez nous!
             </p>
-            <Link to="/contact">
+            <div onClick={handleContactClick}>
               <RainbowButton>
                 Nous Contacter
               </RainbowButton>
-            </Link>
+            </div>
           </div>
         </>
       }
@@ -254,4 +262,3 @@ export const PricingSection = () => {
     </ContainerScroll>
   );
 };
-
