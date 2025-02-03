@@ -244,7 +244,7 @@ export const PricingSection = () => {
           
           <div className="text-center space-y-8 mb-16">
             <p className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-200">
-              Contactez nous!
+              Pas convaincu? Contactez nous!
             </p>
             <div onClick={handleContactClick}>
               <RainbowButton>
